@@ -5,7 +5,7 @@ import java.util.Map;
 
 public class BestSolution {
 	public int findPairs(int[] nums, int k) {
-		if(nums.length == 0) return 0;
+		if(nums.length == 0 && k < 0) return 0;
 		Map<Integer, Integer> check = new HashMap<>();
 		int pairCnt = 0;
 		for(int num : nums) {
