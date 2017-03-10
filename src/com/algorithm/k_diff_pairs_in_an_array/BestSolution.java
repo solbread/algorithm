@@ -13,7 +13,7 @@ public class BestSolution {
 		}
 		for(Integer key : check.keySet()) {
 			if(k==0 && check.get(key) >= 2) pairCnt++;
-			else if(check.containsKey(key+k)) pairCnt++;
+			else if(k!=0 && check.containsKey(key+k)) pairCnt++;
 		}
 		return pairCnt;
 	}
