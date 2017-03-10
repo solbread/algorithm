@@ -1,5 +1,6 @@
 package com.algorithm.k_diff_pairs_in_an_array;
 
+import java.util.Arrays;
 import java.util.HashSet;
 import java.util.Set;
 
@@ -7,9 +8,10 @@ public class Solution {
     public int findPairs(int[] nums, int k) {
         Set<String> checkDuplicate = new HashSet<>();
         int pairCount = 0;
+        Arrays.sort(nums);
         for(int i = 0; i < nums.length; i++) {
-        	for(int j = i+1; j < nums.length; j++) {
-        		if(Math.abs(nums[i]-nums[j]) == k && checkDuplicate.add(nums[i]+","+nums[j]) && (nums[i]==nums[j] || checkDuplicate.add(nums[j]+","+nums[i]))) {
+        	for(int j = i+1; j < nums.length && nums[j]-nums[i]<=k; j++) {
+        		if((nums[j]-nums[i])==k && checkDuplicate.add(nums[i]+","+nums[j])) {
         			pairCount++;
         		}
         	}
