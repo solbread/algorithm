@@ -10,4 +10,4 @@ Input: [1,1,2,3,3,4,4,8,8]
 Output: 2
 `
 
-Note: Your solution should run in O(log n) time and O(1) space.
+**Note:** Your solution should run in O(log n) time and O(1) space.
