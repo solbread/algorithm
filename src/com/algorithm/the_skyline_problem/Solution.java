@@ -16,11 +16,11 @@ public class Solution {
         Queue<Entry<Integer, Integer>> queue = new PriorityQueue<>((a,b) -> (b.getValue()-a.getValue()));
         Queue<Entry<Integer, Integer>> queue2 = new PriorityQueue<>((a,b) -> (a.getKey() - b.getKey()));
         while(currentX <= buildings[buildings.length-1][0] || !queue.isEmpty()) {
-            if(!queue2.isEmpty() && queue2.peek().getKey() == currentX) {
+            while(!queue2.isEmpty() && queue2.peek().getKey() == currentX) {
                 Entry<Integer, Integer> removedBuilding = queue2.poll();
                 queue.remove(removedBuilding);
             }
-            if(i < buildings.length && buildings[i][0] == currentX) {
+            while(i < buildings.length && buildings[i][0] == currentX) {
                 Entry<Integer, Integer> entry = new AbstractMap.SimpleEntry<>(buildings[i][1], buildings[i][2]);
                 queue.add(entry);
                 queue2.add(entry);
