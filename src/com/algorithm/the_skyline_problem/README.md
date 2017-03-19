@@ -4,6 +4,8 @@ https://leetcode.com/problems/the-skyline-problem/#/description
 
 **Show tag:** \#binary_indexed_tree \#segment_tree \#heap \#divide_and_conquer
 
+------------------------------------
+
 **Solution**
 빌딩의 높이를 기준으로 정렬하는 힙1, 빌딩의 끝나는 x좌표지점을 기준으로 정렬하는 힙2를 사용
 currentX에 현재 기준 x좌표값이 들어가며, 가장 먼저 있는 빌딩의 x좌표값에서 시작
