@@ -32,7 +32,7 @@ public class Solution {
                 currentMaxY = tmpMaxValue;
                 result.add(newPoint);
             }
-            currentX++;
+            currentX = Math.min((i < buildings.length) ? buildings[i][0] : Integer.MAX_VALUE, (queue2.isEmpty()) ? Integer.MAX_VALUE : queue2.peek().getKey());
         }
         return result;
     }
