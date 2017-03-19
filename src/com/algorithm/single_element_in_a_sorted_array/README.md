@@ -5,10 +5,10 @@ https://leetcode.com/problems/single-element-in-a-sorted-array/#/description
 Given a sorted array consisting of only integers where every element appears twice except for one element which appears once.
 Find this single element that appears only once.
 
-`
+```
 Input: [1,1,2,3,3,4,4,8,8]
 Output: 2
-`
+```
 
 **Note:** Your solution should run in O(log n) time and O(1) space.
 
@@ -16,7 +16,7 @@ Output: 2
 
 ------------------------------------
 
-**Solution**
+**Solution** <br/>
 문제의 조건인 시간복잡도 O(logn)과 공간복잡도 O(1)에 맞춰서 풀이함 <br/>
 p와 q 두개의 지점을 두고 p=0, q=배열의끝지점 에서 시작함 <br/>
 mid지점을 구해서 해당 지점에서 왼쪽구역으로 갈지 오른쪽구역으로 갈지를 정하며 이진탐색을 함 <br/>
