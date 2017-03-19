@@ -9,6 +9,8 @@ n vertical lines are drawn such that the two endpoints of line i is at (i, ai) a
 
 **show tag:** \#array \#two pointer
 
+-------------------------------
+
 **Best Solution**
 두개의 포인터 p와 q를 사용
 p는 0에서 q는 배열의 마지막에서 시작
