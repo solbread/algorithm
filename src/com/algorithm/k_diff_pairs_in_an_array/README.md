@@ -11,6 +11,8 @@ Output: 2
 Explanation: There are two 2-diff pairs in the array, (1, 3) and (3, 5).
 Although we have two 1s in the input, we should only return the number of unique pairs.
 `
+**show tag:** \#array \#two_pointers
+-----------------------------------
 
 **Solution**
 Time complexity : 최선O(nlogn) 최악(n^2)
