@@ -15,10 +15,18 @@ public class BestSolution {
 			TreeNode right = stack.pop();
 			TreeNode left = stack.pop();
 			if(right.val != left.val) return false;
-			stack.push(left.left);
-			stack.push(right.right);
-			stack.push(left.right);
-			stack.push(right.left);
+			if(left.left == null || right.right == null) {
+				if(left.left != right.right) return false; 
+			}  else {
+				stack.push(left.left);
+				stack.push(right.right);
+			}
+			if(left.right == null || right.left == null) {
+				if(left.right != right.left) return false;
+			} else {
+				stack.push(left.right);
+				stack.push(right.left);
+			}
 		}
 		return true;
 	}

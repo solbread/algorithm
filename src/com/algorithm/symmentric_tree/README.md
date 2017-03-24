@@ -36,5 +36,5 @@ But the following [1,2,2,null,3,null,3] is not: <br/>
 stack에 루트의 left와 right를 넣은 후 <br/>
 while문을 반복하며 두개의 TreeNode를 pop하여 비교한 후 <br/>
 노드1의 left, 노드2의 right, 노드1의 right, 노드2의 left 순서대로 다시 스택에 넣어줌 <br/>
-위의 과정을 스택이 빌떄까지 반복하면 됨 <br/>
+위의 과정을 스택이 빌때까지 반복하면 됨 <br/>
 ※ stack에 null을 집어넣으면 NullPointerException이 발생하므로 널 처리해줘야 함
