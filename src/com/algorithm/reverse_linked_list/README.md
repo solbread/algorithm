@@ -14,7 +14,7 @@ Reverse a singly linked list.
  */
 ```
 
-**Show tag:** linked_list
+**Show tag:** \#linked_list
 
 -------------------------------------------------
 
