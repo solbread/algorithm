@@ -1,4 +1,4 @@
-package com.algorithm.reverse_linked_list;
+package com.algorithm.linked_list.reverse_linked_list;
 
 import com.algorithm.etc.ListNode;
 

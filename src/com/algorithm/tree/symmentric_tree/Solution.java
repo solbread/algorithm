@@ -1,4 +1,4 @@
-package com.algorithm.symmentric_tree;
+package com.algorithm.tree.symmentric_tree;
 
 import com.algorithm.etc.TreeNode;
 

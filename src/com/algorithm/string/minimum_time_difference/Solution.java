@@ -1,4 +1,4 @@
-package com.algorithm.minimum_time_difference;
+package com.algorithm.string.minimum_time_difference;
 
 import java.util.Arrays;
 import java.util.Collections;

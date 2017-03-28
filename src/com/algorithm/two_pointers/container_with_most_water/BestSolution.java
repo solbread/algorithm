@@ -1,4 +1,4 @@
-package com.algorithm.container_with_most_water;
+package com.algorithm.two_pointers.container_with_most_water;
 
 public class BestSolution {
 	//Time complexity : O(n)
