@@ -6,14 +6,14 @@ Given a matrix consists of 0 and 1, find the distance of the nearest 0 for each 
 The distance between two adjacent cells is 1.
 
 ```
-input <br/>
-0 0 0 <br/>
-0 1 0 <br/>
-0 0 0 <br/>
-output <br/>
-0 0 0 <br/>
-0 1 0 <br/>
-0 0 0 <br/>
+input 
+0 0 0 
+0 1 0 
+0 0 0 
+output
+0 0 0 
+0 1 0 
+0 0 0 
 ```
 
 **Note** <br/>
