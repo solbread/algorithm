@@ -34,14 +34,14 @@ currentMaximumXOR값을 찾는방법은 원소의 각 자릿수마다 비트값�
 
 **Best Solution**<br/>
 출처 : https://discuss.leetcode.com/topic/63213/java-o-n-solution-using-bit-manipulation-and-hashmap/8 <br/>
-설명을 시작하기 전에 아래의 공식을 이해하는 것이 중요 <br/>
+설명을 시작하기 전에 아래의 공식을 이해하는 것이 중요하다. <br/>
 **※** a^b=c 라고하면 a^c=b b^c=a <br/>
-맨 왼쪽 자릿수가 가장 커야 maxXOR 값을 찾을 수 있으므로 맨 왼쪽 자릿수부터 for loop를(32번 반복) 봄 <br/>
-32번 반복하는 for loop안에서 각각의 단어의 맨왼쪽에서첫번째자리수~i번째자릿수 까지를 뽑아내서 set안에 저장한 후 i번째 자릿수까지의 최대값을 구하면서 maximumXOR값을 찾음 <br/>
-i번째 자릿수까지의 최대값을 구하는 방법은 아래와 같음 <br/>
-a^b = c 라고 할 때 우리가 원하는 c 값은 i-1번째 자릿수까지의 최대값에서 i번째 자릿수가 1bit이 값임 (즉, max|(1<<i) <br/>
-c를 구한 후 a와 b가 모두 set안에 있는지를 확인하면 됨 <br/>
-c가 있으므로 c^a = b, c^b = a 이므로 set을 순회하면서 c와 xor한 것이 set안에 있는지를 확인하여 set 안에 있다면 c가 max값이 됨 
+맨 왼쪽 자릿수가 가장 커야 maxXOR 값을 찾을 수 있으므로 맨 왼쪽 자릿수부터 for loop를(32번 반복) 본다. <br/>
+32번 반복하는 for loop안에서 각각의 단어의 맨왼쪽에서첫번째자리수~i번째자릿수 까지를 뽑아내서 set안에 저장한 후 i번째 자릿수까지의 최대값을 구하면서 maximumXOR값을 찾는다. <br/>
+i번째 자릿수까지의 최대값을 구하는 방법은 아래와 같다. <br/>
+a^b = c 라고 할 때 우리가 원하는 c 값은 i-1번째 자릿수까지의 최대값에서 i번째 자릿수가 1bit이 값이다. (즉, max|(1<<i) <br/>
+c를 구한 후 a와 b가 모두 set안에 있는지를 확인하면 된다. <br/>
+c가 있으므로 c^a = b, c^b = a 이므로 set을 순회하면서 c와 xor한 것이 set안에 있는지를 확인하여 set 안에 있다면 c가 max값이 된다.
 
 이 solution의 이해를 돕는 예시 ↓
 ```
