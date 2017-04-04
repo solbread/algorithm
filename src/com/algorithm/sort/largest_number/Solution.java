@@ -19,12 +19,18 @@ public class Solution {
         for(String numStr : numsStr) {
             sb.append(numStr);
         }
-        return sb.toString();
+        String largestNumber = sb.toString();
+        int i = 0;
+        while(largestNumber.charAt(i) == '0' && i != largestNumber.length()-1) {
+        	i++;
+        }
+        return largestNumber.substring(i);
     }	
 	public static void main(String[] args) {
 		Solution solution = new Solution();
 //		int nums[] = {3, 30, 34, 5, 9};
-		int nums[] = {121, 12};
+//		int nums[] = {121, 12};
+		int nums[] = {0, 0};
 		System.out.println(solution.largestNumber(nums));
 	}
 }
