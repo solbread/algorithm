@@ -12,19 +12,7 @@ public class Solution {
         Arrays.sort(numsStr, new Comparator<String>() {
            @Override
            public int compare(String o1, String o2) {
-               if(o1.length() > o2.length()) {
-                   char c = o2.charAt(0);
-                   for(int i = 0; i < o1.length() - o2.length(); i++) {
-                       o2+=String.valueOf(c);
-                   }
-               }
-               else if(o1.length() < o2.length()) {
-                   char c = o1.charAt(0);
-                   for(int i = 0; i < o2.length() - o1.length(); i++) {
-                       o1+=String.valueOf(c);
-                   }                   
-               }
-               return o2.compareTo(o1);
+               return (o2+o1).compareTo(o1+o2);
            }
         });
         StringBuilder sb = new StringBuilder();
@@ -35,7 +23,8 @@ public class Solution {
     }	
 	public static void main(String[] args) {
 		Solution solution = new Solution();
-		int nums[] = {3, 30, 34, 5, 9};
+//		int nums[] = {3, 30, 34, 5, 9};
+		int nums[] = {121, 12};
 		System.out.println(solution.largestNumber(nums));
 	}
 }
