@@ -15,16 +15,14 @@ public class Solution {
                return (o2+o1).compareTo(o1+o2);
            }
         });
+        
+        if(numsStr[0].charAt(0) == '0') return "0";
+        
         StringBuilder sb = new StringBuilder();
         for(String numStr : numsStr) {
             sb.append(numStr);
         }
-        String largestNumber = sb.toString();
-        int i = 0;
-        while(largestNumber.charAt(i) == '0' && i != largestNumber.length()-1) {
-        	i++;
-        }
-        return largestNumber.substring(i);
+        return sb.toString();
     }	
 	public static void main(String[] args) {
 		Solution solution = new Solution();
