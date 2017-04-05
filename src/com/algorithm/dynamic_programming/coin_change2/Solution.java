@@ -13,7 +13,6 @@ public class Solution {
                 cache[i][j] = -1;
             }
         }
-        Arrays.sort(coins);
         return dp(amount, coins, coins.length-1);
     }
     
