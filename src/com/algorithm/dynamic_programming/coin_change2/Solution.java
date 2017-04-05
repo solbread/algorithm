@@ -27,7 +27,7 @@ public class Solution {
     }
     public static void main(String[] args) {
 		Solution solution = new Solution();
-		int[] coins = {1, 2, 5};
+		int[] coins = {5, 1, 2};
 		System.out.println(solution.change(5, coins));
 	}
 }
