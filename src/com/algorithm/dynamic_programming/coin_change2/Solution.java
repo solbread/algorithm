@@ -1,13 +1,11 @@
 package com.algorithm.dynamic_programming.coin_change2;
 
-import java.util.Arrays;
-
 public class Solution {
     public int[][] cache;
     public int change(int amount, int[] coins) {
         if(amount == 0) return 1;
-        if(coins.length==0) return 0;
-        cache = new int[amount + 1][coins.length + 1];
+        if(coins.length == 0) return 0;
+        cache = new int[amount + 1][coins.length];
         for(int i = 0; i < cache.length; i ++) {
             for(int j = 0; j < cache[0].length; j++) {
                 cache[i][j] = -1;
