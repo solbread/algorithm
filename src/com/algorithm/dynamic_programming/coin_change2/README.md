@@ -22,17 +22,20 @@ dp함수의 의미는 startIndex부터 coins.length-1 범위까지의 coins를 �
 dp함수 안에서 startIndex부터 coins.length-1까지를 for loop 돌면서 <br/>
 1. 해당 coin이 amount랑 같으면 횟수를 +1 해준다. <br/>
 2. 해당 coin이 amount보다 작으면 dp(amoint-coint, coins, 해당index)를 호출한다. <br/>
+
 이를 반복하여 주어진 coins로 amount를 만들 수 있는 가짓수를 찾는다.<br/>
 또한 cache[amount][startIndex]를 사용하여 속도를 향상시킬 수 있다. <br/>
+
 **refactoring** <br/>
 1. 처음에는 coins함수를 sort를 해줬었는데 sort가 필요없음을 깨달았다 <br/>
 가장 큰 코인값부터 amount에서 빼주려고 sort를 했는데 굳이 가장 큰 코인값부터 빼줄 이유가 없었다 <br/>
 dp함수를 호출할 때 startIndex에 의해서 1,2 = 2,1 과 같은 중복처리가 되므로 sort는 필요없는 작업이다 <br/>
 2. 2차원 행렬의 cache의 열 크기는 coins.length+1이 아니라 coins.length여도 된다. <br/>
 안쓰는 공간을 낭비하고 있었다.
+
 **반복문을 이용한 dp를 구현하기 위해서 해당 코드를 몇가지 방식으로 바꿔보았다** <br/>
 **commit은 하지 않았다.** <br/>
-1. <br/>
+1. 첫번째 시도 <br/>
 기존에는 sort를 넣어서 큰값부터 빼줘야 한다는 생각에 startIndex는 length-1이었으며, for문은 i=startIndex부터 0까지 감소하면서 loop하였다. <br/>
 그러나 sort가 제거되었으므로 startIndex를 0부터로 변경하였고 <br/>
 dp함수의 for문도 startIndex부터 length-1로 변경하였다.
@@ -65,7 +68,7 @@ public class Solution {
     }
 }
 ```
-2. <br/>
+2. 두번째 시도 <br/>
 dp함수를 startIndex를 사용하는것에서 lastIndex를 사용하는것으로 변경하였다 <br/>
 즉 dp(int amount, int[] coins, int lastIndex)의 의미는 coins의 0~lastIndex까지의 coin으로 amount를 만들 수 있는 가짓수 이다. <br/>
 dp안의 for문은 lastIndex부터 0번째 인덱스까지 loop 돌면서 가짓수를 찾도록 하였다. <br/>
@@ -107,5 +110,11 @@ public class Solution {
     }
 }
 ```
-
+**Solution2 : using iteratively** <br/>
+1 1 1 <br/>
+0 1 1 <br/>
+0 1 2 <br/>
+0 1 2 <br/>
+0 1 3 <br/>
+1 2 4 <br/>
 
