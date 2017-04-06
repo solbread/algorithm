@@ -111,10 +111,26 @@ public class Solution {
 }
 ```
 **Solution2 : using iteratively** <br/>
+Solution1의 마지막 시도코드(커밋은 하지 않고 마크다운 문서에만 표기)를 반복문으로 옮긴 것이다. <br/>
+cache[i][j]에 0부터 j까지의 coin으로 money i를 만들 수 있는 가짓수를 for문을 이용해서 넣으면서 최종적으로는 cache[amount][coins.leght-1]의 값을 리턴하는 방식으로 구현하였다 <br/>
+amount를 0부터 주어진 amount까지 반복문을 돌리고 <br/>
+그 안에서 coins함수를 순회한다 <br/>
+loop안의 코드는 아래와 같이 구성한다 <br/>
+amount가 0일경우에는 무조건 하나의 경우의수를 만들 수 있으므로 cache[i][j] = 1이다. <br/>
+그 외의 경우에는 <br/>
+1. 현재 coin이 현재 amount랑 같으면 value = 1 <br/>
+2. 현재 coin이 현재 amount보다 작으면 value = cache[i-coins[j]][j] -> 이것은 i-coins[j]가 현재 코인으로 amount를 만들기에 모자란 amount이므로 해당 amount를 만들 수 있는 가짓수를 cache에서 검색해서 이를 value로 쓴다. <br/>
+
+이렇게 얻은 value는 현재 coin으로 amount를 만들 수 있는 가짓수이므로, <br/>
+이 value에다가 cache[i][j-1]을 더해줘서 이전 coin으로 amount를 만들 수 있는 가짓수를 더해줘서 <br/>
+cache[i][j]가 0부터 j까지의 coin으로 money i를 만들 수 있는 가짓수가 되도록 한다. <br/>
+
+만약 amount=5, coins={5, 1, 2}가 주어질 때 최종 cache 행렬은 아래와 같다. <br/>
 1 1 1 <br/>
 0 1 1 <br/>
 0 1 2 <br/>
 0 1 2 <br/>
 0 1 3 <br/>
 1 2 4 <br/>
+cache[i][j]가 의미하는 것은 coins 0부터j까지의 coin으로 money i를 만들 수 있는 가짓수 이다.<br/>
 
