@@ -79,7 +79,7 @@ dp안의 for문은 lastIndex부터 0번째 인덱스까지 loop 돌면서 가짓
 -1  1  2 <br/>
 -1 -1 -1 <br/>
 -1 -1  4 <br/>
-cache[i][j]가 의미하는 것은 coins 0부터j까지의 coin으로 money i를 만들 수 있는 가짓수 이다.<br/>
+**cache[i][j]가 의미하는 것은 coins 0부터j까지의 coin으로 money i를 만들 수 있는 가짓수** 이다.<br/>
 **이 코드를 기반으로 반복 dp로 옮겼다.** </br>
 
 ```
@@ -123,7 +123,7 @@ amount가 0일경우에는 무조건 하나의 경우의수를 만들 수 있으
 
 이렇게 얻은 value는 현재 coin으로 amount를 만들 수 있는 가짓수이므로, <br/>
 이 value에다가 cache[i][j-1]을 더해줘서 이전 coin으로 amount를 만들 수 있는 가짓수를 더해줘서 <br/>
-cache[i][j]가 0부터 j까지의 coin으로 money i를 만들 수 있는 가짓수가 되도록 한다. <br/>
+**cache[i][j]가 0부터 j까지의 coin으로 money i를 만들 수 있는 가짓수**가 되도록 한다. <br/>
 
 만약 amount=5, coins={5, 1, 2}가 주어질 때 최종 cache 행렬은 아래와 같다. <br/>
 1 1 1 <br/>
