@@ -134,3 +134,9 @@ amount가 0일경우에는 무조건 하나의 경우의수를 만들 수 있으
 1 2 4 <br/>
 cache[i][j]가 의미하는 것은 coins 0부터j까지의 coin으로 money i를 만들 수 있는 가짓수 이다.<br/>
 
+**refactoring** <br/>
+i - coins[j]가 0일떄랑 0보다 클때랑 나눠서 value를 얻었는데 i-coins[j]가 0일떄는 cache[0][j]가 되는데 이는 어차피 1이기 때문에 조건을 0일때, 0보다 클때, 그외일때 이렇게 나눌 필요 없이 i - coins[j]가 0이상인지만 체크하면 된다.
+
+**조금더 깔끔한코드** <br/>
+https://leetcode.com/problems/coin-change-2/#/solutions
+

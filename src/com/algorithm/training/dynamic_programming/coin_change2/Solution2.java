@@ -9,9 +9,7 @@ public class Solution2 {
             for(int j = 0; j < coins.length; j++) {
                 if(i==0) cache[i][j] = 1;
                 else {
-                    int value = 0;
-                    if(i - coins[j]==0) value = 1;
-                    else if(i - coins[j] > 0) value = cache[i-coins[j]][j];
+                    int value = (i - coins[j]>=0) ? cache[i-coins[j]][j]: 0 ;
                     cache[i][j] = (j==0)? value : value+cache[i][j-1];
                 }
             }
