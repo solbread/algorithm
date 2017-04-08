@@ -1,6 +1,6 @@
-package com.algorithm.two_pointers.linked_list_cycle;
+package com.algorithm.training.two_pointers.linked_list_cycle;
 
-import com.algorithm.etc.ListNode;
+import com.algorithm.training.etc.ListNode;
 
 public class Solution {
     public boolean hasCycle(ListNode head) {

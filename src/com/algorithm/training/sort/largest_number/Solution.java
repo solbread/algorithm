@@ -1,4 +1,4 @@
-package com.algorithm.sort.largest_number;
+package com.algorithm.training.sort.largest_number;
 
 import java.util.Arrays;
 import java.util.Comparator;

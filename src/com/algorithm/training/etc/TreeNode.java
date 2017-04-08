@@ -1,4 +1,4 @@
-package com.algorithm.etc;
+package com.algorithm.training.etc;
 
 public class TreeNode {
 	public int val;

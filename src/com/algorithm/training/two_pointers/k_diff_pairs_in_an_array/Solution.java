@@ -1,4 +1,4 @@
-package com.algorithm.two_pointers.k_diff_pairs_in_an_array;
+package com.algorithm.training.two_pointers.k_diff_pairs_in_an_array;
 
 import java.util.Arrays;
 import java.util.HashSet;

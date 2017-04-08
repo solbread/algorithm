@@ -1,4 +1,4 @@
-package com.algorithm.etc;
+package com.algorithm.training.etc;
 
 public class ListNode {
 	public int val;

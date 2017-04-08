@@ -1,6 +1,6 @@
-package com.algorithm.linked_list.reverse_linked_list;
+package com.algorithm.training.linked_list.reverse_linked_list;
 
-import com.algorithm.etc.ListNode;
+import com.algorithm.training.etc.ListNode;
 
 public class BestSolution2 {
 	public ListNode reverseList(ListNode head) {

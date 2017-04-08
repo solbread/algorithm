@@ -1,6 +1,6 @@
-package com.algorithm.tree.symmentric_tree;
+package com.algorithm.training.tree.symmentric_tree;
 
-import com.algorithm.etc.TreeNode;
+import com.algorithm.training.etc.TreeNode;
 
 public class Solution {
     public boolean isSymmetric(TreeNode root) {

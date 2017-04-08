@@ -1,4 +1,4 @@
-package com.algorithm.dynamic_programming.coin_change2;
+package com.algorithm.training.dynamic_programming.coin_change2;
 
 public class Solution {
     public int[][] cache;

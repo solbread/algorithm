@@ -1,4 +1,4 @@
-package com.algorithm.trie.maximum_xor_of_two_numbers_in_an_array;
+package com.algorithm.training.trie.maximum_xor_of_two_numbers_in_an_array;
 
 public class Solution {
 	public int findMaximumXOR(int[] nums) {

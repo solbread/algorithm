@@ -1,8 +1,8 @@
-package com.algorithm.tree.symmentric_tree;
+package com.algorithm.training.tree.symmentric_tree;
 
 import java.util.Stack;
 
-import com.algorithm.etc.TreeNode;
+import com.algorithm.training.etc.TreeNode;
 
 public class BestSolution {
 	public boolean isSymmetric(TreeNode root) {

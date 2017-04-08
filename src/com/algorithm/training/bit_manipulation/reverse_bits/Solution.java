@@ -1,6 +1,6 @@
-package com.algorithm.bit_manipulation.reverse_bits;
+package com.algorithm.training.bit_manipulation.reverse_bits;
 
-@Deprecated //½ÇÆÐÇÑ ÄÚµå
+@Deprecated //ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ ï¿½Úµï¿½
 public class Solution {
     public int reverseBits(int n) {
     	int reverseBits = 0;

@@ -1,4 +1,4 @@
-package com.algorithm.breadth_first_search.zero_one_matrix;
+package com.algorithm.training.breadth_first_search.zero_one_matrix;
 
 import java.util.ArrayList;
 import java.util.LinkedList;

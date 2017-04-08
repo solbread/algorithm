@@ -1,4 +1,4 @@
-package com.algorithm.divide_and_conquer.the_skyline_problem;
+package com.algorithm.training.divide_and_conquer.the_skyline_problem;
 
 import java.util.AbstractMap;
 import java.util.ArrayList;

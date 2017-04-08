@@ -1,4 +1,4 @@
-package com.algorithm.bit_manipulation.number_of_1_bits;
+package com.algorithm.training.bit_manipulation.number_of_1_bits;
 
 public class Solution {
     public int hammingWeight(int n) {

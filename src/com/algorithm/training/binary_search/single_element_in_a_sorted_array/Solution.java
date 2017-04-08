@@ -1,4 +1,4 @@
-package com.algorithm.binary_search.single_element_in_a_sorted_array;
+package com.algorithm.training.binary_search.single_element_in_a_sorted_array;
 
 public class Solution {
     public int singleNonDuplicate(int[] nums) {
