@@ -32,11 +32,14 @@ Case #3: 1 1
 Case #4: 0 0
 Case #5: 500 499
 
-In Case #1, the first person occupies the leftmost of the middle two stalls, leaving the following configuration (O stands for an occupied stall and . for an empty one): O.O..O. Then, the second and last person occupies the stall immediately to the right, leaving 1 empty stall on one side and none on the other.
+In Case #1, the first person occupies the leftmost of the middle two stalls, leaving the following configuration (O stands for an occupied stall and . for an empty one): O.O..O. <br/>
+Then, the second and last person occupies the stall immediately to the right, leaving 1 empty stall on one side and none on the other.
 
-In Case #2, the first person occupies the middle stall, getting to O..O..O. Then, the second and last person occupies the leftmost stall.
+In Case #2, the first person occupies the middle stall, getting to O..O..O. <br/>
+Then, the second and last person occupies the leftmost stall.
 
-In Case #3, the first person occupies the leftmost of the two middle stalls, leaving O..O...O. The second person then occupies the middle of the three consecutive empty stalls.
+In Case #3, the first person occupies the leftmost of the two middle stalls, leaving O..O...O. <br/>
+The second person then occupies the middle of the three consecutive empty stalls.
 
 In Case #4, every stall is occupied at the end, no matter what the stall choices are.
 

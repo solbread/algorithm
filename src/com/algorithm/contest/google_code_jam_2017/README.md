@@ -13,8 +13,8 @@
 
 ---------------------------------------
 
-**Qualification 후기**
+**Qualification 후기** <br/>
 문제는 총 4문제였으며 1번과 2번문제는 해결, 3번문제는 wrong answer, 4번문제는 solution을 건들지도 못했다. <br/>
-![qualification_result](./qualification_round/2017_google_code_jam_result.png)
+![qualification_result](./qualification_round/2017_google_code_jam_result.png) <br/>
 예상했던 것보다 더 어려워서 나의 부족함을 느끼게 되는 계기였다. <br/>
 앞으로 더 공부해서 내년에는 더 3문제 이상 풀고 싶다!
