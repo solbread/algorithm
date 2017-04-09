@@ -68,9 +68,12 @@ Case #3: 6 2
 o 2 3
 x 1 2
 
-The sample output displays one set of answers to the sample cases. Other answers may be possible. Note that the last sample case would not appear in the Small dataset.
+The sample output displays one set of answers to the sample cases. <br/>
+Other answers may be possible. Note that the last sample case would not appear in the Small dataset.
 
-In sample case #1, the grid is 2-by-2 and is initially blank. The output corresponds to the following grid. (In these explanations, we will use . to denote a blank cell.)
+In sample case #1, the grid is 2-by-2 and is initially blank. <br/>
+The output corresponds to the following grid. <br/>
+(In these explanations, we will use . to denote a blank cell.)
 
 x.
 +o

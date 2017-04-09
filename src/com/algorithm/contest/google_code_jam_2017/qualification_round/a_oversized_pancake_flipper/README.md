@@ -32,11 +32,14 @@ Case #1: 3
 Case #2: 0
 Case #3: IMPOSSIBLE
 
-In Case #1, you can get all the pancakes happy side up by first flipping the leftmost 3 pancakes, getting to ++++-++-, then the rightmost 3, getting to ++++---+, and finally the 3 pancakes that remain blank side up. There are other ways to do it with 3 flips or more, but none with fewer than 3 flips.
+In Case #1, you can get all the pancakes happy side up by first flipping the leftmost 3 pancakes, <br/>
+getting to ++++-++-, then the rightmost 3, getting to ++++---+, and finally the 3 pancakes that remain blank side up. <br/>
+There are other ways to do it with 3 flips or more, but none with fewer than 3 flips.
 
 In Case #2, all of the pancakes are already happy side up, so there is no need to flip any of them.
 
-In Case #3, there is no way to make the second and third pancakes from the left have the same side up, because any flip flips them both. Therefore, there is no way to make all of the pancakes happy side up.
+In Case #3, there is no way to make the second and third pancakes from the left have the same side up, <br/>
+because any flip flips them both. Therefore, there is no way to make all of the pancakes happy side up.
 ```
 
 **Solution**
