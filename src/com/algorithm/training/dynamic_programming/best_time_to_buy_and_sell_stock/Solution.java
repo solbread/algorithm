@@ -1,5 +1,7 @@
 package com.algorithm.training.dynamic_programming.best_time_to_buy_and_sell_stock;
 
+//Time Limit Exceed 발생 코드
+@Deprecated
 public class Solution {
     public int maxProfit(int[] prices) {
         int maxProfit = 0;
