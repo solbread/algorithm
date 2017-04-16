@@ -2,9 +2,10 @@ package com.algorithm.training.dynamic_programming.maximum_subarray;
 
 public class Solution {
     public int maxSubArray(int[] nums) {
-        int maxSum = 0, currentSum = 0;
-        for(int num : nums) {
-        	currentSum = Math.max(currentSum+num, num);
+    	if(nums.length==0) return 0;
+        int maxSum = nums[0], currentSum = nums[0];
+        for(int i = 1; i < nums.length; i++) {
+        	currentSum = Math.max(currentSum+nums[i], nums[i]);
         	maxSum = Math.max(maxSum, currentSum);
         }
         return maxSum;
