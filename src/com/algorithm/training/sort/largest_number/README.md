@@ -1,5 +1,7 @@
 ## 179. Largest Number
 
+**Difficulty:** Medium
+
 https://leetcode.com/problems/largest-number/#/description
 
 Given a list of non negative integers, arrange them such that they form the largest number.

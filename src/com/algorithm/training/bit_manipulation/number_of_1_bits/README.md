@@ -1,11 +1,13 @@
 ## 191. Number of 1 Bits
 
+**Difficulty:** Easy
+
 https://leetcode.com/problems/number-of-1-bits/#/description
 
-Write a function that takes an unsigned integer and returns the number of ¡¯1' bits it has (also known as the Hamming weight) <br/>
+Write a function that takes an unsigned integer and returns the number of â€™1' bits it has (also known as the Hamming weight) <br/>
 
 ```
-For example, the 32-bit integer ¡¯11' has binary representation 00000000000000000000000000001011, so the function should return 3.
+For example, the 32-bit integer â€™11' has binary representation 00000000000000000000000000001011, so the function should return 3.
 ```
 
 **Show tag:** \#bit\_manipulation
@@ -13,6 +15,6 @@ For example, the 32-bit integer ¡¯11' has binary representation 0000000000000000
 ----------------------
 
 **Solution** <br/>
-¸Ç ¿À¸¥ÂÊ ºñÆ®ºÎÅÍ ÇØ´ç ºñÆ®°¡ 1ÀÎÁö ¾Æ´ÑÁö¸¦ ÆÇ´ÜÇÏ´Â ¹æ½Ä (for¹®ÀÌ 32¹ø µ¹¸é¼­ 32ºñÆ®¸¦ È®ÀÎ) <br/>
-n°ú 1À» & ¿¬»êÀ» ÇÏ¸é ¸Ç ¿À¸¥ÂÊ ºñÆ®°¡ 1ÀÎÁö ¾Æ´ÑÁö È®ÀÎÇÒ ¼ö ÀÖÀ½ (&¿¬»êÀÇ °á°ú°¡ 1ÀÌ¶ó¸é 1ÀÎ°ÍÀÌ°í 0ÀÌ¶ó¸é 0ÀÎ°Í) <br/>
-·çÇÁ¸¦ µ¹ ¶§ ¸¶´Ù ÁÖ¾îÁø nÀ» 1bit¾¿ ¿À¸¥ÂÊ shift¿¬»êÀ» ÇÏ¸é¼­ ºñÆ®°¡ 1ÀÎÁö ¾Æ´ÑÁö¸¦ È®ÀÎ
+ë§¨ ì˜¤ë¥¸ìª½ ë¹„íŠ¸ë¶€í„° í•´ë‹¹ ë¹„íŠ¸ê°€ 1ì¸ì§€ ì•„ë‹Œì§€ë¥¼ íŒë‹¨í•˜ëŠ” ë°©ì‹ (forë¬¸ì´ 32ë²ˆ ëŒë©´ì„œ 32ë¹„íŠ¸ë¥¼ í™•ì¸) <br/>
+nê³¼ 1ì„ & ì—°ì‚°ì„ í•˜ë©´ ë§¨ ì˜¤ë¥¸ìª½ ë¹„íŠ¸ê°€ 1ì¸ì§€ ì•„ë‹Œì§€ í™•ì¸í•  ìˆ˜ ìˆìŒ (&ì—°ì‚°ì˜ ê²°ê³¼ê°€ 1ì´ë¼ë©´ 1ì¸ê²ƒì´ê³  0ì´ë¼ë©´ 0ì¸ê²ƒ) <br/>
+ë£¨í”„ë¥¼ ëŒ ë•Œ ë§ˆë‹¤ ì£¼ì–´ì§„ nì„ 1bitì”© ì˜¤ë¥¸ìª½ shiftì—°ì‚°ì„ í•˜ë©´ì„œ ë¹„íŠ¸ê°€ 1ì¸ì§€ ì•„ë‹Œì§€ë¥¼ í™•ì¸

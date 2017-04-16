@@ -1,5 +1,7 @@
 ## 190. Reverse Bits
 
+**Difficulty:** Easy
+
 https://leetcode.com/problems/reverse-bits/#/description
 
 Reverse bits of a given 32 bits unsigned integer.

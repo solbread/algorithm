@@ -1,5 +1,7 @@
 ## 518. Coin Change 2
 
+**Difficulty:** Medium
+
 https://leetcode.com/problems/coin-change-2/
 
 You are given coins of different denominations and a total amount of money. <br/>

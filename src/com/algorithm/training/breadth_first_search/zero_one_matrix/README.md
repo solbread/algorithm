@@ -1,5 +1,7 @@
 ## 542. 01 Matrix
 
+**Difficulty:** Medium
+
 https://leetcode.com/problems/01-matrix/
 
 Given a matrix consists of 0 and 1, find the distance of the nearest 0 for each cell. <br/>
@@ -26,8 +28,8 @@ output
 ----------------------
 
 **Best Solution** <br/>
-0°ú 1·Î ÀÌ·ç¾îÁø Çà·ÄÀÌ¹Ç·Î 0ÀÎ cellÀº ´äµµ 0ÀÓ <br/>
-Ã³À½¿¡ for¹®À¸·Î Çà·ÄÀ» µ¹¸é¼­ 1ÀÎ cell¸¸ Integer.MAX_VALUE·Î ¹Ù²ã¼­ ¾î¶² ¼ö¶û ºñ±³ÇØµµ Å©µµ·Ï ÇÔ <br/>
-¶ÇÇÑ °ªÀÌ 0ÀÎ cellÀÇ ÁÂÇ¥(i,j)¸¦ Å¥¿¡ ³Ö¾îµÖ¼­ ÈÄ¿¡ ÀÌ ÁÂÇ¥µéÀ» ±âÁØÀ¸·Î Å½»öÇÏµµ·Ï ÇØÁÜ <br/>
-Çà·ÄÀ» ´Ù µ· ÈÄ¿¡´Â queue¿¡¼­ ÇÏ³ª¾¿ ²¨³»¸é¼­ ÇØ´ç ÁÂÇ¥ÀÇ À§,¾Æ·¡,ÁÂ,¿ì¸¦ º¸°í ÇØ´ç ÁÂÇ¥ÀÇ value¿Í À§,¾Æ·¡,ÁÂ,¿ìÀÇ °ª¿¡¼­ 1´õÇÑ °ªÁß ÃÖ¼Ò°ªÀ¸·Î ¼ÂÇØÁÖ¸é¼­ ÀÌµ¿ÇÏ¸é µÊ. -> MIN(matrix[i-1][j]+1, matrix[i+1][j]+1, matrix[i][j-1]+1, matrix[i][j+1]+1, matrix[i][j]) <br/>
-¸¸¾à¿¡ »õ·Î¿î ÃÖ¼Ò°ªÀ¸·Î ¼Â ÇÏ¸é ´Ù½Ã Å¥¿¡ ³Ö¾îÁÖ¸é¼­ Å¥°¡ ºô¶§±îÁö ¹Ýº¹ 
+0ê³¼ 1ë¡œ ì´ë£¨ì–´ì§„ í–‰ë ¬ì´ë¯€ë¡œ 0ì¸ cellì€ ë‹µë„ 0ìž„ <br/>
+ì²˜ìŒì— forë¬¸ìœ¼ë¡œ í–‰ë ¬ì„ ëŒë©´ì„œ 1ì¸ cellë§Œ Integer.MAX_VALUEë¡œ ë°”ê¿”ì„œ ì–´ë–¤ ìˆ˜ëž‘ ë¹„êµí•´ë„ í¬ë„ë¡ í•¨ <br/>
+ë˜í•œ ê°’ì´ 0ì¸ cellì˜ ì¢Œí‘œ(i,j)ë¥¼ íì— ë„£ì–´ë‘¬ì„œ í›„ì— ì´ ì¢Œí‘œë“¤ì„ ê¸°ì¤€ìœ¼ë¡œ íƒìƒ‰í•˜ë„ë¡ í•´ì¤Œ <br/>
+í–‰ë ¬ì„ ë‹¤ ëˆ í›„ì—ëŠ” queueì—ì„œ í•˜ë‚˜ì”© êº¼ë‚´ë©´ì„œ í•´ë‹¹ ì¢Œí‘œì˜ ìœ„,ì•„ëž˜,ì¢Œ,ìš°ë¥¼ ë³´ê³  í•´ë‹¹ ì¢Œí‘œì˜ valueì™€ ìœ„,ì•„ëž˜,ì¢Œ,ìš°ì˜ ê°’ì—ì„œ 1ë”í•œ ê°’ì¤‘ ìµœì†Œê°’ìœ¼ë¡œ ì…‹í•´ì£¼ë©´ì„œ ì´ë™í•˜ë©´ ë¨. -> MIN(matrix[i-1][j]+1, matrix[i+1][j]+1, matrix[i][j-1]+1, matrix[i][j+1]+1, matrix[i][j]) <br/>
+ë§Œì•½ì— ìƒˆë¡œìš´ ìµœì†Œê°’ìœ¼ë¡œ ì…‹ í•˜ë©´ ë‹¤ì‹œ íì— ë„£ì–´ì£¼ë©´ì„œ íê°€ ë¹Œë•Œê¹Œì§€ ë°˜ë³µ 

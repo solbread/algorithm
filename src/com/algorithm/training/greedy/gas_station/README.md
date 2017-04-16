@@ -1,5 +1,7 @@
 ## 134. Gas Station
 
+**Difficulty:** Medium
+
 https://leetcode.com/problems/gas-station/#/description
 
 There are N gas stations along a circular route, where the amount of gas at station i is gas[i].

@@ -1,5 +1,7 @@
 ## 540. Single Element in a Sorted Array
 
+**Difficulty:** Medium
+
 https://leetcode.com/problems/single-element-in-a-sorted-array/#/description
 
 Given a sorted array consisting of only integers where every element appears twice except for one element which appears once.
@@ -12,7 +14,7 @@ Output: 2
 
 **Note:** Your solution should run in O(log n) time and O(1) space.
 
-**show tag:** \#binary_search
+**Show tag:** \#binary_search
 
 ------------------------------------
 

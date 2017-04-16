@@ -1,5 +1,7 @@
 ## 218. The Skyline Problem
 
+**Difficulty:** Hard
+
 https://leetcode.com/problems/the-skyline-problem/#/description
 
 **Show tag:** \#binary_indexed_tree \#segment_tree \#heap \#divide_and_conquer

@@ -1,5 +1,7 @@
 ## 11. Container With Most Water
 
+**Difficulty:** Medium
+
 https://leetcode.com/problems/container-with-most-water/#/description
 
 Given n non-negative integers a1, a2, ..., an, where each represents a point at coordinate (i, ai). <br/>
