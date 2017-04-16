@@ -3,5 +3,5 @@
 **Problem list**
 * Easy
 * Medium
-	*Single Element in a Sorted Array
+	* Single Element in a Sorted Array
 * Hard
