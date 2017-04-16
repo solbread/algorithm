@@ -35,6 +35,7 @@ In this case, no transaction is done, i.e. max profit = 0.
 **Best Solution** <br/>
 시간복잡도 : O(n), 공간복잡도 : O(1)
 참고 링크 : https://leetcode.com/articles/best-time-buy-and-sell-stock/ <br/>
+Kadane's Algorithm를 이용한 것이다. <br/>
 현재까지 최소 가격을 저장하는 currentMin과 수익의 최대값을 저장하는 maxProfit 변수를 사용하여 한번의 for loop 만에  해결한다. <br/>
 currentMin에는 prices에서 현재 지점까지 중에 가장 최소비용이 들어간다. <br/>
 prices의 원소를 순회하면서 현재 index에 해당하는 원소랑 currentMin를 비교해서
