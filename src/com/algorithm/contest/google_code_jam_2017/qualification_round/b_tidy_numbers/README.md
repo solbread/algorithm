@@ -1,5 +1,7 @@
 ## B. Tidy Numbers
 
+https://code.google.com/codejam/contest/3264486/dashboard#s=p1
+
 Tatiana likes to keep things tidy. <br/>
 Her toys are sorted from smallest to largest, her pencils are sorted from shortest to longest and her computers from oldest to newest. <br/>
 One day, when practicing her counting skills, she noticed that some integers, when written in base 10 with no leading zeroes, have their digits sorted in non-decreasing order. <br/>

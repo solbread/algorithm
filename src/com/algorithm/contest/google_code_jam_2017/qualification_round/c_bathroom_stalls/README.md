@@ -1,5 +1,7 @@
 ## Problem C. Bathroom Stalls
 
+https://code.google.com/codejam/contest/3264486/dashboard#s=p2
+
 A certain bathroom has N + 2 stalls in a single row; the stalls on the left and right ends are permanently occupied by the bathroom guards. <br/>
 The other N stalls are for users. <br/>
 

@@ -1,5 +1,7 @@
 ##Problem A. Oversized Pancake Flipper
 
+https://code.google.com/codejam/contest/3264486/dashboard#s=p0
+
 Last year, the Infinite House of Pancakes introduced a new kind of pancake. <br/>
 It has a happy face made of chocolate chips on one side (the "happy side"), and nothing on the other side (the "blank side").
 

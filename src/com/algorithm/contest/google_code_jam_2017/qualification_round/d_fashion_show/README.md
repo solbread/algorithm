@@ -1,5 +1,7 @@
 ## Problem D. Fashion Show
 
+https://code.google.com/codejam/contest/3264486/dashboard#s=p3
+
 You are about to host a fashion show to show off three new styles of clothing. <br/>
 The show will be held on a stage which is in the most fashionable of all shapes: an N-by-N grid of cells.
 
