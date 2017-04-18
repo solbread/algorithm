@@ -20,7 +20,7 @@ Input: "PPALLP"
 Output: True
 ```
 
-**Show tag:** \#string \#array
+**Show tag:** \#string
 
 --------------------------------------------
 
