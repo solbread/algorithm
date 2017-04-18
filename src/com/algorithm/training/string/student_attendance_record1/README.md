@@ -20,6 +20,8 @@ Input: "PPALLP"
 Output: True
 ```
 
+**Show tag:** \#string \#array
+
 --------------------------------------------
 
 **Solution**
