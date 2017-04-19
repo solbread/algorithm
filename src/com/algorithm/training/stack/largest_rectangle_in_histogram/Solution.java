@@ -3,6 +3,7 @@ package com.algorithm.training.stack.largest_rectangle_in_histogram;
 import java.util.PriorityQueue;
 import java.util.Queue;
 
+@Deprecated
 public class Solution {
     public int largestRectangleArea(int[] height) {
         if(height==null || height.length==0) return 0;
