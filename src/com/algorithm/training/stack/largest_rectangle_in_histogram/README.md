@@ -6,10 +6,10 @@ https://leetcode.com/problems/largest-rectangle-in-histogram/#/description
 
 Given n non-negative integers representing the histogram's bar height where the width of each bar is 1, find the area of largest rectangle in the histogram.
 
-(picture) <br/>
+(picture - omit) <br/>
 Above is a histogram where width of each bar is 1, given height = [2,1,5,6,2,3].
 
-(picture) <br/>
+(picture - omit) <br/>
 The largest rectangle is shown in the shaded area, which has area = 10 unit.
 
 ```
@@ -39,8 +39,8 @@ height[start] < height[end]일 때, height[start+1], height[end]의 너비가 he
 두번째 시도에서 인덱스의 접근이 잘못되었다는 것을 깨달았지만 이를 개선할 방법이 떠오르지 않았다. <br/>
 
 
-**BestSolution**
-관련 알고리즘 링크 : http://www.geeksforgeeks.org/largest-rectangle-under-histogram/
+**BestSolution** <br/>
+관련 알고리즘 링크 : http://www.geeksforgeeks.org/largest-rectangle-under-histogram/ <br/>
 height의 원소를 for문으로 순회하면서 <br/>
 height가 증가하거나 유지될때는 stack에 index를 쌓으면서 <br/>
 height가 감소하는 순간에는 stack에 쌓여있는 index의 area를 계산하여 maxArea를 찾는다. <br/>
