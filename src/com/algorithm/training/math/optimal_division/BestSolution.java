@@ -8,8 +8,9 @@ public class BestSolution {
         		result.append('(');
         	}
         	result.append(nums[i]).append('/');
-        	if(i == nums.length-1 && nums.length > 2) {
-        		result.setCharAt(result.length()-1, ')');
+        	if(i == nums.length-1) {
+        		result.deleteCharAt(result.length()-1);
+        		if(nums.length > 2) result.append(")");
         	}
         }
     	return result.toString();
