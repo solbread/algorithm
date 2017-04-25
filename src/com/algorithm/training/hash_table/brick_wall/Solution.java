@@ -9,7 +9,7 @@ import java.util.Map;
 
 public class Solution {
     public int leastBricks(List<List<Integer>> wall) {
-    	int leastBricks = Integer.MAX_VALUE;
+    	int leastBricks = wall.size();
         Map<Integer, Integer> map = new HashMap<>();
         for(List<Integer> rows : wall) {
         	int width = 0;
