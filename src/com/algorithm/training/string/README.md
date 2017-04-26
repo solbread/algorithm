@@ -5,4 +5,5 @@
 	* Student Attendance Record I
 * Medium
 	* Minimum Time Difference
+	* Next Greater Element III
 * Hard
