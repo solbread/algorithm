@@ -9,7 +9,7 @@ public class Solution {
         for(int i = number.length()-2; i >= 0; i--) {
         	if(number.charAt(i) < number.charAt(number.length()-1)) {
         		StringBuilder sb = new StringBuilder();
-        		if(i > 0) sb.append(number.substring(0, i-1));
+        		if(i > 0) sb.append(number.substring(0, i));
         		char[] remainder = number.substring(i, number.length()).toCharArray();
         		Arrays.sort(remainder);
         		for(int j = remainder.length-1; j >= 0; j--) {
