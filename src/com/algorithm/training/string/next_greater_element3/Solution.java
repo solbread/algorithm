@@ -21,6 +21,7 @@ public class Solution {
 					// TODO: handle exception
 				}
         	}
+        	break;
         }
         return nextGreaterNumber;
     }
