@@ -10,9 +10,10 @@ public class Solution {
         	if(number.charAt(i) < number.charAt(number.length()-1)) {
         		StringBuilder sb = new StringBuilder();
         		if(i > 0) sb.append(number.substring(0, i));
-        		char[] remainder = number.substring(i, number.length()).toCharArray();
+        		sb.append(number.charAt(number.length()-1));
+        		char[] remainder = number.substring(i, number.length()-1).toCharArray();
         		Arrays.sort(remainder);
-        		for(int j = remainder.length-1; j >= 0; j--) {
+        		for(int j = 0; j < remainder.length; j++) {
         			sb.append(remainder[j]);
         		}
         		try {
