@@ -20,14 +20,14 @@ public class Solution {
 				} catch (Exception e) {
 					// TODO: handle exception
 				}
+        		break;
         	}
-        	break;
         }
         return nextGreaterNumber;
     }
     
     public static void main(String[] args) {
 		Solution solution = new Solution();
-		System.out.println(solution.nextGreaterElement(1234));
+		System.out.println(solution.nextGreaterElement(12222333)); //output:12223233
 	}
 }
