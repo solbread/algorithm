@@ -8,27 +8,21 @@ public class Solution {
 		this.rootValue = root.val;
 		return findSecondMinimumValue(root.left, root.right);
 	}
-
 	private int findSecondMinimumValue(TreeNode leftNode, TreeNode rightNode) {
 		if(leftNode == null && rightNode ==null) return -1;
-		if(leftNode == null) {
-			if(rightNode.val != this.rootValue) return rightNode.val;
-			return findSecondMinimumValue(rightNode.left, rightNode.right);
-		} else if(rightNode == null) {
-			if(leftNode.val != this.rootValue) return  leftNode.val;
-			return findSecondMinimumValue(leftNode.left, leftNode.right);
-		} else {
-			if(leftNode.val != this.rootValue || rightNode.val != this.rootValue) return Math.max(leftNode.val, rightNode.val);
-			return Math.min(findSecondMinimumValue(leftNode.left, leftNode.right), 
-					findSecondMinimumValue(rightNode.left, rightNode.right));
-		}
+		int leftValue = (leftNode == null) ? -1 : 
+			(leftNode.val != this.rootValue ? leftNode.val : findSecondMinimumValue(leftNode.left, leftNode.right));
+		int rightValue = (rightNode == null) ? -1 :
+			(rightNode.val != this.rootValue ? rightNode.val : findSecondMinimumValue(rightNode.left, rightNode.right));
+		if(leftValue != -1 && rightValue != -1) return Math.min(leftValue, rightValue);
+		return Math.max(leftValue, rightValue);
 	}
 	public static void main(String[] args) {
 		Solution solution = new Solution();
 		TreeNode root = new TreeNode(2);
-		root.left = new TreeNode(2);
+		root.left = new TreeNode(4);
 		root.right = new TreeNode(2);
-		root = null;
+		root.right.left = new TreeNode(3);
 		System.out.println(solution.findSecondMinimumValue(root));
 	}
 }
