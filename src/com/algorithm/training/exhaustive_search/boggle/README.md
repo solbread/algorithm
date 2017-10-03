@@ -36,7 +36,7 @@ GIAZAPX YES
 
 **Note:**
 
-**Show tag:** \#dynamic\_programming
+**Show tag:** \#exhaustive\_search \#dynamic\_programming
 
 ------------------------------------
 
