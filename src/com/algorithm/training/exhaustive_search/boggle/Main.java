@@ -8,6 +8,9 @@ public class Main {
 	static char[][] board;
 	static char[] targetWordChars;
 	static int[][][] cache;
+	static int[] dx = {-1, -1, 0, 1, 1, 1, 0, -1};
+	static int[] dy = {0, -1, -1, -1, 0, 1, 1, 1};
+	
 	public static void main(String[] args) {
 		Main main = new Main();
 //		Scanner scanner = new Scanner(System.in);
@@ -43,18 +46,14 @@ public class Main {
 	}
 	
 	public boolean searchTargetWord(int xPoint, int yPoint, int searchPosition) {
+		if(xPoint < 0 || xPoint > 4 || yPoint < 0 || yPoint > 4) return false;
 		if(cache[xPoint][yPoint][searchPosition] != 0) return cache[xPoint][yPoint][searchPosition] == 1; 
 		if(board[xPoint][yPoint] == targetWordChars[searchPosition]) {
 			boolean isSearched = false;
 			if(searchPosition == targetWordChars.length-1) isSearched = true;
-			if(xPoint > 0) isSearched = isSearched || searchTargetWord(xPoint-1, yPoint, searchPosition+1);
-			if(xPoint > 0 && yPoint > 0) isSearched = isSearched || searchTargetWord(xPoint-1, yPoint-1, searchPosition+1);
-			if(yPoint > 0) isSearched = isSearched || searchTargetWord(xPoint, yPoint-1, searchPosition+1);
-			if(xPoint < 4 && yPoint > 0) isSearched = isSearched || searchTargetWord(xPoint+1, yPoint-1, searchPosition+1);
-			if(xPoint < 4) isSearched = isSearched || searchTargetWord(xPoint+1, yPoint, searchPosition+1);
-			if(xPoint < 4 && yPoint < 4) isSearched = isSearched || searchTargetWord(xPoint+1, yPoint+1, searchPosition+1);
-			if(yPoint < 4) isSearched = isSearched || searchTargetWord(xPoint, yPoint+1, searchPosition+1);
-			if(xPoint > 0 && yPoint < 4) isSearched = isSearched || searchTargetWord(xPoint-1, yPoint+1, searchPosition+1);
+			for(int i = 0; i < dx.length; i++) {
+				isSearched = isSearched || searchTargetWord(xPoint + dx[i], yPoint + dy[i], searchPosition+1);
+			}
 			cache[xPoint][yPoint][searchPosition] = (isSearched) ? 1 : 2;
 		} else {
 			cache[xPoint][yPoint][searchPosition] = 2;
