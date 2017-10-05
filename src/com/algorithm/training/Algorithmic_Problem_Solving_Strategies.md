@@ -21,10 +21,10 @@
 		* 시간복잡도 : O(2^N)
 
 예제 <br/>
-1. 보글게임(BOGGLE) : solve(10/3)
-2. 소풍(PICNIC) : solve(10/4) 
+1. 보글게임(BOGGLE) : solve(2017-10-03)
+2. 소풍(PICNIC) : solve(2017-10-04) 
 3. 게임판덮기(BOARDCOVER) 
-4. 여행하는 외판원 문제(Traveling Sales-man Problem, TSP) : solve(10/4)
+4. 여행하는 외판원 문제(Traveling Sales-man Problem, TSP) : solve(2017-10-04)
 5. 시계 맞추기(CLOCKSYNC)
 
 7장. 분할정복
@@ -38,11 +38,11 @@
 	* 부분 문제의 답을 조합해 원래 문제의 답을 계산하는 효율적인 방법이 있어야 함
 	
 예제 <br/>
-1. 1부터 n까지의 합 구하기(SumOfNumbers) : solve(10/5)
+1. 1부터 n까지의 합 구하기(SumOfNumbers) : solve(2017-10-05)
 2. 행렬의 거듭제곱
 3. 병합 정렬과 퀵 정렬
 4. 카라츠바의 빠른 곱셈 알고리즘
-5. 쿼드 트리 뒤집기(QUADTREE)
+5. 쿼드 트리 뒤집기(QUADTREE) : solve(2017-10-06)
 6. 울타리잘라내기 (FENCE)
 7. 팬미팅 (FANMEETING)
 
