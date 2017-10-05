@@ -1,6 +1,8 @@
 ## Algorithm Problem related on Divide and Conquer
 
 **Problem list**
+* None
+	* Sum Of Numbers (\#exhaustive\_search)
 * Easy
 * Medium
 * Hard
