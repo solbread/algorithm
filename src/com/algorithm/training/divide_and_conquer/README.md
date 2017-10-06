@@ -4,6 +4,8 @@
 * None
 	* Sum Of Numbers (\#exhaustive\_search)
 * Easy
+	* QUARDTREE
 * Medium
+	* FENCE
 * Hard
 	* The Skyline Problem (\#binary_indexed_tree \#segment_tree \#heap)
