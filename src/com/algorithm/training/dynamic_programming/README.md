@@ -4,7 +4,7 @@
 * Easy
 	* Best Time to Buy and Sell Stock (\#array)
 	* Maximum Subarray (\#array \#divide\_and\_conquer)
-	* JUMPGAME
+	* JUMPGAME (\#exhaustive\_search)
 * Medium
 	* Coin Change 2
 * Hard
