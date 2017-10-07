@@ -35,7 +35,7 @@ public class Main {
 		if(currentPoint == numbers.length) return 0;
 		if(cache[prevPoint+1][currentPoint] != -1) return cache[prevPoint][currentPoint];
 		if(prevPoint == -1 || numbers[prevPoint] < numbers[currentPoint]) {
-			cache[prevPoint+1][currentPoint] = ((prevPoint == -1) ? 0 : 1) + Math.max(getMaxLength(currentPoint, currentPoint+1), getMaxLength(prevPoint, currentPoint+1));
+			cache[prevPoint+1][currentPoint] = Math.max(getMaxLength(currentPoint, currentPoint+1) + (prevPoint == -1 ? 0 : 1), getMaxLength(prevPoint, currentPoint+1));
 		} else {
 			cache[prevPoint+1][currentPoint] = getMaxLength(prevPoint, currentPoint+1);
 		}
