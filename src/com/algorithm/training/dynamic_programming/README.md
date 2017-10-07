@@ -6,6 +6,7 @@
 	* Maximum Subarray (\#array \#divide\_and\_conquer)
 	* JUMPGAME (\#exhaustive\_search)
 	* TRIANGLEPATH
+	* LIS
 * Medium
 	* Coin Change 2
 	* WILDCARD
