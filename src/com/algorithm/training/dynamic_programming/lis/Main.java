@@ -27,7 +27,8 @@ public class Main {
 					cache[i][j] = -1;
 				}
 			}
-			System.out.println(main.getMaxLength(-1, 0) + 1);
+			int ret = main.getMaxLength(-1, 0);
+			System.out.println(ret == 0 ? 0 : ret+1);
 		}
 	}
 	
