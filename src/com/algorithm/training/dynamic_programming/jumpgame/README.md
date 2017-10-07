@@ -47,9 +47,11 @@ NO
 
 **Note:**
 
-**Show tag:** \#dynamic\_programming
+**Show tag:** \#dynamic\_programming \#exhaustive\_search
 
 ------------------------------------
 
 **Solution** <br/>
-시간복잡도 : 
+시간복잡도 : O(n^2) 공간복잡도 : O(n^2) <br/>
+(0,0)에서 출발하여 오른쪽 혹은 아래쪽으로 갈 수 있으므로, <br/>
+완전탐색과 메모리제이션을 이용하여 해결하였다.
