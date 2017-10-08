@@ -2,7 +2,7 @@ package com.algorithm.training.binary_search.lower_bound;
 
 public class Solution {
 	int getLowerBound(int k, int[] nums) {
-		int left = 0, right = nums.length - 1;
+		int left = 0, right = nums.length;
 		while(left < right) {
 			int mid = (left + right) / 2;
 			if(nums[mid] < k) left = mid + 1;
