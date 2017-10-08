@@ -41,4 +41,17 @@ Output:
 
 ------------------------------------
 
-**Solution** <br/>
+**Main** <br/>
+시간복잡도 : O(n^2) 공간복잡도 : O(n^2)
+가능한 순증가 부분 수열을 모두 구하면서 가장 긴 길이의 수열을 찾는 방식으로 구현하였다. <br/>
+prevPoint와 currentPoint를 이용해서 prevPoint점의 숫자가 currentPoint지점의 숫자보다 작으면, <br/>
+해당 currentPoint지점의 숫자를 부분수열에 포함시키는 것과 포함시키지 않는 경우 모두 재귀 호출한다. <br/>
+만약 prevPoint점의 숫자가 currentPoint지점의 숫자보다 크거나 같다면 currentPoint지점의 숫자는 포함하지 않는 경우만 재귀호출을 하면 된다.
+
+**Main2** <br/>
+시간복잡도 : O(n^2) 공간복잡도 : O(n)
+Algorithmic Problem Solving Strategies 책을 보고 Main 코드를 개선하였다. <br/>
+내가 구현한 Main 코드는 prevPoint랑 currentPoint를 이용하였지만 사실은 prevPoint를 알 필요가 없다. <br/>
+getMaxLength(int startPoint)를 startPoint에서 시작했을때 가장 긴 순증가 부분수열의 length라고 정의를 하면 된다. <br/>
+함수 내부에서 for문으로 startPoint+1지점부터 숫자들을 순회하며 해당 숫자가 startPoint지점의 숫자보다 클 경우, 해당 함수를 재귀호출 하여 해당지점을 부분수열에 포함시켜본다. <br/>
+해당 지점을 부분수열에 포함시키지 않을 수도 있는데, 이는 반복문을 통해서 해결이 된다. <br/>
