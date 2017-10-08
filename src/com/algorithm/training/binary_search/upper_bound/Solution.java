@@ -1,7 +1,7 @@
 package com.algorithm.training.binary_search.upper_bound;
 
 public class Solution {
-	int getUpperBound(int k, int[] nums) {
+	public int getUpperBound(int k, int[] nums) {
 		int left = 0, right = nums.length;
 		while(left < right) {
 			int mid = (left + right) / 2;
