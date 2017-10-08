@@ -49,9 +49,17 @@ prevPoint와 currentPoint를 이용해서 prevPoint점의 숫자가 currentPoint
 만약 prevPoint점의 숫자가 currentPoint지점의 숫자보다 크거나 같다면 currentPoint지점의 숫자는 포함하지 않는 경우만 재귀호출을 하면 된다.
 
 **Main2** <br/>
-시간복잡도 : O(n^2) 공간복잡도 : O(n)
+시간복잡도 : O(n^2) 공간복잡도 : O(n) <br/>
 Algorithmic Problem Solving Strategies 책을 보고 Main 코드를 개선하였다. <br/>
 내가 구현한 Main 코드는 prevPoint랑 currentPoint를 이용하였지만 사실은 prevPoint를 알 필요가 없다. <br/>
 getMaxLength(int startPoint)를 startPoint에서 시작했을때 가장 긴 순증가 부분수열의 length라고 정의를 하면 된다. <br/>
 함수 내부에서 for문으로 startPoint+1지점부터 숫자들을 순회하며 해당 숫자가 startPoint지점의 숫자보다 클 경우, 해당 함수를 재귀호출 하여 해당지점을 부분수열에 포함시켜본다. <br/>
 해당 지점을 부분수열에 포함시키지 않을 수도 있는데, 이는 반복문을 통해서 해결이 된다. <br/>
+
+**Main3** <br/>
+시간복잡도 : O(n^2) 공간복잡도 : O(n) <br/>
+Main2의 코드를 반복문을 이용한 dp 구현으로 변경한것이다. <br/>
+dp[i] 배열의 의미는 i번째 원소를 마지막 원소로 가지는 순증가 부분수열의 최대길이 값이다. <br/>
+처음에는 dp[dp.length-1]이 무조건 최대길이라고 생각했는데, <br/>
+이렇게 해버리면 마지막원소가 무조건 최대길이인 순증가 부분 수열에 포함된다고 전제해버리는 것이었다. <br/>
+그래서 dp[0]~dp[dp.length-1]까지 중에 max값을 리턴하는 것으로 수정하였더니 통과하였다.

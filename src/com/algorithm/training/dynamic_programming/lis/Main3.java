@@ -16,6 +16,7 @@ public class Main3 {
 		while(cases-- > 0) {
 			int numbers[] = new int[scanner.nextInt()];
 			int dp[] = new int[numbers.length];
+			int maxLength = 0;
 			for(int i = 0; i < numbers.length; i++) {
 				numbers[i] = scanner.nextInt();
 				dp[i] = 1;
@@ -26,8 +27,9 @@ public class Main3 {
 						dp[i] = Math.max(dp[i], dp[j] + 1);
 					}
 				}
+				maxLength = Math.max(maxLength, dp[i]);
 			}
-			System.out.println(dp.length == 0 ? 0 : dp[dp.length-1]);
+			System.out.println(maxLength);
 		}
 	}
 }
