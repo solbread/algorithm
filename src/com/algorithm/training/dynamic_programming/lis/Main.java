@@ -27,14 +27,13 @@ public class Main {
 					cache[i][j] = -1;
 				}
 			}
-			int ret = main.getMaxLength(-1, 0);
-			System.out.println(ret == 0 ? 0 : ret+1);
+			System.out.println(numbers.length == 0 ? 0 : main.getMaxLength(-1, 0));
 		}
 	}
 	
 	public int getMaxLength(int prevPoint, int currentPoint) {
-		if(currentPoint == numbers.length) return 0;
-		if(cache[prevPoint+1][currentPoint] != -1) return cache[prevPoint][currentPoint];
+		if(currentPoint == numbers.length) return 1;
+		if(cache[prevPoint+1][currentPoint] != -1) return cache[prevPoint+1][currentPoint];
 		if(prevPoint == -1 || numbers[prevPoint] < numbers[currentPoint]) {
 			cache[prevPoint+1][currentPoint] = Math.max(getMaxLength(currentPoint, currentPoint+1) + (prevPoint == -1 ? 0 : 1), getMaxLength(prevPoint, currentPoint+1));
 		} else {
