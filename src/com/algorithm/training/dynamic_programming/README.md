@@ -7,6 +7,8 @@
 	* JUMPGAME (\#exhaustive\_search)
 	* TRIANGLEPATH
 	* LIS
+	* JLIS
+	* PI
 * Medium
 	* Coin Change 2
 	* WILDCARD
