@@ -37,14 +37,16 @@ public class Main {
 	}
 	
 	private int getCurrentScore(int start, int end) {
-		int currentScore = 0;
 		boolean isAllSame = true, isProgressive = true, isAlternated = true;
 		for(int i = start; i < end; i++) {
 			if(subPi[i] != subPi[i+1]) isAllSame = false;
 			if(subPi[i+1]-subPi[i] != subPi[start+1]-subPi[start]) isProgressive = false;
 			if(i+2 < subPi.length && subPi[i] != subPi[i+2]) isAlternated = false;
 		}
-		currentScore = (isAllSame) ? 1 : (isProgressive ? (Math.abs(subPi[start+1]-subPi[start]) == 1 ? 2 : 5) : (isAlternated ? 4 : 10));
-		return currentScore;
+		if(isAllSame) return 1;
+		if(isProgressive && Math.abs(subPi[start+1] - subPi[start]) == 1) return 2;
+		if(isAlternated) return 4;
+		if(isProgressive) return 5;
+		return 10;
 	}
 }
