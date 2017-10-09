@@ -41,7 +41,7 @@ public class Main {
 		for(int i = start; i < end; i++) {
 			if(subPi[i] != subPi[i+1]) isAllSame = false;
 			if(subPi[i+1]-subPi[i] != subPi[start+1]-subPi[start]) isProgressive = false;
-			if(i+2 < subPi.length && subPi[i] != subPi[i+2]) isAlternated = false;
+			if(i < end-1 && subPi[i] != subPi[i+2]) isAlternated = false;
 		}
 		if(isAllSame) return 1;
 		if(isProgressive && Math.abs(subPi[start+1] - subPi[start]) == 1) return 2;

@@ -48,10 +48,14 @@ Output:
 ------------------------------------
 
 **Main** <br/>
-시간복잡도 : O(nm(n+m)) 공간복잡도 O(nm) <br/>
-책의 해답을 보고 풀었다. <br/>
-getJLISLength(int start1, int start2)를 numbers[start1], numbers[start2]에서 시작하는 합친 증가 부분 수열을 구하는 함수로 정의한다. <br/>
-기본적으로 numbers[start1], numbers[start2]의 2개의 원소를 가지므로 jlisLength의 초기값은 2이다. <br/>
-둘 중 작은 원소를 min, 큰 원소를 max라고 할 때 start1~start2 구간에서의 증가부분 수열은 min, max, ... 로 시작하게 되므로 <br/>
-start+1 ~ numbers1.length, start2 + 1 ~ numbers2.length를 보면서 max값보다 크면 해당 증가부분 수열에 들어갈 수 있다는 것이므로 재귀호출을 하여 구한다. <br/>
-참고로 getJLISLength(i,j)인데 numbers[i]와 numbers[j]가 같은 경우가 호출되는 경우가 없으므로 위와 같이 해도 상관없다. <br/>
+시간복잡도 : O(n) 공간복잡도 : O(n) <br/>
+만들 수 있는 모든 경우를 메모리제이션을 이용하여 탐색하여 결과를 얻었다. <br/>
+getMinScore(int start) 메소드는 start지점에서 시작했을때 얻을 수 있는 가장 낮은 난이도이며, <br/>
+3번의 반복문을 통해 start~start+2, start~start+3, start~start4으로 각각 3, 4, 5의 크기로 끊는 경우마다 <br/>
+해당 구간에서의 난이도를 구하고, 해당 지점 이후부터를 start지점으로 재귀호출하여 구하는 것을 반복하여 최소난이도를 구하였다. <br/>
+
+getMinScore 메소드는 문제에 주어진 대로 start~end 지점의 점수를 반환하면 된다. <br/>
+나는 이부분에서 구현실수를 해서 시간을 굉장히 오래 소요했는데 두가지 실수를 하였다. <br/>
+첫번째는 난이도를 반환할 때 여러 케이스에 해당되면 그 중 가장 낮은 난이도로 반환해줘야 하므로 return 순서에 유의한다는 점이다. <br/>
+두번째는 단순실수인데, 두개의 숫자가 번갈아가며 출연할떄 체크해주는 부분에서 조건문 기준을 end지점으로 해야하는데, <br/>
+전체 배열 length 기준으로 해버려서 start~end 포인트 지점을 벗어나는 곳까지도 두개의 숫자가 번갈아가며 출연하는지를 체크해버리는 경우가 발생하였다.
