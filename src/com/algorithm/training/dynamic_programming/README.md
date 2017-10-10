@@ -9,7 +9,9 @@
 	* LIS
 	* JLIS
 	* PI
+	* TITLING2
 * Medium
 	* Coin Change 2
 	* WILDCARD
+	* QUANTIZE
 * Hard
