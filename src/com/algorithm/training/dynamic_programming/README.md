@@ -14,4 +14,5 @@
 	* Coin Change 2
 	* WILDCARD
 	* QUANTIZE
+	* TRIPATHCNT
 * Hard
