@@ -10,6 +10,8 @@
 	* JLIS
 	* PI
 	* TITLING2
+	* SNAIL
+	* ASYMTILING
 * Medium
 	* Coin Change 2
 	* WILDCARD
