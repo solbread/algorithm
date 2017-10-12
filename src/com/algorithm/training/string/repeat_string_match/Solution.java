@@ -12,12 +12,13 @@ public class Solution {
                 isMatched = false;
             }
             if(B.charAt(bIndex) == A.charAt(aIndex)) {
-                aIndex++;
                 bIndex++;
                 isMatched = true;
             } else {
-                aIndex++;
+                isMatched = false;
+                bIndex = 0;
             }
+            aIndex++;
         }
         return repeatCount;
     }
@@ -27,5 +28,6 @@ public class Solution {
         System.out.println(solution.repeatedStringMatch("abcd", "cdabcdab")); //3
         System.out.println(solution.repeatedStringMatch("abd", "cccc")); //-1
         System.out.println(solution.repeatedStringMatch("a", "aa")); //2
+        System.out.println(solution.repeatedStringMatch("abcabcabcabc", "abac")); //-1
 	}
 }
