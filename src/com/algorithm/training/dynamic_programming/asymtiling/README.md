@@ -61,5 +61,7 @@ getAsymmetricCount 메소드에서 getTilingCount(width)값에다가 대칭 타�
 이 과정에서 음수값이 되어버릴 수 있으므로 MOD\_VALUE를 한 번 더해줘서 양수의 값으로 만들고, <br/>
 이 값을 MOD_VALUE로 나눠주는 방법을 사용한다. <br/>
 
-또한 짝수일떄는 두개의 값을 빼주게 되는데 처음에는 한줄에 계산을 하고 (MOD\_VALUE*2)를 더해주려고 했는데 이렇게 해버리면 int 범위를 초과할 수 있기 때문에 두번에 나눠서 계산을 하였다.
+width가 짝수일 때 MOD_VALUE에 2를 곱한것을 더해줘서 한번에 계산을 시도하였는데, <br/>
+이렇게 하면 getTilingCount(width)-getTilingCount((width-2)/2)-getTilingCount(width/2)의 결과값에 따라, <br/>
+int 범위를 초과해버릴 수가 있으므로 나눠서 계산하는 것으로 변경하였다.
 
