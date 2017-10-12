@@ -17,4 +17,5 @@
 	* WILDCARD
 	* QUANTIZE
 	* TRIPATHCNT
+	* POLY
 * Hard
