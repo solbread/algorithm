@@ -42,6 +42,7 @@ Output:
 8
 3
 ```
+**Related Problem:** trianglepath
 
 **Note:**
 
