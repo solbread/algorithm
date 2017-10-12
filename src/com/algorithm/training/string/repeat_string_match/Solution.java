@@ -5,18 +5,18 @@ public class Solution {
         boolean isMatched = false;
         int repeatCount = 1, aIndex = 0, bIndex = 0;
         while(bIndex < B.length()) {
+            if(aIndex == A.length()) {
+                if(!isMatched) return -1;
+                repeatCount++;
+                aIndex = 0;
+                isMatched = false;
+            }
             if(B.charAt(bIndex) == A.charAt(aIndex)) {
                 aIndex++;
                 bIndex++;
                 isMatched = true;
             } else {
                 aIndex++;
-            }
-            if(aIndex == A.length()) {
-                if(!isMatched) return -1;
-                repeatCount++;
-                aIndex = 0;
-                isMatched = false;
             }
         }
         return repeatCount;
