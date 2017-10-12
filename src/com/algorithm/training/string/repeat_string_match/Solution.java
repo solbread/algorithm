@@ -1,15 +1,15 @@
 package com.algorithm.training.string.repeat_string_match;
 
-import java.util.HashSet;
-import java.util.Set;
-
 public class Solution {
     public int repeatedStringMatch(String A, String B) {
-        Set<String> remainedNumbers = new HashSet<>();
+        StringBuilder sb = new StringBuilder(A);
+        for(int i = 0; i < Math.ceil((B.length()-1)/(double)A.length()); i++) {
+            sb.append(A);
+        }
+        if(!sb.toString().contains(B)) return -1;
         int repeatCount = 1, aIndex = 0, bIndex = 0;
         while(bIndex < B.length()) {
             if(aIndex == A.length()) {
-                if(!remainedNumbers.add(B.substring(bIndex))) return -1;
                 repeatCount++;
                 aIndex = 0;
             }
@@ -25,7 +25,7 @@ public class Solution {
         System.out.println(solution.repeatedStringMatch("abd", "cccc")); //-1
         System.out.println(solution.repeatedStringMatch("a", "aa")); //2
         System.out.println(solution.repeatedStringMatch("abcabcabcabc", "abac")); //-1
-        System.out.println(solution.repeatedStringMatch("abacababacab", "abcdabcdabcdabcd"));
+        System.out.println(solution.repeatedStringMatch("abacababacab", "abcdabcdabcdabcd")); //-1
 	}
 }
 
