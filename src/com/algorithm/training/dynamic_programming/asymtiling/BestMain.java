@@ -34,7 +34,8 @@ public class BestMain {
 		if(asymmetricCache[width-1] != -1) return asymmetricCache[width-1];
 		int tilingCount = getTilingCount(width);
 		if(width % 2 == 0) {
-			asymmetricCache[width-1] = (tilingCount - getTilingCount((width-2)/2) - getTilingCount(width/2) + (MOD_VALUE*2)) % MOD_VALUE;
+			asymmetricCache[width-1] = (tilingCount - getTilingCount((width-2)/2) + MOD_VALUE) % MOD_VALUE;
+			asymmetricCache[width-1] = (asymmetricCache[width-1] - getTilingCount(width/2) + MOD_VALUE) % MOD_VALUE;
 		} else {
 			asymmetricCache[width-1] = (tilingCount - getAsymmetricCount(width/2) + MOD_VALUE) % MOD_VALUE;
 		}
