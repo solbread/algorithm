@@ -43,13 +43,4 @@ Output:
 ------------------------------------
 
 **Solution** <br/>
-시간복잡도 : O(2^m) 공간복잡도 O(m^2) (m=장마기간) <br/>
-_(확실하게 해당 시간복잡도, 공간복잡도가 맞는지 모르겠음)_<br/>
-getEscapeProbaility(int currentDepth, int remainDuration)의 경우에는 현재 달팽이가 currentDepth에 있고 남은 장마기간이 remainDuration일 때 우물밖에 나올 수 있는 확률을 반환하는 함수로 정의된다. <br/>
-remainDuration이 0이될 경우 더이상 달팽이는 우물을 오를 수 없으므로 지금까지의 currentDepth가 우물의 높이를 초과했는지 초과하지 않았는지를 확인한 후, 우물을 벗어났다면 1을 벗어나지 못했다면 0을 return한다. <br/>
-또한 비가 올 확률은 0.75 비가 오지 않을 확률은 0.25이므로 getEscapeProbaility함수의 결과값에 해당 확률의 값을 곱해주어서 모든 경우의수를 더해주면 된다. <br/>
 
-참고) 메모리제이션의 적용 <br/>
-처음에는 getEscapeProbaility함수를 currentDepth가 아닌 남아있는 깊이로 remainDpeth를 이용했었는데, <br/>
-이렇게되면 해당 값이 음수로 내려가므로 메모리제이션을 적용하기가 어렵다. <br/>
-그래서 currentDepth로 변경하여 리펙토링하여 메모리제이션을 하였다.
