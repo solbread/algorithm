@@ -12,7 +12,7 @@ public class Solution {
             int parent1 = find(edge[0]);
             int parent2 = find(edge[1]);
             if(parent1 == parent2) result = edge; 
-            parents[edge[1]] = edge[0];
+            parents[parent2] = parent1;
         }
         return result;
     }
@@ -24,8 +24,9 @@ public class Solution {
     
     public static void main(String[] args) {
         Solution solution = new Solution();
-        int[] result = solution.findRedundantConnection(new int[][]{{1,2},{1,3},{2,3}});
-        result = solution.findRedundantConnection(new int[][]{{1,2},{2,3},{3,4},{1,4},{1,5}});
+        int[] result = solution.findRedundantConnection(new int[][]{{1,2},{1,3},{2,3}}); //2,3
+        result = solution.findRedundantConnection(new int[][]{{1,2},{2,3},{3,4},{1,4},{1,5}}); //1,4
+        result = solution.findRedundantConnection(new int[][]{{1,4},{3,4},{1,3},{1,2},{4,5}});
         System.out.println(result[0] + ", " + result[1]);
     }
 }
