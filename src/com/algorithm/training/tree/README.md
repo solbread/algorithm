@@ -7,4 +7,4 @@
 * Medium
 	* Redundant Connection (\#union_find \#graph)
 * Hard
-	* Redundant Connection2
+	* Redundant Connection2 (\#depth\_first\_search \#union\_find \#graph)
