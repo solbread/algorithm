@@ -1,48 +1,30 @@
-## JUMPGAME
+## 688. Knight Probability in Chessboard
 
-**Difficulty:** Easy
+**Difficulty:** Medium
 
-https://algospot.com/judge/problem/read/JUMPGAME
+https://leetcode.com/problems/knight-probability-in-chessboard/description/
 
-(그림생략) <br/><br/>
-땅따먹기를 하다 질린 재하와 영훈이는 땅따먹기의 변종인 새로운 게임을 하기로 했습니다. <br/>
-이 게임은 그림과 같이 n*n 크기의 격자에 각 1부터 9 사이의 정수를 쓴 상태로 시작합니다.<br/>
-각 차례인 사람은 맨 왼쪽 윗 칸에서 시작해 외발로 뛰어서 오른쪽 아래 칸으로 내려가야 합니다. <br/>
-이 때 각 칸에 적혀 있는 숫자만큼 오른쪽이나 아래 칸으로 움직일 수 있으며, 중간에 게임판 밖으로 벗어나면 안 됩니다. <br/><br/>
-균형을 잃어서 다른 발로 서거나 넘어져도 게임에서 집니다만, 재하와 영훈이는 젊고 활기차기 때문에 외발로 뛰어다니는 것은 아무것도 아닙니다. <br/>
-다만 걱정되는 것은 주어진 게임판에 시작점에서 끝점으로 가는 방법이 존재하지 않을 수도 있다는 것입니다. <br/>
-예를 들어 그림 (a)의 게임판에서는 사각형으로 표시된 칸들을 통해 끝에 도달할 수 있지만, 숫자가 하나 바뀐 그림 (b)에서는 그럴 수가 없습니다. <br/><br/>
-게임판이 주어질 때 왼쪽 위의 시작점에서 오른쪽 아래의 시작점에 도달할 수 있는 방법이 있는지 확인하는 프로그램을 작성하세요. <br/>
+On an NxN chessboard, a knight starts at the r-th row and c-th column and attempts to make exactly K moves. <br/>
+The rows and columns are 0 indexed, so the top-left square is (0, 0), and the bottom-right square is (N-1, N-1). <br/>
 
-입력 <br/>
-입력의 첫 줄에는 테스트 케이스의 수 C(C <= 50)가 주어집니다. 각 테스트 케이스의 첫 줄에는 격자의 크기 n(2 <= n <= 100)이 주어지고, 그 후 n줄에 각 n개의 숫자로 왼쪽 위부터 각 칸에 쓰인 숫자들이 주어집니다. 오른쪽 아래 있는 끝 점 위치에는 0이 주어집니다. <br/>
+A chess knight has 8 possible moves it can make, as illustrated below. <br/>
+Each move is two squares in a cardinal direction, then one square in an orthogonal direction. <br/>
+ 
+(그림생략) <br/>
 
-출력 <br/>
-각 테스트 케이스마다 한 줄로, 시작점에서 끝 점으로 도달할 수 있을 경우 "YES"를, 아닐 경우 "NO"를 출력합니다. (따옴표 제외)
+Each time the knight is to move, it chooses one of eight possible moves uniformly at random (even if the piece would go off the chessboard) and moves there. <br/>
+
+The knight continues moving until it has made exactly K moves or has moved off the chessboard. <br/>
+Return the probability that the knight remains on the board after it has stopped moving.
+
+**Show tag:** \#dynamic\_programming
 
 ```
-Input:
-2
-7
-2 5 1 6 1 4 1
-6 1 1 2 2 9 3
-7 2 3 2 1 3 1
-1 1 3 1 7 1 2
-4 1 2 3 4 1 2
-3 3 1 2 3 4 1
-1 5 2 9 4 7 0
-7
-2 5 1 6 1 4 1
-6 1 1 2 2 9 3
-7 2 3 2 1 3 1
-1 1 3 1 7 1 2
-4 1 2 3 4 1 3
-3 3 1 2 3 4 1
-1 5 2 9 4 7 0 
-
-Output: 
-YES
-NO
+Input: 3, 2, 0, 0
+Output: 0.0625
+Explanation: There are two moves (to (1,2), (2,1)) that will keep the knight on the board.
+From each of those positions, there are also two moves that will keep the knight on the board.
+The total probability the knight stays on the board is 0.0625.
 ```
 
 **Note:**
@@ -51,7 +33,16 @@ NO
 
 ------------------------------------
 
-**Solution** <br/>
-시간복잡도 : O(n^2) 공간복잡도 : O(n^2) <br/>
-(0,0)에서 출발하여 오른쪽 혹은 아래쪽으로 갈 수 있으므로, <br/>
-완전탐색과 메모리제이션을 이용하여 해결하였다.
+**Solution : Unsolved Solution** <br/>
+시간복잡도 : O(k\*n\*n) <br/>
+재귀호출을 이용해서 해결해보려고 했는데 확률을 구하는 부분에서 실패하였다. <br/>
+메모리제이션을 적용하기도 전에 포기한 솔루션 <br/>
+
+**Best Solution** <br/>
+시간복잡도 : O(k\*\*n) 공간복잡도 : O(n) <br/>
+dp\[i\]\[j\]를 (i,j)에서 출발해서 체스판에 도달할 수 있는 경우의 수로 정의하여 <br/>
+n^2 반복하여 dp\[i\]\[j\]를 채워나가는 것을 k번 반복한다. <br/>
+k번째 dp\[i\]\[j\]에는 k-1번째까지 채워나갔던 dp\[i+xDistance\]\[j+yDistance\]의 값들을 다 더해주면 된다. <br/>
+
+주의할 점은 dp배열은 int형으로 하면 범위가 초과하기 떄문에 double형으로 지정해주어야 한다는 것이다. <br/>
+_(이부분의 이해가 부족하다.)_
