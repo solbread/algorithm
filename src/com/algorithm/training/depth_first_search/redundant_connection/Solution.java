@@ -26,7 +26,7 @@ public class Solution {
         Solution solution = new Solution();
         int[] result = solution.findRedundantConnection(new int[][]{{1,2},{1,3},{2,3}}); //2,3
         result = solution.findRedundantConnection(new int[][]{{1,2},{2,3},{3,4},{1,4},{1,5}}); //1,4
-        result = solution.findRedundantConnection(new int[][]{{1,4},{3,4},{1,3},{1,2},{4,5}});
+        result = solution.findRedundantConnection(new int[][]{{1,4},{3,4},{1,3},{1,2},{4,5}}); //1,3
         System.out.println(result[0] + ", " + result[1]);
     }
 }
