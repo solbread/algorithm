@@ -18,4 +18,5 @@
 	* QUANTIZE
 	* TRIPATHCNT
 	* POLY
+	* Knight Probability in Chessboard
 * Hard
