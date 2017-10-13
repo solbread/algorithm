@@ -1,4 +1,4 @@
-package com.algorithm.training.depth_first_search.redundant_connection;
+package com.algorithm.training.tree.redundant_connection;
 
 public class Solution {
     int[] parents;
