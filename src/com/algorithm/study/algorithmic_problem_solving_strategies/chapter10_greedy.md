@@ -27,7 +27,7 @@
 		2) 최적 부분 구조
 
 * 예제
-	1. 출전 순서 정하기 (MATCHORDER)
+	1. 출전 순서 정하기 (MATCHORDER) : solve(2017-10-15)
 	2. 도시락 데우기 (LUNCHBOX)
 	3. 문자열 합치기 (STRJOIN)
 	4. 미나스 아노르 (MINASTIRITH)
