@@ -42,3 +42,11 @@ Output:
 ------------------------------------
 
 **Main** <br/>
+시간복잡도 : O(n^3) 공간복잡도 : O(n^2) <br/>
+알고리즘 문제해결전략의 풀이를 읽은 후 구현하였다. <br/>
+해당 문제는 각 층마다 사각형을 배치하는데 각 층의 사각형들은 모두 붙어있어야 폴리오미노가 된다. <br/>
+따라서 재귀호출을 이용해서 각층의 사각형의 개수를 정의하고 조합을 계산하면 된다. <br/>
+i-1층의 사각형의 개수가 n개이고, i층의 사각형의 개수가 m개이면, i층에는 m개의 사각형을 n+m-1가지의 경우의수로 놓을 수 있다.<br/>
+이를 이용해서 조합을 계산하면 된다.
+getPolyCount(int remainedSquareCount, int currentSquareCount)를 첫줄에 들어갈 정사각형수가 currentSquareCount이고 남은 정사각형의 수가 remainedSquareCount일 때 폴리오미노의 수를 반환하는 메소드로 정의된다. <br/>
+가능한 remainedSquareCount와 currentSquareCount 조합의 수는 n^2이고 getPolyCount메소드내부에서 n번의 시간이 소요되기 떄문에 시간복잡도는 O(n^3)이다.

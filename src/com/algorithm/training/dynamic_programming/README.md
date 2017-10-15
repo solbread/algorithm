@@ -19,4 +19,5 @@
 	* TRIPATHCNT
 	* POLY
 	* Knight Probability in Chessboard
+	* NUMB3RS
 * Hard
