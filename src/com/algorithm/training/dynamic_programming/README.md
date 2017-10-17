@@ -20,4 +20,5 @@
 	* POLY
 	* Knight Probability in Chessboard
 	* NUMB3RS
+	* PACKING (\#knapsack)
 * Hard

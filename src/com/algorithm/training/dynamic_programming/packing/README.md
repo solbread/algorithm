@@ -53,8 +53,19 @@ grinder
 
 **Note:**
 
-**Show tag:** \#dynamic\_programming
+**Show tag:** \#dynamic\_programming \#knapsack
+
+**Related Problem:** 
 
 ------------------------------------
 
 **Main** <br/>
+시간복잡도 : O(n\*w) 공간복잡도 : O(n\*w)
+알고리즘 문제해결전략의 283p 풀이를 보고 구현하였다. <br/>
+우선 남은 용량에 담을 수 있는 물건들의 절박도 최대합을 구한 후, 이를 이용하여 담은 물건을 역추적하는 방법으로 구현하였다. <br/>
+우선 남은 용량에 담을 수 있는 물건들의 절박도를 구하는getMaxScore(int remainedWeight, int targetItem)를 정의한다. <br/>
+해당 함수에서는 targetItem을 캐리어에 담을 수도 있고 담지 않을 수도 있으므로 각각의 경우에 대해 재귀호출하여 최대 절박도의합을 구한다. <br/>
+위와 같은 방법으로 최대 절박도합을 구한 후 다음과 같은 방법으로 담은 물건들을 역추적한다. <br/>
+(각 부분 문제에 선택지가 두 개 밖에 없기 때문에 따로 선택을 저장하지 않고도 답을 역추적할 수 있다.) <br/>
+만약 getMaxScore(remainedWeight, targetItem)과 getMaxScore(remanedWeight, targetItem+1)의 값이 같다면 targetItem을 선택하지 않고도 최대절박도의합을 얻을 수 있다는 것이기 때문에 targetItem은 선택하지 않는다. <br/>
+반대로 두개의 값이 다르다면 targetItem을 선택한다.

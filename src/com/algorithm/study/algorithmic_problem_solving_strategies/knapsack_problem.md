@@ -1,0 +1,11 @@
+## Knapsack Problem (배낭문제)
+
+1. 0-1 Knapsack Problem
+	* N 개의 타입의 아이템이 1개씩 있음.
+	* 2017-10-17해결 (com.algorithm.training.dynamic_programming.packing)
+2. Bounded Knapsack Problem
+	* N 개의 타입의 아이템이 x(임의의 갯수)개씩 있음.
+3. Unbounded Knapsack Problem
+	* N 개의 타입의 아이템의 갯수 제한이 없음.
+4. Fractional Knapsack Problem
+	* N개의 물건을 원하는 분량만 쪼개서 담을 수 있음.

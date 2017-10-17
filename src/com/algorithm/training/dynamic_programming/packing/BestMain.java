@@ -35,8 +35,8 @@ public class BestMain {
 				itemScores[i] = scanner.nextInt();
 			}
 			int maxScore = main.getMaxScore(weightLimit, 0);
-			List<String> packedItemList = main.getPackedItemList(weightLimit, 0);
-
+			List<String> packedItemList = new ArrayList<>();
+			main.setPackedItemList(weightLimit, 0, packedItemList);
 			System.out.println(maxScore + " " + packedItemList.size());
 			for(String packedItem : packedItemList) {
 				System.out.println(packedItem);
@@ -46,23 +46,20 @@ public class BestMain {
 	public int getMaxScore(int remainedWeight, int targetItem) {
 		if(targetItem == itemNames.length) return 0;
 		if(cache[remainedWeight][targetItem] != -1) return cache[remainedWeight][targetItem];
-		int maxScore = 0;
 		if(remainedWeight >= itemWeights[targetItem]) {
-			maxScore = itemScores[targetItem] + getMaxScore(remainedWeight - itemWeights[targetItem], targetItem+1);
+			cache[remainedWeight][targetItem] = itemScores[targetItem] + getMaxScore(remainedWeight - itemWeights[targetItem], targetItem+1);
 		}
-		maxScore = Math.max(maxScore, getMaxScore(remainedWeight, targetItem+1));
-		return maxScore;
+		cache[remainedWeight][targetItem] = Math.max(cache[remainedWeight][targetItem], getMaxScore(remainedWeight, targetItem+1));
+		return cache[remainedWeight][targetItem] ;
 	}
 	
-	public List<String> getPackedItemList(int weightLimit, int targetItem) {
-		List<String> packedItemList = new ArrayList<>();
-		if(targetItem == itemNames.length) return packedItemList;
+	public void setPackedItemList(int weightLimit, int targetItem, List<String> packedItemList) {
+		if(targetItem == itemNames.length) return;
 		if(getMaxScore(weightLimit, targetItem) == getMaxScore(weightLimit, targetItem+1)) {
-			packedItemList.addAll(getPackedItemList(weightLimit, targetItem+1));
+			setPackedItemList(weightLimit, targetItem+1, packedItemList);
 		} else {
 			packedItemList.add(itemNames[targetItem]);
-			packedItemList.addAll(getPackedItemList(weightLimit-itemWeights[targetItem], targetItem+1));
+			setPackedItemList(weightLimit-itemWeights[targetItem], targetItem+1, packedItemList);
 		}
-		return packedItemList;
 	}
 }
