@@ -22,3 +22,4 @@
 	* NUMB3RS
 	* PACKING (\#knapsack)
 * Hard
+	* OCR
