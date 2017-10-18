@@ -21,5 +21,7 @@
 	* Knight Probability in Chessboard
 	* NUMB3RS
 	* PACKING (\#knapsack)
+	* MORSE
 * Hard
 	* OCR
+	* KLIS
