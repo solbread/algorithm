@@ -10,3 +10,6 @@ TODO LIST
 		* Bounded Knapsack Problem
 		* Unbounded Knapsack Problem
 		* Fractional Knapsack Problem
+	* LIS (dynamic_programming.lis)
+		* 인덱스트리를 이용한 LIS 구현
+	* dynamic_programming.morse Main2
