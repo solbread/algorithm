@@ -4,6 +4,7 @@
 * Easy
 	* Symmetric Tree
 	* Second Minimum Node In a Binary Tree
+	* Longest Univalue Path (\#recursion)
 * Medium
 	* Redundant Connection (\#union_find \#graph)
 * Hard
