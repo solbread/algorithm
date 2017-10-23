@@ -4,4 +4,5 @@
 * Easy
 * Medium
 	* Brick Wall
+	* Top K Frequent Words (\#heap \#trie)
 * Hard
