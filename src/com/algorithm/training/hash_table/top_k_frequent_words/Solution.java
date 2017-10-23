@@ -10,21 +10,25 @@ import java.util.Queue;
 
 public class Solution {
     public List<String> topKFrequent(String[] words, int k) {
-        Queue<Entry<String, Integer>> wordCounter = new PriorityQueue<>();
+    	Map<String,Integer> wordCounter = new HashMap<>();
+        Queue<Entry<String, Integer>> sortedWords = new PriorityQueue<>(
+        		(a,b) -> ((b.getValue() - a.getValue() == 0) 
+        				? a.getKey().compareTo(b.getKey()) : b.getValue() - a.getValue()));
         for(String word : words) {
-            
+        	wordCounter.put(word, wordCounter.getOrDefault(word, 0)+1);
         }
+        sortedWords.addAll(wordCounter.entrySet());
         List<String> topKFrequentList = new ArrayList<>();
         while(k-- > 0) {
-            topKFrequentList.add(wordCounter.poll().getKey());
+            topKFrequentList.add(sortedWords.poll().getKey());
         }
         return topKFrequentList;
     }
     
     public static void main(String[] args) {
         Solution solution = new Solution();
-        String[] words1 = {"i", "love", "leetcode", "i", "love", "coding"};
-        String[] words2 = {"the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"};
+        String[] words1 = {"i", "love", "leetcode", "i", "love", "coding"}; // i love
+        String[] words2 = {"the", "day", "is", "sunny", "the", "the", "the", "sunny", "is", "is"}; // the is sunny day
         List<String> result1 = solution.topKFrequent(words1, 2);
         for(String str : result1) {
             System.out.print(str + " ");
