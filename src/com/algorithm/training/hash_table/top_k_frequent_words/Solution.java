@@ -13,14 +13,20 @@ public class Solution {
     	Map<String,Integer> wordCounter = new HashMap<>();
         Queue<Entry<String, Integer>> sortedWords = new PriorityQueue<>(
         		(a,b) -> ((b.getValue() - a.getValue() == 0) 
-        				? a.getKey().compareTo(b.getKey()) : b.getValue() - a.getValue()));
+        				? b.getKey().compareTo(a.getKey()) : a.getValue() - b.getValue()));
         for(String word : words) {
         	wordCounter.put(word, wordCounter.getOrDefault(word, 0)+1);
         }
-        sortedWords.addAll(wordCounter.entrySet());
+        
+        for(Entry<String, Integer> entry : wordCounter.entrySet()) {
+        	sortedWords.add(entry);
+        	if(sortedWords.size() > k) {
+        		sortedWords.poll();
+        	}
+        }
         List<String> topKFrequentList = new ArrayList<>();
-        while(k-- > 0) {
-            topKFrequentList.add(sortedWords.poll().getKey());
+        while(!sortedWords.isEmpty()) {
+            topKFrequentList.add(0, sortedWords.poll().getKey());
         }
         return topKFrequentList;
     }
