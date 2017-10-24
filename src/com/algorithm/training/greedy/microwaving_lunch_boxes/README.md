@@ -1,4 +1,4 @@
-## LUNCHBOX(Microwaving Lunch Boxes)
+## LUNCHBOX (Microwaving Lunch Boxes)
 
 **Difficulty:** Easy
 
