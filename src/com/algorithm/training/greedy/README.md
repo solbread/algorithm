@@ -7,4 +7,5 @@
 	* LUNCHBOX
 * Medium
 	* Gas Station
+	* STRJOIN
 * Hard
