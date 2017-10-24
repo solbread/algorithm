@@ -24,14 +24,15 @@ public class Main {
 				heatTime[i] = scanner.nextInt();
 			}
 			for(int i = 0; i < heatTime.length; i++) {
-				heap.add(new AbstractMap.SimpleEntry<>(scanner.nextInt() + heatTime[i], heatTime[i]));
+				heap.add(new AbstractMap.SimpleEntry<>(scanner.nextInt(), heatTime[i]));
 			}
 			int minTime = 0, remainedTime = 0;
 			while(!heap.isEmpty()) {
 				Entry<Integer, Integer> lunchbox = heap.poll();
-				if(remainedTime < lunchbox.getKey()) {
-					minTime += (lunchbox.getKey() - remainedTime);
-					remainedTime = lunchbox.getKey();
+				int totalTime = lunchbox.getKey() + lunchbox.getValue();
+				if(remainedTime < totalTime) {
+					minTime += (totalTime - remainedTime);
+					remainedTime = totalTime;
 				}
 				remainedTime -= lunchbox.getValue();
 			}
