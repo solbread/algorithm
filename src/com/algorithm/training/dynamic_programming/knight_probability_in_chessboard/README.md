@@ -17,8 +17,6 @@ Each time the knight is to move, it chooses one of eight possible moves uniforml
 The knight continues moving until it has made exactly K moves or has moved off the chessboard. <br/>
 Return the probability that the knight remains on the board after it has stopped moving.
 
-**Show tag:** \#dynamic\_programming
-
 ```
 Input: 3, 2, 0, 0
 Output: 0.0625
@@ -29,7 +27,7 @@ The total probability the knight stays on the board is 0.0625.
 
 **Note:**
 
-**Show tag:** \#dynamic\_programming \#exhaustive\_search
+**Show tag:** \#dynamic\_programming
 
 ------------------------------------
 
