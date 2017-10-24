@@ -33,6 +33,7 @@ public class LFUCache {
     }
 
     public void put(int key, int value) {
+        if(this.capacity == 0) return;
         if(this.datas.size() == capacity) {
             Entry<Integer, Entry<Integer, Integer>> removedData = sortedMetaData.poll();
             datas.remove(removedData.getKey());
@@ -45,7 +46,10 @@ public class LFUCache {
     }
     
     public static void main(String[] args) {
-        LFUCache cache = new LFUCache(2);
+        LFUCache cache = new LFUCache(0);
+        cache.put(0, 0);
+        System.out.println(cache.get(0)); //-1
+        cache = new LFUCache(2);
         cache.put(1, 1);
         cache.put(2, 2);
         System.out.println(cache.get(1));       // returns 1
