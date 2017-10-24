@@ -22,6 +22,7 @@
 	* NUMB3RS
 	* PACKING (\#knapsack)
 	* MORSE
+	* Partition to K Equal Sum Subsets (\#recursion)
 * Hard
 	* OCR
 	* KLIS
