@@ -53,7 +53,7 @@ Output:
 
 **Note:**
 
-**Show tag:** \#greedy
+**Show tag:** \#greedy \#heap
 
 ------------------------------------
 
