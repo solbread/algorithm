@@ -28,7 +28,7 @@
 
 * 예제
 	1. 출전 순서 정하기 (MATCHORDER) : solve(2017-10-15)
-	2. 도시락 데우기 (LUNCHBOX)
-	3. 문자열 합치기 (STRJOIN)
+	2. 도시락 데우기 (LUNCHBOX) : solve(2017-10-24)
+	3. 문자열 합치기 (STRJOIN) : solve(2017-10-24)
 	4. 미나스 아노르 (MINASTIRITH)
 	

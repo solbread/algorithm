@@ -6,6 +6,7 @@ TODO LIST
 	* dynamic_programing.ocr
 	* dynamic_programming.wildcard (런타임에러)
 	* dynamic_programming.klis (런타임에러)
+	* greedy.minastirith
 	
 * 공부해야할 부분
 	* Knapsack Problem
