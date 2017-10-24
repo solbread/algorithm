@@ -7,5 +7,6 @@
 	* LUNCHBOX
 * Medium
 	* Gas Station
-	* STRJOIN
+	* STRJOIN (\#heap)
 * Hard
+	* MINASTIRITH
