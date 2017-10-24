@@ -11,11 +11,11 @@ public class LFUCache {
     Map<Integer, Integer> datas;
     Map<Integer, Entry<Integer, Integer>> counter;
     Queue<Entry<Integer, Entry<Integer, Integer>>> sortedMetaData;
-    int callingIndex, capacity;
+    int usingIndex, capacity;
     
     public LFUCache(int capacity) {
         this.capacity = capacity;
-        this.callingIndex = 0;
+        this.usingIndex = 0;
         datas = new HashMap<>(capacity);
         counter = new HashMap<>(capacity);
         sortedMetaData = new PriorityQueue<>((a, b) -> 
@@ -26,29 +26,41 @@ public class LFUCache {
     public int get(int key) {
         if(!datas.containsKey(key)) return -1;
         sortedMetaData.remove(new AbstractMap.SimpleEntry<>(key, counter.get(key)));
-        counter.put(key, new AbstractMap.SimpleEntry<>(counter.get(key).getKey()+1, callingIndex));
+        counter.put(key, new AbstractMap.SimpleEntry<>(counter.get(key).getKey()+1, usingIndex));
         sortedMetaData.add(new AbstractMap.SimpleEntry<>(key, counter.get(key)));
-        this.callingIndex++;
+        this.usingIndex++;
         return datas.get(key);
     }
 
     public void put(int key, int value) {
         if(this.capacity == 0) return;
-        if(this.datas.size() == capacity) {
+        if(!this.datas.containsKey(key) && this.datas.size() == capacity) {
             Entry<Integer, Entry<Integer, Integer>> removedData = sortedMetaData.poll();
             datas.remove(removedData.getKey());
             counter.remove(removedData.getKey());
         } 
         if(datas.containsKey(key)) {
             sortedMetaData.remove(new AbstractMap.SimpleEntry<>(key, counter.get(key)));
+            counter.remove(key);
+            datas.remove(key);
         }
         datas.put(key, value);
-        counter.put(key, new AbstractMap.SimpleEntry<>(0, -1));
+        counter.put(key, new AbstractMap.SimpleEntry<>(0, usingIndex));
         sortedMetaData.add(new AbstractMap.SimpleEntry<>(key, counter.get(key)));
+        usingIndex++;
     }
     
     public static void main(String[] args) {
         LFUCache cache = new LFUCache(2);
+        System.out.println(cache.get(2)); // -1
+        cache.put(2, 6);
+        System.out.println(cache.get(1)); // -1
+        cache.put(1, 5);
+        cache.put(1, 2);
+        System.out.println(cache.get(1)); // 2
+        System.out.println(cache.get(2)); // 6
+        
+        cache = new LFUCache(2);
         cache.put(2, 1);
         cache.put(2, 2);
         System.out.println(cache.get(2)); //2
