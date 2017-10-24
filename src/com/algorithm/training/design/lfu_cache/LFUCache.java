@@ -39,16 +39,27 @@ public class LFUCache {
             datas.remove(removedData.getKey());
             counter.remove(removedData.getKey());
         } 
-
+        if(datas.containsKey(key)) {
+            sortedMetaData.remove(new AbstractMap.SimpleEntry<>(key, counter.get(key)));
+        }
         datas.put(key, value);
         counter.put(key, new AbstractMap.SimpleEntry<>(0, -1));
         sortedMetaData.add(new AbstractMap.SimpleEntry<>(key, counter.get(key)));
     }
     
     public static void main(String[] args) {
-        LFUCache cache = new LFUCache(0);
+        LFUCache cache = new LFUCache(2);
+        cache.put(2, 1);
+        cache.put(2, 2);
+        System.out.println(cache.get(2)); //2
+        cache.put(1, 1);
+        cache.put(4, 1);
+        System.out.println(cache.get(2)); //2
+        
+        cache = new LFUCache(0);
         cache.put(0, 0);
         System.out.println(cache.get(0)); //-1
+        
         cache = new LFUCache(2);
         cache.put(1, 1);
         cache.put(2, 2);
