@@ -35,9 +35,9 @@ cache.get(4);       // returns 4
 
 **Solution : Unsolved Solution** <br/>
 3개의 저장소를 이용해서 get과 put을 구현하려고 하였다. <br/>
-1. datas : 첫번째로는 data를 저장하는 map, <br/>
-2. counter : data의 key를 key로 가지고 data가 몇번 호출되었고 몇번쨰로 호출되었는지를 저장하는 entry를 value로 가지는 map, <br/>
-3. sortedMetaData : data의 key를 key로 가지고 data가 몇번 호출되었고 몇번째로 호출되었는지를 저장하는 entry를 value로 가지는 entry를 저장하는 heap이 있다. <br/>
+1. datas : 첫번째로는 data를 저장하는 map <br/>
+2. counter : data의 key를 key로 가지고 data가 몇번 호출되었고 몇번쨰로 호출되었는지를 저장하는 entry를 value로 가지는 map <br/>
+3. sortedMetaData : data의 key를 key로 가지고 data가 몇번 호출되었고 몇번째로 호출되었는지를 저장하는 entry를 value로 가지는 entry를 저장하는 heap <br/>
 
 * get
 	1. sortedMetaData에서 해당 데이터를 제거
