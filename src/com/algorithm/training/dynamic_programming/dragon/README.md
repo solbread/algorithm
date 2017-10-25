@@ -68,5 +68,5 @@ getKthDragonCurve(String str, int generation, int k)을 str을 generation세대�
 str의 문자를 순회하면서 X이거나 Y이면 해당 문자를 generation 세대만큼 진화시켰을때의 문자열의 길이를 미리 구해둔 length 배열에서 얻는다. <br/>
 길이가 k보다 작으면 해당 문자를 generation 세대만큼 진화시켰을 때의 문자열에는 k번째 문자가 포함되지 않는것이므로 k를 줄이고 다음 문자로 넘어간다. <br/>
 길이가 k랑 같거나 크면 해당 문자를 generation 세대만큼 진화시켰을 때의 문자열에는 k번째 문자가 포함된다는 것이기 때문에 해당문자를 1세대 진화시킨 후 재귀호출을 반복하며 k번째 문자를 찾는다.
-generation세대까지 계속 진화시킨 후 generation이 0이되었을 떄의 k번째 문자가 찾고자하는 문자이게 된다. <br/>
+generation세대까지 계속 진화시킨 후 generation이 0이되었을 때의 k번째 문자가 찾고자하는 문자이게 된다. <br/>
 반면 str의 문자가 X랑 Y가 아니면 k가 1일경우 해당 문자를 반환 하고 1이 아닐경우 k를 하나 줄이고 다음 문자로 넘어가면 된다.
