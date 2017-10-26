@@ -32,7 +32,7 @@ public class Solution {
                     if(canPartitionSubsets(isVisited, getNextTargetIndex(isVisited), average, k-1)) return true;
                     isVisited[i] = false;
                 } else if(nums[startPoint] + nums[i] < targetSum) {
-                    if(canPartitionSubsets(isVisited, i, targetSum - nums[startPoint] - nums[i], k)) return true;
+                    if(canPartitionSubsets(isVisited, i, targetSum - nums[startPoint], k)) return true;
                 }
             }
         }
@@ -60,5 +60,6 @@ public class Solution {
     	Solution solution = new Solution();
     	System.out.println(solution.canPartitionKSubsets(new int[]{4,3,2,3,5,2,1}, 4)); //true
     	System.out.println(solution.canPartitionKSubsets(new int[]{5,2,5,5,5,5,5,5,5,5,5,5,5,5,5,3}, 15)); //true
+    	System.out.println(solution.canPartitionKSubsets(new int[]{2,2,10,5,2,7,2,2,13}, 3)); //true
     }
 }
