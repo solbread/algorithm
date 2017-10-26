@@ -14,8 +14,11 @@ Explanation: It's possible to divide it into 4 subsets (5), (1, 4), (2,3), (2,3)
 
 **Note:**
 
-**Show tag:** \#dynamic\_programming \#recursion
+**Show tag:** \#dynamic\_programming \#recursion \#depth\_first\_search
 
 ------------------------------------
 
 **Solution** <br/>
+시간복잡도 : O(n^3) 공간복잡도 : O(n) <br/>
+_시간복잡도 추출을 잘 모르겠다._
+Depth First Search를 이용하여 구현하였다.
