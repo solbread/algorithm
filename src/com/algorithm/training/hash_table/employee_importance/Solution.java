@@ -1,25 +1,23 @@
 package com.algorithm.training.hash_table.employee_importance;
 
-import java.util.AbstractMap;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
-import java.util.Map.Entry;
 
 public class Solution {
-    Map<Integer, Entry<Integer, List<Integer>>> linkEmployeesMap;
+    Map<Integer, Employee> linkEmployeesMap;
     public int getImportance(List<Employee> employees, int id) {
         linkEmployeesMap = new HashMap<>();
         for(Employee employee : employees) {
-            linkEmployeesMap.put(employee.id, new AbstractMap.SimpleEntry<>(employee.importance, employee.subordinates));
+            linkEmployeesMap.put(employee.id, employee);
         }
         return calSubordinatesImportance(id);
     }
     public int calSubordinatesImportance(int id) {
-        int importance = linkEmployeesMap.get(id).getKey();
-        for(int subordinatesId : linkEmployeesMap.get(id).getValue()) {
+        int importance = linkEmployeesMap.get(id).importance;
+        for(int subordinatesId : linkEmployeesMap.get(id).subordinates) {
             importance += calSubordinatesImportance(subordinatesId);
         }
         return importance;
