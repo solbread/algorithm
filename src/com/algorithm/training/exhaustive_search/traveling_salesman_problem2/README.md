@@ -42,6 +42,14 @@ Output:
 
 **Show tag:** \#exhaustive\_search
 
+**Related problem:**
+dynamic\_programming.traveling\_salesman\_problem1
+
 ------------------------------------
 
 **Main** <br/>
+시간복잡도 : O(2^n \* n) 공간복잡도 : O(2^n \* n ) <br/>
+dynamic\_programming.traveling\_salesman\_problem1문제에 메모리제이션을 적용하여서 더 큰 n에 대해서도 동작하도록 개선하였다. <br/>
+이 문제에서는 방문한 지점에 대해서 알고있어야 하므로 getMinPathLength(int visit, int startPoint)함수를 만들어서 메모리제이션을 하였다.(visit에 저장된 방문기록을 가지고 startPoint에서 시작할 때 만들 수 있는 minPathLength) <br/>
+visit은 비트마스크 기법을 이용하여 방문한 지점들을 저장하였다. <br/>
+n이 3이면 111 하면 모두 방문한것이고 110이면 2번,3번 지점을 방문한것이다. <br/>
