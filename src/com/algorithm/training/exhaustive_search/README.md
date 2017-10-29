@@ -3,6 +3,7 @@
 **Problem list**
 * None
 	* Traveling Salesman Problem 1
+	* Traveling Salesman Problem 2
 * Easy
 	* BOGGLE
 	* PICNIC

@@ -20,6 +20,11 @@ AOJ 에서 이 문제는 같은 내용을 가진 문제 여러 개로 구성된�
 테스트 케이스마다 한 줄에 최소 경로의 길이를 소수점 밑 열 자리까지 출력한다. <br/>
 1e-7 이하의 절대/상대 오차가 있어도 맞는 답으로 인정한다.
 
+**Show tag:** \#exhaustive\_search \#dynamic\_programming
+
+**Related problem:** <br/>
+exhaustive\_search.traveling\_salesman\_problem2
+
 ```
 Input:
 2
