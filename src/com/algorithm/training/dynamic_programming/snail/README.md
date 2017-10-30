@@ -1,4 +1,4 @@
-## TRIANGLE
+## SNAIL
 
 **Difficulty:** Easy
 
