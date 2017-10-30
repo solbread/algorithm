@@ -40,7 +40,7 @@ Output:
 
 **Note:**
 
-**Show tag:** \#exhaustive\_search \#dynamic\_programming
+**Show tag:** \#exhaustive\_search \#dynamic\_programming \#bit\_mask
 
 **Related problem:** <br/>
 exhaustive\_search.traveling\_salesman\_problem1
