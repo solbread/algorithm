@@ -26,3 +26,4 @@
 * Hard
 	* OCR
 	* KLIS
+	* ZIMBABWE (\#bit\_mask)
