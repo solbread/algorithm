@@ -54,19 +54,20 @@ public class Main {
 	private String merge(int i, int j) {
 		if(mergeCache[i][j] != null) return mergeCache[i][j];
 		String string1 = subStrings[i], string2 = subStrings[j];
-		int currentI = string1.length()-1, resultJ = 0;;
-		while(currentI > 0) {
-			if(string1.charAt(currentI) == string2.charAt(0)) {
-				if(string1.length()-currentI <= string2.length() && string1.substring(currentI, string1.length()).equals(string2.substring(0, string1.length()-currentI))) {
-					resultJ = string1.length()-currentI;
-				} else if(string1.substring(currentI, string1.length()).contains(string2)) {
-					resultJ = string2.length();
-					break;
-				}
+		char[] stringArr1 = string1.toCharArray(), stringArr2 = string2.toCharArray();
+		int index1 = 0, index2 = 0;
+		while(index1 < string1.length() && index2 < string2.length()) {
+			if(stringArr1[index1] == stringArr2[index2]) {
+				index1++; index2++;
+			} else {
+				index1++; index2=0;
 			}
-			currentI--;
 		}
-		mergeCache[i][j] = string2.substring(resultJ, string2.length());
+		if(index2 == subStrings.length) {
+			mergeCache[i][j] = (index1 == subStrings.length) ? "" : string2;
+		} else {
+			mergeCache[i][j] = string2.substring(index2, string2.length());
+		}
 		return mergeCache[i][j];
 	}
 }
