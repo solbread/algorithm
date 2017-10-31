@@ -23,6 +23,7 @@
 	* PACKING (\#knapsack)
 	* MORSE
 	* Partition to K Equal Sum Subsets (\#recursion \#depth\_first\_search)
+	* RESTORE
 * Hard
 	* OCR
 	* KLIS
