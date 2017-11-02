@@ -28,7 +28,18 @@ getFindMaxLength(int aIdx, int bIdx)를 aIndx에서 시작하는 A배열과 bInd
 만약 A[aIdx] != B[bIdx]이면 index를 하나씩 이동한 getFindMaxLength메소드의 결과중 max값을 반환하면 된다. <br/>
 
 **Best Solution** <br/>
+시간복잡도 : O(n\*m) 공간복잡도 : O(n\*m) (n=A의길이 m=B의길이) <br/>
 참고자료 : https://discuss.leetcode.com/topic/108722/concise-java-dp-same-idea-of-longest-common-substring <br/>
 dp\[i\]\[j\]에는 A의 0~i 원소들과 B의 0~j 원소들에 대해 만들 수 있는 겹치는 subarray의 최대길이로 정의한다. <br/>
 그래서 A\[i\]랑B\[j\]가 같다면 dp\[i\]\[j\]에는 dp\[i-1\]\[j-1\]+1이 들어가게 된다. <br/>
 dp배열중에 최대값이 답이된다. <br/>
+
+**Best Solution** <br/>
+시간복잡도 : O(n\*m) 공간복잡도 : O(m) (n=A의길이 m=B의길이) <br/>
+Best Solution의 답안을 공간복잡도를 줄이는 방향으로 리팩토링한 것이다. <br/>
+Best Solution의 코드를 보면 dp\[\]\[\]의 max값을 찾게되는데 dp\[1\]\[\] dp\[2\]\[\] dp\[n\]\[\]순으로 채워지게 된다. <br/>
+또한 각 dp\[i\]\[\] 는 dp\[i-1\]\[\]를 이용해서 구하게 되므로 2차원배열을 써서 모든 i에 대해 저장할 필요 없이 직전 행의 값들(i-1행)만 알고 있으면 되므로 1차원 배열로 줄일 수 있다. <br/>
+i-1행의 dp 배열에 i행의 값들로 순차적으로 새로 채워나가면서 꼭 필요한 정보를 저장하면 된다. <br/>
+변경할 때 주의할점은 2가지가 있다. <br/>
+1. 열의 순회를 원래는 1에서 m까지 하였는데, dp\[i\]\[j\]를 채우기 위해서는 dp\[i-1\]\[j-1\]값을 알아야 하는데, dp[j]로 줄였을 때 1에서 m방향으로 해버리면 dp[j-1]의 값은 이미 i행에 대한 값으로 덮어씌워져버린 상태이기 떄문에 i-1행에 대한 값을 알 수 없으므로 열의 순회를 m에서 1로 거꾸로 바꿔준다. <br/>
+2. 또한 dp[j]에는 i번째 행에 대한 값들로 매번 셋팅되어야 한다. A[i-1]==B[j-1]일때만 값을 넣어주지 말고 0으로라도 넣어줘야한다. <br/>
