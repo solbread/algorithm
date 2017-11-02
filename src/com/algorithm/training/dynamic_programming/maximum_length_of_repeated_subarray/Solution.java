@@ -20,7 +20,7 @@ public class Solution {
         if(aIdx == A.length || bIdx == B.length) return 0;
         if(lengthCache[aIdx][bIdx] != -1) return lengthCache[aIdx][bIdx];
         if(A[aIdx] == B[bIdx]) {
-            lengthCache[aIdx][bIdx] = Math.max(calOverlapLength(aIdx, bIdx), getFindMaxLength(aIdx+1, bIdx+1));
+            lengthCache[aIdx][bIdx] = Math.max(calOverlapLength(aIdx, bIdx), Math.max(getFindMaxLength(aIdx + 1, bIdx), getFindMaxLength(aIdx, bIdx+1)));
         } else {
             lengthCache[aIdx][bIdx] = Math.max(getFindMaxLength(aIdx + 1, bIdx), getFindMaxLength(aIdx, bIdx+1));
         }
@@ -37,5 +37,6 @@ public class Solution {
     public static void main(String[] args) {
     	Solution solution = new Solution();
     	System.out.println(solution.findLength(new int[]{1,2,3,2,1}, new int[]{3,2,1,4,7})); //3
+    	System.out.println(solution.findLength(new int[]{0,0,0,0,0,0,1,0,0,0}, new int[]{0,0,0,0,0,0,0,1,0,0})); //9
     }
 }
