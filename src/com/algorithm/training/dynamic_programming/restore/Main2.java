@@ -23,15 +23,19 @@ public class Main2 {
 		while(cases-- > 0) {
 		    int subStringsLength = scanner.nextInt();
 		    List<String> subStringList = new ArrayList<>();
+		    List<String> removedContainedStringList = new ArrayList<>();
 		    for(int i = 0; i < subStringsLength; i++) {
-		        String subString = scanner.next();
+		        subStringList.add(scanner.next());
+		    }
+		    for(int i = 0; i < subStringList.size(); i++) {
 		        boolean isContainedString = false;
 		        for (int j = 0; j < subStringList.size(); j++) {
-		            if(subStringList.get(j).contains(subString)) isContainedString = true;
+		            if(i==j) continue;
+		            if(subStringList.get(j).contains(subStringList.get(i))) isContainedString = true;
 		        }
-		        if(!isContainedString) subStringList.add(subString);
+		        if(!isContainedString) removedContainedStringList.add(subStringList.get(i));
 		    }
-		    subStrings = subStringList.toArray(new String[subStringList.size()]);
+		    subStrings = removedContainedStringList.toArray(new String[removedContainedStringList.size()]);
 			cache = new int[(int)Math.pow(2, subStrings.length)][subStrings.length];
 			for(int subCache[] : cache) Arrays.fill(subCache, -1);
 			Arrays.fill(cache[(1<<subStrings.length)-1], 0);
