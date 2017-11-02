@@ -24,6 +24,7 @@
 	* MORSE
 	* Partition to K Equal Sum Subsets (\#recursion \#depth\_first\_search)
 	* RESTORE
+	* Maximum Length of Repeated Subarray (\#array \#hash\_table \#binary\_search)
 * Hard
 	* OCR
 	* KLIS
