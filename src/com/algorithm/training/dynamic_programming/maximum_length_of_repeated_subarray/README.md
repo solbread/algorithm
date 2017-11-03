@@ -54,6 +54,3 @@ _시간복잡도와 공간복잡도 잘 모르겠다._ <br/>
 먼저 A배열을 순회하며 원소값을 key로 가지고 index를 value list에 추가하여 map을 만든다. <br/>
 그 후 B배열을 순회하면서 해당 원소가 map에 있는지를 확인하고 있다면 index를 담고있는 list를 순회하며 만들 수 있는 겹치는 subarray의 길이를 계산한다. <br/>
 반복하여 계산하며 최대값을 구한다.
-
-TODO <br/>
-공간복잡도 O(1)인 풀이 : https://discuss.leetcode.com/topic/108785/easy-o-n-2-time-o-1-space-solution-no-dp
