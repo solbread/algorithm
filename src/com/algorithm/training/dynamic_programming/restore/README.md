@@ -44,5 +44,28 @@ cadabrac
 
 ------------------------------------
 
-**Solution** <br/>
+**Main** <br/>
 
+**Main2** <br/>
+시간복잡도 : O(n \* n \* 2^n) 공간복잡도 : O(n \* 2^n) <br/>
+알고리즘 문제해결전략 책을 참고하는 등 굉장히 오랜시간이 걸려서 해결하였다. <br/>
+내가 구현하는데 헤맸떤 부분은 i번째 string과 j번째 string의 겹치는 길이를 구하는 getOverlapLength이다.
+간략한 솔루션은 아래와 같다. <br/>
+모든 문자의 조합을 만들어서 가장 짧게 겹칠 수 있는 문자열을 찾는건데, <br/>
+가장 짧게 문자열을 만들려면 문자열간의 겹치는 부분의 길이가 가장 길어야 하기 때문에 이를 이용해서 만들 수 있는 가장 짧은 문자열의 길이를 구한 후 역추적하여 문자열을 만든다. <br/>
+
+시간복잡도의 경우에는 가장 짧은 문자열의 길이를 구하는 getMaxOverlapLength() 함수가 n \* 2^n번 호출되며 함수 내부에서 n번의 연산이 있으므로 n \* n \* 2^n이다. <br/>
+또한 이를 이용해서 역추적하여 가장 짧은 문자열을 만드는 getShortString 함수는 n번 호출되며 함수 내에서 n번의 연산이 있으므로 n^2이다. <br/>
+
+이 떄 문자의 조합을 만들 때 하나의 문자열에 완전히 포함되는 문자열은 제외시켜야 한다. <br/>
+a, ab, c 가 있을 때 a는 ab에 포함되므로 제외시키고 ab랑 c만 합치면 된다. 만약 a를 제외시키지 않는다면 ab - a - c 순으로 합쳤을떄가 가장 짧은 문자열이지만 abac가 된다. <br/>
+
+getOverlapLength(int i, int j)메소드는 우리는 subStrings[i]에 subStrings[j]를 붙이고자 할 때 겹치는 문자열의 길이를 반환하는 메소드이다. <br/>
+(subStrings[i]를 string1, subStrings[j]를 string2라고 칭하겠다.) <br/>
+string1에 strinb2가 포함되는 경우는 이미 제외시켰으므로 string1에 string2를 붙이려면 string2의 인덱스0에서 시작하는 substring이 string1에 포함되어야 하며, <br/>
+substring의 맨 끝은 string1의 맨 끝과 일치해야 substring1뒤에 붙일 수 있게 된다. <br/>
+따라서 이중for문을 사용하여 string1의 각 문자에서 시작해서 string2를 붙일 수 있는지 확인한다. <br/>
+해당 이중for문의 안쪽for문이 핵심인데 이를 설명하면 다음과 같다. <br/>
+string1[i]와 string[j]가 같으면 i와 j를 +1해가면서 계속 탐색한다. (바깥for문에 영향없도록 tmpI사용) <br/>
+만약 string1[i]와 string[j]가 다른게 등장하면 해당 문자열은 겹칠 수 없으므로 for문을 빠져나온다. <br/>
+그 후 i가 string1의 length와 같다는 것은 내부 for문이 끝까지 다 돌았다는 것이고 그 의미는 string1에 string2를 붙일 수 있다는 것이기때문에 이 경우에만 겹치는 길이를 저장해준다. (겹치는 길이는 j가 된다.)

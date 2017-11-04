@@ -49,12 +49,6 @@ public class Main2 {
 				}
 			}
 			System.out.println(shortString);
-//			int shortLength = 601;
-//          for(int i = 0; i < subStrings.length; i++) {
-//              int ret = subStrings[i].length() + main.getShortStringLength(1 << i, i);
-//              shortLength = Math.min(shortLength, ret);
-//          }
-//          System.out.println(shortLength);
 		}
 	}
 	public String getShortString(int visit, int startIndex) {
@@ -80,19 +74,22 @@ public class Main2 {
 	    cache[visit][startIndex] = getOverlapLength;
 	    return cache[visit][startIndex];
 	}
-	private int getOverlapLength(int i, int j) {
-		if(mergeCache[i][j] != -1) return mergeCache[i][j];
-		String string1 = subStrings[i], string2 = subStrings[j];
+	private int getOverlapLength(int idx1, int idx2) {
+		if(mergeCache[idx1][idx2] != -1) return mergeCache[idx1][idx2];
+		String string1 = subStrings[idx1], string2 = subStrings[idx2];
 		char[] stringArr1 = string1.toCharArray(), stringArr2 = string2.toCharArray();
-		int index1 = 0, index2 = 0;
-		while(index1 < string1.length() && index2 < string2.length()) {
-			if(stringArr1[index1] == stringArr2[index2]) {
-				index1++; index2++;
-			} else {
-				index1++; index2=0;
+		int overlapCount = 0;
+		for(int i = 0; i < stringArr1.length; i++) {
+			int tmpI = i, j = 0;
+			for(j = 0; tmpI < stringArr1.length && j < stringArr2.length; j++) {
+				if(stringArr1[tmpI] != stringArr2[j]) break;
+				tmpI++;
+			}
+			if(tmpI == stringArr1.length) {
+				overlapCount = Math.max(overlapCount, j);
 			}
 		}
-		mergeCache[i][j] = index2;
-		return mergeCache[i][j];
+		mergeCache[idx1][idx2] = overlapCount;
+		return mergeCache[idx1][idx2];
 	}
 }
