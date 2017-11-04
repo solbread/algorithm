@@ -60,7 +60,7 @@ public class Main2 {
 	            }
 	        }
 	    }
-	    return shortString;
+	    return shortString; //호출될케이스없음 
 	}
 
 	public int getMaxOverlapLength(int visit, int startIndex) {
@@ -78,18 +78,15 @@ public class Main2 {
 		if(mergeCache[idx1][idx2] != -1) return mergeCache[idx1][idx2];
 		String string1 = subStrings[idx1], string2 = subStrings[idx2];
 		char[] stringArr1 = string1.toCharArray(), stringArr2 = string2.toCharArray();
-		int overlapCount = 0;
 		for(int i = 0; i < stringArr1.length; i++) {
 			int tmpI = i, j = 0;
 			for(j = 0; tmpI < stringArr1.length && j < stringArr2.length; j++) {
 				if(stringArr1[tmpI] != stringArr2[j]) break;
 				tmpI++;
 			}
-			if(tmpI == stringArr1.length) {
-				overlapCount = Math.max(overlapCount, j);
-			}
+			mergeCache[idx1][idx2] = (tmpI == stringArr1.length) ? j : 0;
+			if(tmpI == stringArr1.length) break;
 		}
-		mergeCache[idx1][idx2] = overlapCount;
 		return mergeCache[idx1][idx2];
 	}
 }
