@@ -12,6 +12,7 @@
 	* TITLING2
 	* SNAIL
 	* ASYMTILING
+	* TICTACTOE
 * Medium
 	* Coin Change 2
 	* WILDCARD
