@@ -2,7 +2,9 @@ package com.algorithm.training.dynamic_programming.restore;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.ArrayList;
 import java.util.Arrays;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -19,13 +21,24 @@ public class Main {
 		}
 		int cases = scanner.nextInt();
 		while(cases-- > 0) {
-			subStrings = new String[scanner.nextInt()];
+		    int subStringsLength = scanner.nextInt();
+		    List<String> subStringList = new ArrayList<>();
+		    List<String> removedContainedStringList = new ArrayList<>();
+		    for(int i = 0; i < subStringsLength; i++) {
+		        subStringList.add(scanner.next());
+		    }
+		    for(int i = 0; i < subStringList.size(); i++) {
+		        boolean isContainedString = false;
+		        for (int j = 0; j < subStringList.size(); j++) {
+		            if(i <= j  && subStringList.get(j).equals(subStringList.get(i))) continue;
+		            if(subStringList.get(j).contains(subStringList.get(i))) isContainedString = true;
+		        }
+		        if(!isContainedString) removedContainedStringList.add(subStringList.get(i));
+		    }
+		    subStrings = removedContainedStringList.toArray(new String[removedContainedStringList.size()]);
 			cache = new String[(int)Math.pow(2, subStrings.length)][subStrings.length];
 			Arrays.fill(cache[(1<<subStrings.length)-1], "");
 			mergeCache = new String[subStrings.length][subStrings.length];
-			for(int i = 0; i < subStrings.length; i++) {
-				subStrings[i] = scanner.next();
-			}
 			String shortString = null;
 			for(int i = 0; i < subStrings.length; i++) {
 				String ret = subStrings[i] + main.getShortString(1 << i, i);
@@ -51,23 +64,22 @@ public class Main {
 		cache[visit][startIndex] = shortString;
 		return cache[visit][startIndex];
 	}
-	private String merge(int i, int j) {
-		if(mergeCache[i][j] != null) return mergeCache[i][j];
-		String string1 = subStrings[i], string2 = subStrings[j];
+	private String merge(int idx1, int idx2) {
+		if(mergeCache[idx1][idx2] != null) return mergeCache[idx1][idx2];
+		String string1 = subStrings[idx1], string2 = subStrings[idx2];
 		char[] stringArr1 = string1.toCharArray(), stringArr2 = string2.toCharArray();
-		int index1 = 0, index2 = 0;
-		while(index1 < string1.length() && index2 < string2.length()) {
-			if(stringArr1[index1] == stringArr2[index2]) {
-				index1++; index2++;
-			} else {
-				index1++; index2=0;
+		mergeCache[idx1][idx2] = string2;
+		for(int i = 0; i < stringArr1.length; i++) {
+			int tmpI = i, j = 0;
+			for(j = 0; tmpI < stringArr1.length && j < stringArr2.length; j++) {
+				if(stringArr1[tmpI] != stringArr2[j]) break;
+				tmpI++;
+			}
+			if(tmpI == stringArr1.length) {
+				mergeCache[idx1][idx2] = string2.substring(j);
+				break;
 			}
 		}
-		if(index2 == subStrings.length) {
-			mergeCache[i][j] = (index1 == subStrings.length) ? "" : string2;
-		} else {
-			mergeCache[i][j] = string2.substring(index2, string2.length());
-		}
-		return mergeCache[i][j];
+		return mergeCache[idx1][idx2];
 	}
 }
