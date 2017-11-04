@@ -40,7 +40,7 @@ cadabrac
 
 **Note:**
 
-**Show tag:** \#dynamic\_programming
+**Show tag:** \#dynamic\_programming \#bit\_mask
 
 ------------------------------------
 

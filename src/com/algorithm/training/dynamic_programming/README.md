@@ -24,8 +24,9 @@
 	* PACKING (\#knapsack)
 	* MORSE
 	* Partition to K Equal Sum Subsets (\#recursion \#depth\_first\_search)
-	* RESTORE
+	* RESTORE (\#bit\_mask)
 	* Maximum Length of Repeated Subarray (\#array \#hash\_table \#binary\_search)
+	* GRADUATION (\#bit\_mask)
 * Hard
 	* OCR
 	* KLIS
