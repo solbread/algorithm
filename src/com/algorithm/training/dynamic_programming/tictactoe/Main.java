@@ -27,7 +27,7 @@ public class Main {
 				board[i] = scanner.next().toCharArray();
 				for(int j = 0; j < board.length; j++) {
 					turn = board[i][j] == 'x' ? turn+1 : (board[i][j] == 'o' ? turn-1 : turn);
-					boardNumber += Math.pow(3, i*3+j) * (board[i][j] == '.' ? 0 : (board[i][j] == '*' ? 1 : 2));
+					boardNumber += Math.pow(3, i*3+j) * (board[i][j] == '.' ? 0 : (board[i][j] == 'x' ? 1 : 2));
 				}
 			}
 			turn = (turn == 0 ? 'x' : 'o');
@@ -37,20 +37,22 @@ public class Main {
 	}
 	//현재turn이 이기면 1, 비기면 0, 지면 -1
 	public int getGameResult(int boardIdentification, char turn) {
-		if(cache[boardIdentification] != -2) return cache[boardIdentification];
 		if(isFinished()) return -1;
-		if(isGameOver()) return 0;
-		int gameResult = -1;
+		if(cache[boardIdentification] != -2) return cache[boardIdentification];
+		int gameResult = -2;
 		for(int i = 0; i < board.length; i ++) {
 			for(int j = 0; j < board[i].length; j++) {
 				if(board[i][j] == '.') {
 					board[i][j] = turn;
-					gameResult = Math.max(gameResult, reverse(getGameResult(boardIdentification, (char)('o'+'x'-turn))));
+					gameResult = Math.max(gameResult, -getGameResult(
+							boardIdentification + (int)Math.pow(3, i*3+j) * (board[i][j] == '.' ? 0 : (board[i][j] == 'x' ? 1 : 2)), 
+							(char)('o'+'x'-turn)));
 					board[i][j] = '.';
 				}
 			}
 		}
-		return gameResult;
+		cache[boardIdentification] = (gameResult == -2) ?  0 : gameResult;
+		return cache[boardIdentification];
 	}
 	
 	private boolean isFinished() {
@@ -66,20 +68,5 @@ public class Main {
 		}
 		return (board[0][0] != '.' && board[0][0] == board[1][1] && board[1][1] == board[2][2])
 			|| (board[0][2] != '.' && board[0][2] == board[1][1] && board[1][1] == board[2][0]);
-	}
-	
-	private boolean isGameOver() {
-		boolean isGameOver = true;
-		for(int i = 0; i < board.length; i++) {
-			for(int j = 1; j < board[i].length; j++) {
-				if(board[i][j] == '.') return false;
-			}
-		}
-		return isGameOver;
-	}
-	
-	private int reverse(int result) {
-		if(result == 0) return result;
-		return (result == 1) ? -1 : 1;
 	}
 }
