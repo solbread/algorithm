@@ -1,4 +1,4 @@
-## is prime
+## Is Prime
 
 **Difficulty:** Easy
 
@@ -8,7 +8,7 @@
 
 **Note:**
 
-**Show tag:** \#dynamic\_programming
+**Show tag:** \#number\_theory
 
 ----------------------------------------------
 
