@@ -4,7 +4,7 @@
 * Easy
 	* Is Prime
 	* Cal Factor
-	* Service of Eratosthenes
+	* Service of Eratosthenes (\#bit\_mask)
 * Medium
 	* 
 * Hard
