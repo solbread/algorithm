@@ -12,7 +12,7 @@ public class Solution {
 		isPrime[0] = isPrime[1] = false;
 		for(int i = 2; i < isPrime.length; i++) {
 			if(isPrime[i]) {
-				for(int j = i*2; j < isPrime.length; j+=i) {
+				for(int j = i*i; j < isPrime.length; j+=i) {
 					isPrime[j] = false;
 				}
 			}
