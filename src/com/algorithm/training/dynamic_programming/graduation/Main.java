@@ -51,20 +51,18 @@ public class Main {
 		}
 	}
 	public int getMinSemester(int listen, int currentSemester, int reaminedSubjectCount) {
+	    if(reaminedSubjectCount <= 0) return 0;
 	    if(currentSemester > semesterSubjectList.size()) return semesterSubjectList.size()+1;
 	    if(cache[listen][currentSemester] != -1) return cache[listen][currentSemester];
-	    int minSemester = getMinSemester(listen, currentSemester+1, reaminedSubjectCount);
+	    int minSemester = semesterSubjectList.size()+1;
 	    int semesterSubjects = semesterSubjectList.get(currentSemester);
 	    for(int subset = semesterSubjects; subset != 0; subset = (semesterSubjects & (subset-1))) {
 	        int subjectCount = countSubject(subset);
 	        if(subjectCount <= maxSubjectPerSemester && canListen(listen, subset)) {
-	            if(subjectCount >= reaminedSubjectCount) {
-	                return 1;
-	            } else {
-	                minSemester = Math.min(minSemester, 1 + getMinSemester(listen | subset, currentSemester+1, reaminedSubjectCount - subjectCount));
-	            }
+	            minSemester = Math.min(minSemester, 1 + getMinSemester(listen | subset, currentSemester+1, reaminedSubjectCount - subjectCount));
 	        }
 	    }
+	    minSemester = Math.min(minSemester, getMinSemester(listen, currentSemester+1, reaminedSubjectCount));
 	    cache[listen][currentSemester] = minSemester;
 	    return cache[listen][currentSemester];
 	}
