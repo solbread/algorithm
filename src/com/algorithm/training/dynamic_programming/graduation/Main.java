@@ -57,7 +57,7 @@ public class Main {
 	    int semesterSubjects = semesterSubjectList.get(currentSemester);
 	    for(int subset = semesterSubjects; subset != 0; subset = (semesterSubjects & (subset-1))) {
 	        int subjectCount = countSubject(subset);
-	        if(subjectCount <= maxSubjectPerSemester && canListen(listen, subset)) {
+	        if(subjectCount <= reaminedSubjectCount && canListen(listen, subset)) {
 	            if(subjectCount >= reaminedSubjectCount) {
 	                return 1;
 	            } else {
@@ -75,11 +75,11 @@ public class Main {
 	    }
 	    return count;
 	}
-	private boolean canListen(int listen, int currentSubject) {
-        if((listen & currentSubject) == 0) {
+	private boolean canListen(int listen, int currentSubjects) {
+        if((listen & currentSubjects) == 0) { //모든 과목을 들을 수 있는지 확인
             for(int i = 0; i < prevSubjectList.size(); i++) {
-                if((currentSubject & (1 << i)) > 0) {
-                    if((listen & prevSubjectList.get(i)) != prevSubjectList.get(i)) {
+                if((currentSubjects & (1 << i)) > 0) {  //이번학기에 개설된 과목이면
+                    if((listen & prevSubjectList.get(i)) != prevSubjectList.get(i)) { // 해당과목의 선이수과목을 다 들었는지 확인
                         return false;
                     }
                 }
