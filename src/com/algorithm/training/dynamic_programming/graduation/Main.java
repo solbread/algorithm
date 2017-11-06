@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Main {
 	static int[][] cache;
-	static int mustSubjectNumber, maxSubjectPerSemester;
+	static int maxSubjectPerSemester;
 	static Map<Integer, Integer> prevSubjectList;
 	static Map<Integer, Integer> semesterSubjectList;
 	public static void main(String[] args) {
@@ -23,7 +23,7 @@ public class Main {
 		int cases = scanner.nextInt();
 		while(cases-- > 0) {
 			int subjectNumber = scanner.nextInt();
-			mustSubjectNumber = scanner.nextInt();
+			int mustSubjectNumber = scanner.nextInt();
 			int semester = scanner.nextInt();
 			maxSubjectPerSemester = scanner.nextInt();
 			prevSubjectList = new HashMap<>();
@@ -57,7 +57,7 @@ public class Main {
 	    int semesterSubjects = semesterSubjectList.get(currentSemester);
 	    for(int subset = semesterSubjects; subset != 0; subset = (semesterSubjects & (subset-1))) {
 	        int subjectCount = countSubject(subset);
-	        if(subjectCount <= reaminedSubjectCount && canListen(listen, subset)) {
+	        if(subjectCount <= maxSubjectPerSemester && canListen(listen, subset)) {
 	            if(subjectCount >= reaminedSubjectCount) {
 	                return 1;
 	            } else {
