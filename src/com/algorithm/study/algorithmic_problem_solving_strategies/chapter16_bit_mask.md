@@ -120,7 +120,7 @@
 			3. 1번과 2번을 반복하여 모든 부분집합을 구함
 	
 		```
-		for(int subset = bit; bit != 0; bit = ((subset-1) & bit) {
+		for(int subset = bit; bit != 0; subset = ((subset-1) & bit) {
 			//subset은  bit의 부분집합
 		}
 		```
