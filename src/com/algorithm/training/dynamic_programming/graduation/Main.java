@@ -9,7 +9,7 @@ import java.util.Scanner;
 
 public class Main {
 	static int[][] cache;
-	static int maxSubjectPerSemester;
+	static int mustSubjectNumber, maxSubjectPerSemester;
 	static Map<Integer, Integer> prevSubjectList;
 	static Map<Integer, Integer> semesterSubjectList;
 	public static void main(String[] args) {
@@ -23,7 +23,7 @@ public class Main {
 		int cases = scanner.nextInt();
 		while(cases-- > 0) {
 			int subjectNumber = scanner.nextInt();
-			int mustSubjectNumber = scanner.nextInt();
+			mustSubjectNumber = scanner.nextInt();
 			int semester = scanner.nextInt();
 			maxSubjectPerSemester = scanner.nextInt();
 			prevSubjectList = new HashMap<>();
@@ -32,27 +32,28 @@ public class Main {
 				int prevSubjectNumber = scanner.nextInt();
 				int prevSubjectMask = 0;
 				for(int j = 0; j < prevSubjectNumber; j++) {
-					prevSubjectMask += (1 << scanner.nextInt());
+					prevSubjectMask |= (1 << scanner.nextInt());
 				}
 				prevSubjectList.put(i, prevSubjectMask);
 			}
-			for(int i = 1; i <= semester; i++) {
+			for(int i = 0; i < semester; i++) {
 				int semesterSubjectNumber = scanner.nextInt();
 				int semesterSubjectMask = 0;
 				for(int j = 0; j < semesterSubjectNumber; j++) {
-					semesterSubjectMask += (1 << scanner.nextInt());
+					semesterSubjectMask |= (1 << scanner.nextInt());
 				}
 				semesterSubjectList.put(i, semesterSubjectMask);
 			}
-			cache = new int[(int)Math.pow(2, subjectNumber)][semester+1];
+			cache = new int[(int)Math.pow(2, subjectNumber)][semester];
 			for(int[] subCache : cache) Arrays.fill(subCache, -1);
-			int minSemester = main.getMinSemester(0, 1, mustSubjectNumber);
-			System.out.println(minSemester == semesterSubjectList.size() + 1 ? "IMPOSSIBLE" : minSemester);
+			int minSemester = main.getMinSemester(0, 0, mustSubjectNumber);
+			System.out.println(minSemester >= semesterSubjectList.size() + 1 ? "IMPOSSIBLE" : minSemester);
 		}
 	}
+
 	public int getMinSemester(int listen, int currentSemester, int reaminedSubjectCount) {
 	    if(reaminedSubjectCount <= 0) return 0;
-	    if(currentSemester > semesterSubjectList.size()) return semesterSubjectList.size()+1;
+	    if(currentSemester >= semesterSubjectList.size()) return semesterSubjectList.size()+1;
 	    if(cache[listen][currentSemester] != -1) return cache[listen][currentSemester];
 	    int minSemester = semesterSubjectList.size()+1;
 	    int semesterSubjects = semesterSubjectList.get(currentSemester);
