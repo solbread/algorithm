@@ -13,9 +13,11 @@ public class Solution2 {
 		}
 		int sqrt = (int)Math.sqrt(n);
 		for(int i = 2; i <= sqrt; i++) {
-			for(int j = i*i; j <= n; j+=i) {
-				if(minFactor[j] == j) {
-					minFactor[j] = i;
+			if(minFactor[i] == i ) {
+				for(int j = i*i; j <= n; j+=i) {
+					if(minFactor[j] == j) { //이 조건문 없어도 되지 않을까
+						minFactor[j] = i;
+					}
 				}
 			}
 		}
@@ -29,7 +31,7 @@ public class Solution2 {
 		}
 		return factorList;
 	}
-    public static void main(String[] args) {
+	public static void main(String[] args) {
 		Solution2 solution = new Solution2();
 		for(int f : solution.factor(128)) {
 			System.out.print(f + " ");
