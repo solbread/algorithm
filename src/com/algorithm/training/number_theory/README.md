@@ -6,6 +6,6 @@
 	* Cal Factor
 	* Service of Eratosthenes (\#bit\_mask)
 * Medium
-	* 
+	* PASS486
 * Hard
 	*
