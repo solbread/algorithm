@@ -13,6 +13,7 @@
 	* SNAIL
 	* ASYMTILING
 	* TICTACTOE
+	* NUMBERGAME (\#minimax\_algorithm)
 * Medium
 	* Coin Change 2
 	* WILDCARD
