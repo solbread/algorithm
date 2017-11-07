@@ -21,7 +21,7 @@ public class BestMain {
 		while(cases-- > 0) {
 		    pDollNumbers = new int[scanner.nextInt()+1];
 		    childNumber = scanner.nextInt();
-		    int[] pDollCounter = new int[childNumber];
+		    long[] pDollCounter = new long[childNumber];
 		    pDollCounter[0] = 1;
 		    for(int i = 1; i < pDollNumbers.length; i++) {
 		        pDollNumbers[i] = (pDollNumbers[i-1] + scanner.nextInt()) % childNumber;
@@ -30,7 +30,7 @@ public class BestMain {
 		    int singleOrderCount = 0;
 		    for(int i = 0; i < pDollCounter.length; i++) {
 		        if(pDollCounter[i] >= 2) {
-		        	singleOrderCount = (singleOrderCount + (pDollCounter[i] * (pDollCounter[i] - 1) / 2)) % MOD_VALUE;
+		        	singleOrderCount = (int)((singleOrderCount + (pDollCounter[i] * (pDollCounter[i] - 1) / 2)) % MOD_VALUE);
 		        }
 		    }
 		    int maxOrderCount = main.getMultiMaxOrderCount();
