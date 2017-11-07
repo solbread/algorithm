@@ -18,3 +18,5 @@ TODO LIST
 	* LIS (dynamic_programming.lis)
 		* 인덱스트리를 이용한 LIS 구현
 	* dynamic\_programming.morse Main2
+	* dynamic\_programming.graduation Main
+		* 비트마스크를 만들어줄 때 +연산으로 하면 wrong answer가 되는 이유

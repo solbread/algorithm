@@ -71,6 +71,8 @@ getMinSemester(int listen, int currentSemester, int reaminedSubjectCount)를 현
 4. 해당 학기에 휴학을 하는 경우도 고려해야 하므로 아무런 과목도 수강하지 않고 다음 학기로 넘어가는 메소드를 재귀호출 한다.
 5. 위의 과정을 반복하며 최소학기를 구해준다.
 
+**고민해봐야 할 것(TODO)**
+선이수 과목 리스트와 학기 별 들을수있는 과목 리스트의 bit mask를 만들어 줄 때 산술연산으로 하면 결과가 wrong answer로 나오는데, 정확한 이유를 잘 모르겠다.
 
 **Main2** <br/>
 시간복잡도 : O(m\*2^(n+c)) 공간복잡도 : O(m\*2^n) (m=학기의 수, n=과목의 수, c=학기에 개설 되는 과목 수) <br/>
