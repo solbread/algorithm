@@ -20,3 +20,5 @@ TODO LIST
 	* dynamic\_programming.morse Main2
 	* dynamic\_programming.graduation Main
 		* 비트마스크를 만들어줄 때 +연산으로 하면 wrong answer가 되는 이유
+	* dynamic\_programming.tictactoe
+		* 틱택토 게임의 중복을 제거 하여 더 빠르게 구현하기
