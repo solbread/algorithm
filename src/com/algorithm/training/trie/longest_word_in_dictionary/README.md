@@ -30,7 +30,7 @@ Both "apply" and "apple" can be built from other words in the dictionary. Howeve
 * The length of words will be in the range [1, 1000].
 * The length of words[i] will be in the range [1, 30].
 
-**Show tag:** 
+**Show tag:** \#trie \#hash\_table
 
 -----------------------------------------------
 
