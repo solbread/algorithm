@@ -15,8 +15,7 @@ public class Solution {
                     break;
                 } else if(i == word.length()-1) {
                     currentTrie[c[i]-'a'] = new Object[26];
-                    if(longestWord == null || longestWord.length() < word.length() 
-                            || (longestWord.length() == word.length() && longestWord.compareTo(word) > 0)) {
+                    if(longestWord == null || longestWord.length() < word.length()) {
                         longestWord = word; 
                     }
                 }
