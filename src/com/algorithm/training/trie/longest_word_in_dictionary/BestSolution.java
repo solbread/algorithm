@@ -32,7 +32,7 @@ public class BestSolution {
         return longestWord;
     }
 	public static void main(String[] args) {
-	    Solution solution = new Solution();
+	    BestSolution solution = new BestSolution();
 		System.out.println(solution.longestWord(new String[]{"w","wo","wor","worl", "world"})); //world
 		System.out.println(solution.longestWord(new String[]{"a", "banana", "app", "appl", "ap", "apply", "apple"})); //apple
 		System.out.println(solution.longestWord(new String[]{"a", "b"})); //a
