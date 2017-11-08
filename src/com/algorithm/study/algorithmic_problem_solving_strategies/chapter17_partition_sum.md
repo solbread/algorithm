@@ -18,4 +18,4 @@
 	2. 분산의 계산(cal\_variance) : solve(2017-11-06)
 	3. 2차원 배열의 구간합 계산(cal\_matrix) : solve(2017-11-06)
 	4. 합이 0에 가장 가까운 구간(get\_zero\_approximate\_range) : solve(2017-11-06)
-	5. 크리스마스 인형(christmas)
+	5. 크리스마스 인형(christmas) : solve(2017-11-07)
