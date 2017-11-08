@@ -7,9 +7,10 @@ public class Solution {
     static int[][] matrix;
     static boolean[][] visit;
     public List<int[]> pacificAtlantic(int[][] matrix) {
+        List<int[]> points = new ArrayList<>();
+        if(matrix.length == 0) return points;
         this.matrix = matrix;
         visit = new boolean[matrix.length][matrix[0].length];
-        List<int[]> points = new ArrayList<>();
         for(int i = 0; i < matrix.length; i++) {
             for(int j = 0; j < matrix.length; j++) {
                 if(canFlow(i, j) == 3) {
