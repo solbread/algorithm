@@ -20,7 +20,7 @@ public class BestSolution {
         return longestWord;
     }
     private String getLongestWord(Object[][] trie) {
-        String longestWord = null;
+        String longestWord = "";
         for(int i = 0; i < trie.length; i++) {
             if(trie[i][0] != null && trie[i][1] != null) {
                 String currentWord = String.valueOf((char)('a'+i)) + getLongestWord((Object[][])trie[i][0]);
