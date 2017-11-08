@@ -1,9 +1,5 @@
 package com.algorithm.training.trie.longest_word_in_dictionary;
 
-import java.util.Arrays;
-
-import javax.swing.plaf.ColorUIResource;
-
 public class BestSolution {
     public String longestWord(String[] words) {
         Object[][] trie = new Object[26][2];
@@ -11,11 +7,11 @@ public class BestSolution {
             char[] c = word.toCharArray();
             Object[][] currentTrie = trie;
             for(int i = 0; i < word.length(); i++) {
-                if(currentTrie[c[i]-'a'] == null) {
-                    currentTrie[c[i]='a'][0] = new Object[26][2];
+                if(currentTrie[c[i]-'a'][0] == null) {
+                    currentTrie[c[i]-'a'][0] = new Object[26][2];
                 }
                 if(i == word.length()-1) {
-                    currentTrie[c[i]='a'][1] = true;
+                    currentTrie[c[i]-'a'][1] = true;
                 }
                 currentTrie = (Object[][])currentTrie[c[i]-'a'][0];
             }
