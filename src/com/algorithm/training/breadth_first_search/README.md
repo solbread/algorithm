@@ -3,5 +3,5 @@
 **Problem list**
 * Easy
 * Medium
-	* 01 Matrix (\#Depth-First-Search)
+	* 01 Matrix (\#depth\_fisrt\_search)
 * Hard
