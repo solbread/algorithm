@@ -10,7 +10,7 @@
 	* JLIS
 	* PI
 	* TITLING2
-	* SNAIL
+	* SNAILF
 	* ASYMTILING
 	* TICTACTOE
 	* NUMBERGAME (\#minimax\_algorithm)
@@ -28,6 +28,9 @@
 	* RESTORE (\#bit\_mask)
 	* Maximum Length of Repeated Subarray (\#array \#hash\_table \#binary\_search)
 	* GRADUATION (\#bit\_mask)
+	* BLOCKGAME
+	* SUSHI
+	* GENIUS
 * Hard
 	* OCR
 	* KLIS
