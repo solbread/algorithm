@@ -1,6 +1,7 @@
 package com.algorithm.training.depth_first_search.pacific_atlantic_water_flow;
 
 import java.util.ArrayList;
+import java.util.Arrays;
 import java.util.List;
 
 public class Solution {
@@ -12,7 +13,7 @@ public class Solution {
         this.matrix = matrix;
         visit = new boolean[matrix.length][matrix[0].length];
         for(int i = 0; i < matrix.length; i++) {
-            for(int j = 0; j < matrix.length; j++) {
+            for(int j = 0; j < matrix[i].length; j++) {
                 if(canFlow(i, j) == 3) {
                     points.add(new int[]{i, j});
                 }
@@ -31,7 +32,7 @@ public class Solution {
         if(i > 0 && !visit[i-1][j] && matrix[i][j] >= matrix[i-1][j]) { //위
             path |= canFlow(i-1, j);
         }
-        if(j < matrix.length-1 && !visit[i][j+1] && matrix[i][j] >= matrix[i][j+1]) { //오른쪽
+        if(j < matrix[0].length-1 && !visit[i][j+1] && matrix[i][j] >= matrix[i][j+1]) { //오른쪽
             path |= canFlow(i, j+1);
         }
         if(j > 0 && !visit[i][j-1] && matrix[i][j] >= matrix[i][j-1]) { //왼쪽
@@ -55,6 +56,11 @@ public class Solution {
     public static void main(String[] args) {
         Solution solution = new Solution();
         List<int[]> points = solution.pacificAtlantic(new int[][]{{1,2,2,3,5},{3,2,3,4,4},{2,4,5,3,1},{6,7,1,4,5},{5,1,1,2,4}});
+        for(int[] point : points) {
+            System.out.print("[" + point[0] + ", " + point[1] + "] ");
+        }
+        System.out.println();
+        points = solution.pacificAtlantic(new int[][]{{1,1},{1,1},{1,1}});
         for(int[] point : points) {
             System.out.print("[" + point[0] + ", " + point[1] + "] ");
         }
