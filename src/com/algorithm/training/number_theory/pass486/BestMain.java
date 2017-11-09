@@ -13,7 +13,7 @@ public class BestMain {
 			e.printStackTrace();
 		}
 		int[] minFactor = new int[10000001];
-		int[] minFactorPow = new int[10000001];
+		byte[] minFactorPow = new byte[10000001];
 		int[] factorNumber = new int[10000001];
 		minFactor[0] = minFactor[1] = -1;
 		for(int i = 2; i < minFactor.length; i++) {
@@ -38,7 +38,7 @@ public class BestMain {
 				if(minFactor[i] != minFactor[m]) {
 					minFactorPow[i] = 1;
 				} else {
-					minFactorPow[i] = (minFactorPow[m] + 1);
+					minFactorPow[i] = (byte) (minFactorPow[m] + 1);
 				}
 				factorNumber[i] = (factorNumber[m] / minFactorPow[i]) * (minFactorPow[i] + 1);
 			}
