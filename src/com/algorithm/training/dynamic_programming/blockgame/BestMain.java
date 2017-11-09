@@ -2,13 +2,15 @@ package com.algorithm.training.dynamic_programming.blockgame;
 
 import java.io.File;
 import java.io.FileNotFoundException;
+import java.util.HashSet;
 import java.util.Scanner;
+import java.util.Set;
 
 public class BestMain {
-	static int[][][] settingBlock = {{{-1,0},{-1,-1}}, {{-1,0},{-1,1}}, {{1,0},{1,-1}}, {{1,0},{1,1}}, {{0,1}}, {{1,0}}};
-	static char[][] board;
+    static Set<Integer> blockCases;
+	static byte[] cache;
 	public static void main(String[] args) {
-		BestMain main = new BestMain();
+	    BestMain main = new BestMain();
 		Scanner scanner = new Scanner(System.in);
 		try {
 			scanner = new Scanner(new File("src/com/algorithm/training/dynamic_programming/blockgame/test"));
@@ -16,47 +18,54 @@ public class BestMain {
 			e.printStackTrace();
 		}
 		int cases = scanner.nextInt();
+		cache = new byte[(int)Math.pow(2,25)];
+		blockCases = main.getblockCases();
 		while(cases-- > 0) {
-			board = new char[5][5];
-			for(int i = 0; i < board.length; i++) {
-				board[i] = scanner.next().toCharArray();
+		    int boardState = 0;
+			for(int i = 0; i < 5; i++) {
+			    char[] c = scanner.next().toCharArray();
+			    for(int j = 0; j < 5; j ++) {
+			        if(c[j] == '#') boardState |= (1 << (5*i + j));
+			    }
 			}
-			System.out.println(main.isWin() ? "WINNING" : "LOSING");
+			System.out.println(main.isWin(boardState) == 1 ? "WINNING" : "LOSING");
 		}
 	}
-	public boolean isWin() {
-		boolean isWin = false;
-		for(int i = 0; i < board.length; i++) {
-			for(int j = 0; j < board[i].length; j++) {
-				if(board[i][j] == '.') {
-					board[i][j] = '#';
-					for(int k = 0; k < settingBlock.length; k++) {
-						isWin |= setBlock(i, j, settingBlock[k]);
-					}
-					board[i][j] = '.';
-				}
-			}
-		}
-		return isWin;
+	public Set<Integer> getblockCases() {
+	    Set<Integer> blockCases = new HashSet<>();
+	    for(int i = 0; i < 4; i++) {
+	        for(int j = 0; j < 4; j++) {
+	            int[] point = new int[4];
+	            int sumPoint = 0;
+	            for(int x = 0; x < 2; x++) {
+	                for(int y = 0; y < 2; y++) {
+	                    point[2*x+y] = 1 << (5*(i+x)+j+y);
+	                    sumPoint+=point[2*x+y];
+	                }
+	            }
+	            for(int k = 0; k < point.length; k++) {
+	                blockCases.add(sumPoint-point[k]);
+	            }
+	        }
+	    }
+	    for(int i = 0; i < 5; i++) {
+	        for(int j = 0; j < 5; j++) {
+	            if(j!=4) blockCases.add( (1<<(5*i+j)) + (1<<(5*i+j+1)) );
+	            if(i!=4) blockCases.add( (1<<(5*i+j)) + (1<<(5*(i+1)+j)) );
+	        }
+	    }
+	    return blockCases;
 	}
-	private boolean setBlock(int cX, int cY, int[][] points) {
-		boolean canSet = true, isWin = false;
-		for(int i = 0; i < points.length; i++) {
-			if(cX+points[i][0] < 0 || cX+points[i][0] >= board.length 
-					|| cY+points[i][1] < 0 || cY+points[i][1] >= board[0].length 
-					|| board[cX+points[i][0]][cY+points[i][1]] == '#') {
-				canSet = false;
-			}
-		}
-		if(canSet) {
-			for(int i = 0; i < points.length; i++) {
-				board[cX+points[i][0]][cY+points[i][1]] = '#';
-			}
-			isWin |= !isWin();
-			for(int i = 0; i < points.length; i++) {
-				board[cX+points[i][0]][cY+points[i][1]] = '.';
-			}
-		}
+	public byte isWin(int boardState) { //-1이면 losing 1이면 winning
+	    if(cache[boardState] != 0) return cache[boardState];
+	    byte isWin = -1;
+	    for(Integer blockCase : blockCases) {
+	        if((boardState & blockCase) == 0 && -isWin(boardState | blockCase) == 1) {
+	            isWin = 1;
+	            break;
+	        }
+	    }
+		cache[boardState] = isWin;
 		return isWin;
 	}
 }
