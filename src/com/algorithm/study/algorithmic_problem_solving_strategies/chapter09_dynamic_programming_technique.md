@@ -91,8 +91,8 @@
 	8. 실험 데이터 복구하기 (RESTORE) : solve(2017-11-04)
 	9. 틱택토 (TICTACTOE) : solve(2017-11-04)
 	10. 숫자 게임 (NUMBERGAME) : solve(2017-11-08)
-	11. 블록 게임 (BLOCKGAME)
-	12. 삼각형 위의 최대 경로(TRIPATHCNT)
+	11. 블록 게임 (BLOCKGAME) : solve(2017-11-09)
+	12. 삼각형 위의 최대 경로(TRIANGLEPATH) : solve(2017-11-09)
 	13. 회전초밥 (SUSHI)
 	14. 지니어스 (GENIUS)
 	
