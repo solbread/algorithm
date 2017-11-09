@@ -27,7 +27,7 @@ public class BestMain2 {
             }
             for(int i = triangle.length-2; i >= 0; i--) {
                 for(int j = 0; j < triangle[i].length; j++) {
-                    dp[i%2][j] = Math.max((j==triangle[i].length-1)? 0 : dp[(i+1)%2][j+1], dp[(i+1)%2][j]) + triangle[i][j];
+                    dp[i%2][j] = Math.max(dp[(i+1)%2][j+1], dp[(i+1)%2][j]) + triangle[i][j];
                 }
             }
             System.out.println(dp[0][0]);
