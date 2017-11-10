@@ -32,9 +32,14 @@ public class BestMain {
 			while(cooking) {
 				for(int i = 0; i < recipe.length; i++) {
 					int totalSpoon = (int)Math.ceil(ratio * recipe[i]);
-					additionalPut[i] += totalSpoon - put[i];
-					put[i] = totalSpoon;
-					if(ratio != (double)put[i]/recipe[i]) {
+					if(totalSpoon > put[i]) {
+						additionalPut[i] += totalSpoon - put[i];
+						put[i] = totalSpoon;
+						if(ratio != (double)put[i]/recipe[i]) {
+							ratio = (double)put[i]/recipe[i];
+							break;
+						}
+					} else if(totalSpoon < put[i]) {
 						ratio = (double)put[i]/recipe[i];
 						break;
 					}
