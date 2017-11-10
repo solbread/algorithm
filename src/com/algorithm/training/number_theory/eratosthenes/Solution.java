@@ -10,7 +10,7 @@ public class Solution {
 		boolean isPrime[] = new boolean[n];
 		Arrays.fill(isPrime, true);
 		isPrime[0] = isPrime[1] = false;
-		for(int i = 2; i < isPrime.length; i++) {
+		for(int i = 2; i <= (int)Math.sqrt(isPrime.length); i++) {
 			if(isPrime[i]) {
 				for(int j = i*i; j < isPrime.length; j+=i) {
 					isPrime[j] = false;
