@@ -8,7 +8,6 @@ import java.util.Scanner;
 
 public class Main {
 	public static void main(String[] args) {
-		Main main = new Main();
 		Scanner scanner = new Scanner(System.in);
 		try {
 			scanner = new Scanner(new File("src/com/algorithm/training/linked_list/josephus/test"));
