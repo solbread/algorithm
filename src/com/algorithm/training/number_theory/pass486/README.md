@@ -52,4 +52,26 @@ hi의 max값인 10000000를 n이라고 하면, <br/>
 따라서 시간복잡도는 nlogn이 된다. <br/>
 (알고리즘 문제해결 전략 505p에 상세하게 나와있다.) <br/>
 
-참고자료 : 조화급수(https://ko.wikipedia.org/wiki/%EC%A1%B0%ED%99%94%EA%B8%89%EC%88%98)
+참고자료 : 조화급수(https://ko.wikipedia.org/wiki/%EC%A1%B0%ED%99%94%EA%B8%89%EC%88%98) <br/>
+
+**Best Main : Using Eratosthenes** <br/>
+시간복잡도 : O(nloglogn) 공간복잡도 : O(n) (n=10000000) <br/>
+시간복잡도는 가장 작은 소인수를 minFactor에 채우는 반복문에 의해서 결정된다. <br/>
+
+3개의 배열을 사용하는데 각각의 배열의 의미는 아래와 같다.<br/>
+* minFactor : 가장 작은 소인수를 저장
+* minFactorPoew : 소인수 분해에 가장 작은 소인수가 몇승인지를 저장
+* factorNumber : 약수의 개수를 저장
+
+우선 에라토스테네스의 체를 이용하여 가장 작은 소인수를 minFactor에 저장한다. <br/>
+minFactor를 이용한 소인수분해를 하여 약수의 개수를 셀 수 있지만, 소인수 분해를 하지 않고도 약수의 개수를 셀 수 있다. <br/>
+약수의 개수를 구하고자 하는 수를 a라고 하면 a의 minFactor로 나눈 수 b를 얻는다. <br/>
+b의 minFactorPow와 factorNumber를 가지고 a의 minFactorPow와 factorNumber를 계산할 수 있다. <br/>
+* minFactorPow 계산
+	* b의 minFactor가 a의 minFactor와 같을 경우에는 a의 minFactorPow는 b의 minFactorPow+1가 되며 <br/>
+	* b의 minFactor가 a의 minFactor와 다를 경우에는 a의 minFactorPow는 1이 된다. <br/>
+* factorNumber의 계산
+	* a와 b의 차이는 a에는 a의 minFactor가 한번 더 곱해져 있다는 것이다. (a의 minFactor를 c라고 지칭)
+	* 따라서 a의 약수의 개수를 구하기 위해서는 b의 약수의개수 / b에서 c의 승수+1 \* a에서 c의 승수+1 를 해주면 된다.
+	* b에서의 c의 승수+1는 a의 minFactorPow와 같고 a에서의 c의 승수+1는 minFactorPow+1이다.
+	* 즉, factorNumber[a] = factorNumber[b]/minFactorPow[a]\*(minFactorPow[a]+1)

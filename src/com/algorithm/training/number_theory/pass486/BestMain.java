@@ -34,7 +34,6 @@ public class BestMain {
 				factorNumber[i] = 2;
 			} else {
 				int m =  i / minFactor[i];
-//				minFactorPow[i] = minFactorPow[m] + 1; //추후 확인할 것 
 				if(minFactor[i] != minFactor[m]) {
 					minFactorPow[i] = 1;
 				} else {
