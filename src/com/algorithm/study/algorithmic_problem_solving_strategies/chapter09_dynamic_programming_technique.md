@@ -94,6 +94,6 @@
 	10. 숫자 게임 (NUMBERGAME) : solve(2017-11-08)
 	11. 블록 게임 (BLOCKGAME) : solve(2017-11-09)
 	12. 삼각형 위의 최대 경로(TRIANGLEPATH) : solve(2017-11-09)
-	13. 회전초밥 (SUSHI)
+	13. 회전초밥 (SUSHI) : solve(2017-10-10)
 	14. 지니어스 (GENIUS)
 	

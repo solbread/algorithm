@@ -21,6 +21,12 @@ https://algospot.com/judge/problem/read/PACKING
 출력 <br/>
 각 테스트 케이스별 출력의 첫 줄에는 가져갈 수 있는 물건들의 최대 절박도 합과 가져갈 물건들의 개수를 출력합니다. 이후 한 줄에 하나씩 각 물건들의 이름을 출력합니다. 만약 절박도를 최대화하는 물건들의 조합이 여럿일 경우 아무 것이나 출력해도 좋습니다.
 
+**Note:**
+
+**Show tag:** \#dynamic\_programming
+
+**Related Problem:** dynamic_programming.shusi
+
 ```
 Input:
 2
