@@ -16,6 +16,8 @@ Note that [10, 5, 2] is not included as the product of 100 is not strictly less 
 
 **show tag:** \#array \#two_pointers
 
+**Related Problem:** queue/ites <br/>
+
 ----------------------------------------
 
 **Solution** <br/>
