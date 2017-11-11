@@ -25,3 +25,12 @@ TODO LIST
 	* dynamic_programming.numbergame	
 		* 미니맥스 알고리즘을 이용한 구현
 	* 알고리즘문제해결전략 351p 행렬 거듭 제곱을 이용한 동적 계획법(피보나치)
+	* 알고리즘문제해결전략 515p~156p
+		* 확장유클리드 알고리즘
+		* 중국인 나머지정리
+		* 루카스의 정리
+		* 참고자료
+			* 중국인의 나머지 정리와 확장 유클리드 알고리즘 http://blog.myungwoo.kr/55
+			* 나머지 연산의 곱셈 역원 https://www.acmicpc.net/blog/view/29
+	* 거듭제곱 연산할 때 O(1)만에 하기
+		* skill.pow.CalculatePow3
