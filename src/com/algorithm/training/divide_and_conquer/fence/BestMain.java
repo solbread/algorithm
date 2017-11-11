@@ -31,7 +31,7 @@ public class BestMain {
 			}
 			while(!boards.isEmpty()) {
 				int j = boards.pop();
-				maxWeight = Math.max(maxWeight, (boardHeights.length-(boards.isEmpty() ? -1 : boards.peek()))*boardHeights[j]);
+				maxWeight = Math.max(maxWeight, (boardHeights.length-(boards.isEmpty() ? -1 : boards.peek())-1)*boardHeights[j]);
 			}
 			System.out.println(maxWeight);
 		}
