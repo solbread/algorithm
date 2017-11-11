@@ -22,17 +22,17 @@ public class Main {
 				if(!isMathched) break;
 				switch (c) {
 				case ')':
-					if(stack.pop() != '(') {
+					if(stack.isEmpty() || stack.pop() != '(') {
 						isMathched = false;
 					}
 					break;
 				case '}':
-					if(stack.pop() != '{') {
+					if(stack.isEmpty() || stack.pop() != '{') {
 						isMathched = false;
 					}
 					break;
 				case ']':
-					if(stack.pop() != '[') {
+					if(stack.isEmpty() || stack.pop() != '[') {
 						isMathched = false;
 					}
 					break;
