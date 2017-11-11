@@ -6,6 +6,6 @@
 * Easy
 	* QUARDTREE
 * Medium
-	* FENCE
+	* FENCE (\#stack)
 * Hard
 	* The Skyline Problem (\#binary_indexed_tree \#segment_tree \#heap)

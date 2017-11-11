@@ -16,8 +16,9 @@ public class BestMain {
 		}
 		int cases = scanner.nextInt();
 		while(cases-- > 0) {
-			boardHeights = new int[scanner.nextInt()];
-			for(int i = 0; i < boardHeights.length; i++) {
+			boardHeights = new int[scanner.nextInt()+1];
+			boardHeights[boardHeights.length-1] = 0;
+			for(int i = 0; i < boardHeights.length-1; i++) {
 				boardHeights[i] = scanner.nextInt();
 			}
 			int maxWeight = 0;
@@ -25,13 +26,10 @@ public class BestMain {
 			for(int i = 0; i < boardHeights.length; i++) {
 				while(!boards.isEmpty() && boardHeights[boards.peek()] >= boardHeights[i]) {
 					int j = boards.pop();
+					if(boardHeights[j] == boardHeights[i]) continue; //생략가능
 					maxWeight = Math.max(maxWeight, (i-(boards.isEmpty() ? -1 : boards.peek())-1)*boardHeights[j]);
 				}
 				boards.add(i);
-			}
-			while(!boards.isEmpty()) {
-				int j = boards.pop();
-				maxWeight = Math.max(maxWeight, (boardHeights.length-(boards.isEmpty() ? -1 : boards.peek())-1)*boardHeights[j]);
 			}
 			System.out.println(maxWeight);
 		}
