@@ -41,7 +41,7 @@ public class Main {
 					break;
 				}
 			}
-			System.out.println(isMathched ? "YES" : "NO");
+			System.out.println(isMathched && stack.isEmpty() ? "YES" : "NO");
 		}
 	}
 }
