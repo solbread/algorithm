@@ -48,7 +48,17 @@ Output:
 
 **Show tag:** \#dynamic\_programming
 
+**Related Problem:** dynamic_programming.packing
+
 ------------------------------------
 
 **Solution** <br/>
+시간복잡도 : O(budge*n) 공간복잡도 : O(201) <br/>
+이 문제는 budge이 주어질 때 해당 budge으로 초밥을 사먹어서 얻을 수 있는 최대 선호도 이다. <br/>
+문제의 솔루션은 각 budge을 1부터 시작하여 budge값까지 늘려가며 반복하여 각각의 budge마다 해당 budge으로 초밥을 사먹어서 얻을 수 있는 최대 선호도를 구한다. <br/>
+점화식은 cache[budge] = MAX(price + cache[budge-price] 이다. <br/>
 
+그런데 예산이 최대 2,147,483,647으로 이 크기의 cache를 잡기에는 너무 크다.(문제에서 주어진 메모리 제한은 64mb) <br/>
+따라서 cache의 메모리를 줄이는 방법을 생각해보면 아래와 같다. <br/>
+1. cache[budge] = price + cache[budge-price]인데, 스시가격의 최대값은 20,000이므로 cache[budge]를 구하기 위해서는 cache[budge-20000] 이전의 원소들은 호출할 필요가 없다. 따라서 슬라이딩 윈도우 기법으로 cache의 크기를 20001까지 줄일 수 있다.
+2. 초밥의 가격은 100의 배수이기 때문에 초기 100원 이하는 의미가 없기 때문에 초기 budge과 스시 개당 가격들을 100으로 나눠서 사용해도 된다. 이렇게 하면 시간복잡도인 budge\*n의 값도 줄어들고(약20억), 공간복잡도인 cache의 크기도 20001에서 201로 줄일 수 있다.
