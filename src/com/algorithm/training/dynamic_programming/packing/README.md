@@ -25,7 +25,7 @@ https://algospot.com/judge/problem/read/PACKING
 
 **Show tag:** \#dynamic\_programming
 
-**Related Problem:** dynamic_programming.shusi
+**Related Problem:** dynamic_programming.sushi
 
 ```
 Input:
