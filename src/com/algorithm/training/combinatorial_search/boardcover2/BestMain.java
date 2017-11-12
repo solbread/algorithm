@@ -7,14 +7,13 @@ import java.io.FileNotFoundException;
 import java.io.IOException;
 import java.io.InputStreamReader;
 import java.util.ArrayList;
-import java.util.Collections;
 import java.util.List;
 import java.util.StringTokenizer;
 
 public class BestMain {
-	static char[][] board, block;
+	static boolean[][] board, block; //true면 채워져있고 false면 비어있는것 
 	static List<List<int[]>> settingCase;
-	static int blockWidth, blockHeight, maxBlockCount;
+	static int blockWidth, blockHeight, blockNumber, maxBlockCount;
 	public static void main(String[] args) throws IOException {
 		BestMain main = new BestMain();
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -27,36 +26,38 @@ public class BestMain {
 		while(cases-- > 0) {
 			maxBlockCount = 0;
 			StringTokenizer stringTokenizer = new StringTokenizer(bufferedReader.readLine(), " ");
-			board  = new char[Integer.parseInt(stringTokenizer.nextToken())][Integer.parseInt(stringTokenizer.nextToken())];
+			board  = new boolean[Integer.parseInt(stringTokenizer.nextToken())][Integer.parseInt(stringTokenizer.nextToken())];
 			int blockWidth = Integer.parseInt(stringTokenizer.nextToken()), blockHeight = Integer.parseInt(stringTokenizer.nextToken()), blanckCount = 0;
 			for(int i = 0;  i < board.length; i++) {
-				board[i] = bufferedReader.readLine().toCharArray();
+				char row[] = bufferedReader.readLine().toCharArray();
 				for(int j = 0; j < board[i].length; j++) {
-					if(board[i][j] == '.') blanckCount++;
+					board[i][j] = row[j] == '#';
+					if(row[j] == '.') {
+						blanckCount++;
+					}
 				}
 			}
-			int blockNumber = 0;
-			block = new char[blockWidth][blockHeight];
+			block = new boolean[blockWidth][blockHeight];
 			for(int i = 0; i < block.length; i++) {
-				block[i] = bufferedReader.readLine().toCharArray();
-				for(int j = 0; j < block[i].length; j++) {
-					if(block[i][j] == '#') blockNumber++;
+				char row[] = bufferedReader.readLine().toCharArray();
+				for(int j = 0; j < row.length; j++) {
+					block[i][j] = row[j] == '#';
 				}
 			}
-			main.makeSettingCase(blockNumber);
-			main.countMaxBlock(0, blanckCount);
+			main.makeSettingCase();
+			main.countMaxBlock(0, 0, 0, blanckCount);
 			System.out.println(maxBlockCount);
 		}
 	}
 	
-	public void makeSettingCase(int blockNumber) {
+	public void makeSettingCase() {
 		settingCase = new ArrayList<>();
 		for(int i = 0; i < 4; i++) {
 			List<int[]> setting = new ArrayList<>();
 			int leftTop[] = {-1,-1};
 			for(int j = 0; j < block.length; j++) {
 				for(int k = 0; k < block[j].length; k++) {
-					if(block[j][k] == '#') {
+					if(block[j][k]) {
 						if(leftTop[0] == -1) {
 							leftTop[0] = j;
 							leftTop[1] = k;
@@ -65,21 +66,21 @@ public class BestMain {
 					}
 				}
 			}
-			Collections.sort(setting, (a,b) -> (a[0]==b[0] ? a[1]-b[1] : a[0]-b[0]));
-			boolean isSame = true;
-			for(List<int[]> addedSetting : settingCase) {
-				for(int j = 0; j < setting.size(); j++) {
-					isSame = isSame && addedSetting.get(j)[0] == setting.get(j)[0]
-							&& addedSetting.get(j)[1] == addedSetting.get(j)[1];
+			boolean isSame = !settingCase.isEmpty();
+			for(int j = 0; j < settingCase.size() && isSame; j++) {
+				for(int k = 0; k < setting.size() && isSame; k++) {
+					isSame = isSame && settingCase.get(j).get(k)[0] == setting.get(k)[0]
+							&& settingCase.get(j).get(k)[1] == settingCase.get(j).get(k)[1];
 				}
 			}
-			if(settingCase.isEmpty() || !isSame) settingCase.add(setting);
+			if(!isSame) settingCase.add(setting);
 			rotateBlock();
 		}
+		blockNumber = settingCase.get(0).size();
 	}
 	
 	public void rotateBlock() {
-		char[][] rotatedBlock = new char[block[0].length][block.length];
+		boolean[][] rotatedBlock = new boolean[block[0].length][block.length];
 		for(int i = 0; i < rotatedBlock.length; i++) {
 			for(int j = 0; j < rotatedBlock[0].length; j++) {
 				rotatedBlock[i][j] = block[block.length-1-j][i];
@@ -89,23 +90,24 @@ public class BestMain {
 	}
 	
 	
-	public void countMaxBlock(int currentBlockCount, int remainedBlanckCount) {
-		if(currentBlockCount + remainedBlanckCount / settingCase.get(0).size() <= maxBlockCount) return;
+	public void countMaxBlock(int i, int j, int currentBlockCount, int remainedBlanckCount) {
+		if(currentBlockCount + remainedBlanckCount / blockNumber <= maxBlockCount) return;
 		boolean cover = false;
-		for(int i = 0; i < board.length && !cover; i++) {
-			for(int j = 0; j < board[i].length && !cover; j++) {
-				if(board[i][j] == '.') {
+		for(; i < board.length && !cover; i++) {
+			j = 0;
+			for(; j < board[i].length && !cover; j++) {
+				if(!board[i][j]) {
 					cover = true;
 					for(List<int[]> settings : settingCase) {
 						if(canSet(settings, i, j)) {
-							setBlock(settings, i, j, '#');
-							countMaxBlock(currentBlockCount+1, remainedBlanckCount-settingCase.get(0).size());
-							setBlock(settings, i, j, '.');
+							setBlock(settings, i, j, true);
+							countMaxBlock(i, j+1, currentBlockCount+1, remainedBlanckCount-blockNumber);
+							setBlock(settings, i, j, false);
 						}
 					}
-					board[i][j] = '#';
-					countMaxBlock(currentBlockCount, remainedBlanckCount-1);
-					board[i][j] = '.';
+					board[i][j] = true;
+					countMaxBlock(i, j+1, currentBlockCount, remainedBlanckCount-1);
+					board[i][j] = false;
 				}
 			}
 		}
@@ -114,19 +116,19 @@ public class BestMain {
 
 	private boolean canSet(List<int[]> settings, int cX, int cY) {
 		boolean canSet = true;
-		for(int[] setting : settings) {
-			int x = setting[0];
-			int y = setting[1];
-			canSet = canSet && cX+x >= 0 && cX+x < board.length 
-					&& cY+y >= 0 && cY+y < board[0].length
-					&& board[cX+x][cY+y] == '.';
+		for(int i = 0; i < settings.size() && canSet; i++) {
+			int afterX = cX + settings.get(i)[0];
+			int afgterY = cY + settings.get(i)[1];
+			canSet = canSet && afterX >= 0 && afterX < board.length 
+					&& afgterY >= 0 && afgterY < board[0].length
+					&& !board[afterX][afgterY];
 		}
 		return canSet;
 	}
 	
-	private void setBlock(List<int[]> settings, int cX, int cY, char setChar) {
+	private void setBlock(List<int[]> settings, int cX, int cY, boolean setMode) {
 		for(int[] set : settings) {
-			board[cX+set[0]][cY+set[1]] = setChar;
+			board[cX+set[0]][cY+set[1]] = setMode;
 		}
 	}
 }
