@@ -51,6 +51,26 @@ Output:
 
 **Show tag:** \#combinatorial\_search \#dynamic\_programming
 
+**Realted Problem:** exhaustive_search.boardcover
+
 ------------------------------------
 
-**Solution** <br/>
+**Best Main : Unsolved Solution(Time Limit Excceed)** <br/>
+시간복잡도 : ? 공간복잡도 : O(n*m) (n=보드가로크기 m=보드세로크기) <br/>
+_시간복잡도를 정확하게 계산하기가 어렵다_ <br/>
+boardcover 문제의 확장판으로 가장 많은 칸을 덮는 방법을 세는 최적화 문제이다. <br/>
+boardcover 문제와 마찬가지로 아직 비어있는 칸 중에서 가장 왼쪽 상단에 있는 칸부터 채워나간다는 규칙으로 boardcover에서는 중복해서 세는것을 방지하였지만, 이 문제에서는 같은 상태를 여러번 방문하는 것을 줄여 시간복잡도를 줄인다. <br/>
+
+주어진 블록의 형태를 가지고 왼쪽 상단을 기준으로 상대좌표 리스트를 만들어서 저장하는데, <br/>
+90도 회전을 3번 시켜 총 4가지의 상대좌표를 얻어서 저장해둔다. <br/>
+만약 회전했을 떄 블록의 형태가 동일하다면 리스트에서 제외시켜서 중복해서 체크하는 것을 방지한다. <br/>
+
+countMaxBlock(int i, int j, int currentBlockCount, int remainedBlanckCount)는 board의 (i,j)에서 시작하여 현재까지의 놓은 블록의 개수가 currentBlcokCount이며 보드의 남은 빈 공간이 remainedBlankCount일 때 놓을 수 있는 최대 블록의 개수로 정의한다. <br/>
+이 메소드에서는 보드에서 비어있는 칸 중에서 가장 왼쪽 상단을 구해서 해당 빈칸에 놓을 수 있는 모양의 블록들을 놓는다. <br/>
+또한 블록을 놓지 않고 빈채로 남겨두는 경우도 고려하기 위해서 해당 경우도 처리해준다. (이 경우에는 해당칸을 절대 덮지 않기 위해서 보드에서 해당칸을 채워진 상태로 바꿔주고 countMaxBlock(i, j, curretnBlockCount, remainedBlanckCount-1)로 호출해준다. <br/>
+
+이렇게 완전 탐색을 하면 수행시간이 오래걸리는데 가지치기를 이용하여 수행시간을 줄인다. <br/>
+보드에 남아있는 빈칸의 개수를 블록의 크기로 나눠주면 해당 보드에 놓을 수 있는 블록의 최대개수의 상한이 된다. <br/>
+만약 지금까지 놓은 블록의 개수와 블록의 최대 개수의 상한의 합이 지금까지 구해둔 블록의 최대 개수보다 작다면 더이상 탐색을 할 필요가 없으므로 탐색을 종료한다. <br/>
+
+_TLE가 발생하는데 왜 발생하는지 원인을 못찾겠다. 그래서 미해결문제로 남겨둔다. 나중에 C++공부하여 C++로 동일로직으로 풀어보고싶다.

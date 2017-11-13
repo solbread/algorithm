@@ -70,7 +70,7 @@ public class BestMain {
 			for(int j = 0; j < settingCase.size() && isSame; j++) {
 				for(int k = 0; k < setting.size() && isSame; k++) {
 					isSame = isSame && settingCase.get(j).get(k)[0] == setting.get(k)[0]
-							&& settingCase.get(j).get(k)[1] == settingCase.get(j).get(k)[1];
+							&& settingCase.get(j).get(k)[1] == setting.get(k)[1];
 				}
 			}
 			if(!isSame) settingCase.add(setting);
