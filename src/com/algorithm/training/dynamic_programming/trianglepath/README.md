@@ -45,6 +45,8 @@ Output:
 
 **Show tag:** \#dynamic\_programming
 
+**Related Problem:** dynamic\_programming.triangle
+
 ------------------------------------
 
 **Solution : Using Recursion** <br/>
