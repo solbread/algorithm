@@ -19,9 +19,9 @@ public class BestSolution2 {
             atlanticQueue.add(new int[]{i,matrix[0].length-1});
         }
         for(int i = 0; i < matrix[0].length; i++) {
-            pacific[0][i] = pacific[matrix.length-1][i] = true;
+            pacific[0][i] = atlantic[matrix.length-1][i] = true;
             pacificQueue.add(new int[]{0,i});
-            pacificQueue.add(new int[]{matrix.length-1, i});
+            atlanticQueue.add(new int[]{matrix.length-1, i});
         }
         bfs(matrix, pacific, pacificQueue);
         bfs(matrix, atlantic, atlanticQueue);
