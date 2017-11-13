@@ -27,7 +27,7 @@ Bonus point if you are able to do this using only O(n) extra space, where n is t
 ------------------------------------
 
 **Solution** <br/>
-시간복잡도 : O(n^2) 공간복잡도 : O(n) <br/
+시간복잡도 : O(n^2) 공간복잡도 : O(n) <br/>
 _dynamic\_programming.trianglepath랑 최대경로합/최소경로합을 구한다는 차이를 제외하고는 동일하다. trianglepath문제를 먼저 풀었어서 trianglepath설명이 더 자세하다_
 
 아래에서부터 시작하여 위로 올라가면서 최소경로를 구해준다. <br/>
