@@ -9,6 +9,7 @@ TODO LIST
 	* greedy.minastirith
 	* design.lfu_cache
 	* design.lru_cache
+	* combinatorial_search.boardcover2 (추후 C++로 바꿔풀어볼것)
 	
 * 공부해야할 부분
 	* Knapsack Problem
@@ -34,3 +35,4 @@ TODO LIST
 			* 나머지 연산의 곱셈 역원 https://www.acmicpc.net/blog/view/29
 	* 거듭제곱 연산할 때 O(1)만에 하기
 		* skill.pow.CalculatePow3
+	* 알고리즘문제해결전략 402p~421p 조합탐색기법들 공부 후 정리

@@ -49,6 +49,8 @@ Output:
 
 **Show tag:** \#exhaustive\_search \#dynamic\_programming
 
+**Realted Problem:** combinatorial_search.boardcover
+
 ------------------------------------
 
 **Best Main** <br/>
