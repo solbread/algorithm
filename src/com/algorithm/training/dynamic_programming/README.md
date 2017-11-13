@@ -31,6 +31,7 @@
 	* BLOCKGAME
 	* SUSHI
 	* GENIUS
+	* triangle (\#array)
 * Hard
 	* OCR
 	* KLIS
