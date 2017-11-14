@@ -1,4 +1,4 @@
-##Bucket Sort(버킷/계수/기수 정렬)
+## Bucket Sort(버킷/계수/기수 정렬)
 
 * 분포에 의한 정렬
 	* 원소의 값을 비교하여 정렬 순서를 결정하는 비교 기반 정렬 알고리즘
@@ -31,4 +31,4 @@
 	* O(n) 소요
 	
 * 구현
-	* sort.bucket\_sort	
+	* sort.bucket\_sort : solve(2017-11-15)	
