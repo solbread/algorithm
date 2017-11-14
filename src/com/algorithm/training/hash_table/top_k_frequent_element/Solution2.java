@@ -38,10 +38,5 @@ public class Solution2 {
         for( int num : result) {
             System.out.print(num + " ");
         }
-        System.out.println();
-        result = solution.topKFrequent(new int[]{1}, 1);
-        for( int num : result) {
-            System.out.print(num + " ");
-        }
     }
 }

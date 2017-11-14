@@ -6,5 +6,5 @@
 * Medium
 	* Brick Wall
 	* Top K Frequent Words (\#heap \#trie)
-	* Top K Frequent Elements (\#heap \#bucket\_sort)
+	* Top K Frequent Elements (\#heap)
 * Hard
