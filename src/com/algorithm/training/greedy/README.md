@@ -10,3 +10,4 @@
 	* STRJOIN (\#heap)
 * Hard
 	* MINASTIRITH
+	* Trapping Rain Water
