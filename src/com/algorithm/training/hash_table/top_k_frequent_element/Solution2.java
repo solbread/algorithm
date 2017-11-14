@@ -13,7 +13,7 @@ public class Solution2 {
 	            counter.put(nums[i], counter.getOrDefault(nums[i], 0)+1);
 	        }
 	        @SuppressWarnings("unchecked")
-			List<Integer>[] frequenceCounter = new List[nums.length];
+			List<Integer>[] frequenceCounter = new List[nums.length+1];
 	        Iterator<Integer> keys = counter.keySet().iterator();
 	        while(keys.hasNext()) {
 	            int key = keys.next();
@@ -35,6 +35,11 @@ public class Solution2 {
     public static void main(String[] args) {
         Solution2 solution = new Solution2();
         List<Integer> result = solution.topKFrequent(new int[]{1,1,1,2,2,3}, 2);
+        for( int num : result) {
+            System.out.print(num + " ");
+        }
+        System.out.println();
+        result = solution.topKFrequent(new int[]{1}, 1);
         for( int num : result) {
             System.out.print(num + " ");
         }
