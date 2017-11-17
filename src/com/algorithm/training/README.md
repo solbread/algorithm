@@ -9,7 +9,8 @@ TODO LIST
 	* greedy.minastirith
 	* design.lfu_cache
 	* design.lru_cache
-	* combinatorial_search.boardcover2 (추후 C++로 바꿔풀어볼것)
+	* combinatorial\_search.boardcover2 (추후 C++로 바꿔풀어볼것)
+	* combinatorial\_search.allergy.Main (wrong answer 원인 찾기)
 	
 * 공부해야할 부분
 	* Knapsack Problem
