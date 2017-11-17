@@ -27,13 +27,13 @@ public class Main {
 			for(int i = 0; i < mast.length; i++) {
 				mast[i] = Double.parseDouble(stringTokenizer.nextToken());
 			}
-			System.out.println(main.getLargetDistance(cameraNumber));
+			System.out.printf("%.2f\n",main.getLargetDistance(cameraNumber));
 		}
 	}
 	public double getLargetDistance(int cameraNumber) {
-		double left = 0, right = mast[mast.length-1] - mast[0];
-		while(left < right) {
-			double mid = Math.round((right+left)/2.0*100)/100.0;
+		double left = 0, right = mast[mast.length-1];
+		for(int i = 0; i < 100; i++) {
+			double mid = (right+left)/2.0;
 			if(canSetDistance(mid, cameraNumber)) {
 				left = mid;
 			} else {
