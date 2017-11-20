@@ -37,6 +37,8 @@ Output:
 
 **Show tag:** \#divide_and_conquer \#stack
 
+**Related Problem:** two\_pointers.trapping\_rain\_water
+
 ------------------------------------
 
 **Main : Unsolved Solution** <br/>
