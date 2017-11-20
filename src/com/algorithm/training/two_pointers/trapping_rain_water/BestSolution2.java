@@ -1,4 +1,4 @@
-package com.algorithm.training.greedy.trapping_rain_water;
+package com.algorithm.training.two_pointers.trapping_rain_water;
 
 import java.util.Stack;
 
