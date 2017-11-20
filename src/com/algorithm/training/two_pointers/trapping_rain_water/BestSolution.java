@@ -1,4 +1,4 @@
-package com.algorithm.training.greedy.trapping_rain_water;
+package com.algorithm.training.two_pointers.trapping_rain_water;
 
 public class BestSolution {
     public int trap(int[] height) {
@@ -25,9 +25,9 @@ public class BestSolution {
     
     public static void main(String[] args) {
         BestSolution2 solution = new BestSolution2();
-        System.out.println(solution.trap(new int[]{}));
-        System.out.println(solution.trap(new int[]{0,1,0,2,1,0,1,3,2,1,2,1}));
-        System.out.println(solution.trap(new int[]{5,4,1,2}));
-        System.out.println(solution.trap(new int[]{5,2,1,2,1,5}));
+        System.out.println(solution.trap(new int[]{})); //0
+        System.out.println(solution.trap(new int[]{0,1,0,2,1,0,1,3,2,1,2,1})); //6
+        System.out.println(solution.trap(new int[]{5,4,1,2})); //1
+        System.out.println(solution.trap(new int[]{5,2,1,2,1,5})); //14
     }
 }

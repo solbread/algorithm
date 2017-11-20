@@ -8,3 +8,4 @@
 	* Container With Most Water
 	* Subarray Product Less Than K (\#array)
 * Hard
+	* Trapping Rain Water (\#array \#stack)
