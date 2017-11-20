@@ -1,4 +1,4 @@
-11장. 최적화 문제 결정 문제로 바꿔 풀기
+12장. 최적화 문제 결정 문제로 바꿔 풀기
 
 * 최적화 문제를 결정 문제로 바꾼 뒤 이분법을 이용해 해결
 	* 결정 문제 : 예 or 아니오의 결과가 나옴 -> 답의 수가 2가지
@@ -22,7 +22,7 @@
 	``
 	
 * 예제
-	1. DARPA Grand Challenge (DARPA)
+	1. DARPA Grand Challenge (DARPA) : solve(2017-11-17)
 	2. 남극기지 (ARCTIC)
 	3. 캐나다 여행 (CANADATRIP)
 	4. 수강 철회 (WITHDRAWAL)

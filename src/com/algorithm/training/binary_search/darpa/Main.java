@@ -32,7 +32,7 @@ public class Main {
 	}
 	public double getLargetDistance(int cameraNumber) {
 		double left = 0, right = mast[mast.length-1];
-		for(int i = 0; i < 100; i++) {
+		for(int i = 0; i < 16; i++) {
 			double mid = (right+left)/2.0;
 			if(canSetDistance(mid, cameraNumber)) {
 				left = mid;
