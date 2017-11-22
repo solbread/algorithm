@@ -13,13 +13,13 @@ public class Solution {
     	return getMinStepCount(0, 0, 0);
     }
     private int getMinStepCount(int keyIdx, int ringIdx, int direction) {
-    	if(keyIdx == key.length) return -1;
+    	if(keyIdx == key.length) return 0;
     	if(cache[keyIdx][ringIdx][direction] != -1) return cache[keyIdx][ringIdx][direction];
     	int minStepCount = Integer.MAX_VALUE;
     	int clockwiseNextIdx = (ringIdx+1) % ring.length;
     	int anticlockwiseNextIdx = (ringIdx-1+ring.length) % ring.length;
     	if(ring[ringIdx] == key[keyIdx]) {
-    		minStepCount = Math.min(getMinStepCount(keyIdx + 1, clockwiseNextIdx, 0), getMinStepCount(keyIdx + 1, anticlockwiseNextIdx, 0)) + 2;
+    		minStepCount = Math.min(getMinStepCount(keyIdx + 1, ringIdx, 0), getMinStepCount(keyIdx + 1, ringIdx, 0)) + 1;
     	} else {
     		if(direction == 0) {
     			minStepCount = Math.min(getMinStepCount(keyIdx, clockwiseNextIdx, 1), getMinStepCount(keyIdx, anticlockwiseNextIdx, 2)) + 1;
@@ -32,7 +32,8 @@ public class Solution {
     	
     }
 	public static void main(String[] args) {
-		Solution2 solution = new Solution2();
-		System.out.println(solution.findRotateSteps("godding", "gd"));
+		Solution solution = new Solution();
+		System.out.println(solution.findRotateSteps("godding", "gd")); //4
+		System.out.println(solution.findRotateSteps("aaaaa", "aaaaa")); //5
 	}
 }
