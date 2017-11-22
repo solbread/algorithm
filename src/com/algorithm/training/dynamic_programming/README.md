@@ -36,3 +36,4 @@
 	* OCR
 	* KLIS
 	* ZIMBABWE (\#bit\_mask)
+	* Freedom Trail (\#divide\_and\_conquer \#depth\_first\_search)
