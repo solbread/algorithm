@@ -2,6 +2,7 @@
 
 **Problem list**
 * Easy
+	* Ugly Number
 * Medium
 	* Optimal Division (\#string)
 * Hard
