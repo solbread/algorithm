@@ -42,4 +42,6 @@ I came up with the solution with a heap at first, but then I gave it up because 
 ```
 
 (위의 내용은 해당 댓글이다.) <br/>
-그러나 사실은 for루프 내부의 while문이 최악의 경우에 k번 반복될 수 있으며 k번 반복될 때 마다 logk의 정렬과정이 생기므로 최종 시간 복잡도는 n \* k \* logk가 되는 것이다.
+그러나 사실은 for루프 내부의 while문이 최악의 경우에 k번 반복될 수 있으며 k번 반복될 때 마다 logk의 정렬과정이 생기므로 최종 시간 복잡도는 n \* k \* logk가 되는 것이다. <br/>
+
+내가 푼 solution은 entity를 사용하였지만 1차원 배열을 사용하여 소수의 값, index, ugly number값을 저장한다면 ugly nubmer를 중복해서 구하는 연산을 제거할 수 있을 것이다. (구현은 하지 않겠다.)
