@@ -15,6 +15,8 @@ Note that 1 is typically treated as an ugly number. <br/>
 
 **Show tag:** \#math
 
+**Related Problem:** \#math.ugly\_number2 \#math.super\_ugly\_number
+
 ```
 Input: 14
 Output: false

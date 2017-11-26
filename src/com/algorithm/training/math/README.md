@@ -1,4 +1,4 @@
-## Algorithm Problem related on Math
+	## Algorithm Problem related on Math
 
 **Problem list**
 * Easy
@@ -6,4 +6,5 @@
 * Medium
 	* Optimal Division (\#string)
 	* Ugly Number2 (\#dynamic\_programming \#heap)
+	* Super Ugly Number (\#heap)
 * Hard
