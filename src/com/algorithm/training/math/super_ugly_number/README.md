@@ -38,7 +38,11 @@ heap에 소수와 index를 entity 형태로 저장하는데, 이를 이용해 �
 ugly number2의 solution(or solution2)의 시간복잡도는 O(nk)인데 왜 O(nlogk)인 해당 solution보다 빠른가 하였는데, 댓글에 보니까 해당 solution이 O(nklogk)라는 글이 있었다. <br/>
 
 ```
-I came up with the solution with a heap at first, but then I gave it up because I thought the time complexity was O(nklogk). This is due to the inner loop at most pops out all the elements in the heap, which have a number of k. So, the time complexity of the inner loop is: logk + log(k-1) + log(k-2) +...+log1=O(klogk). As the inner loop runs n times, so the overall time complexity is O(nklogk). Anyone could tell me where I am wrong?
+I came up with the solution with a heap at first, but then I gave it up because I thought the time complexity was O(nklogk).
+This is due to the inner loop at most pops out all the elements in the heap, which have a number of k.
+So, the time complexity of the inner loop is: logk + log(k-1) + log(k-2) +...+log1=O(klogk).
+As the inner loop runs n times, so the overall time complexity is O(nklogk).
+Anyone could tell me where I am wrong?
 ```
 
 (위의 내용은 해당 댓글이다.) <br/>
