@@ -5,5 +5,6 @@
 	* Baseball Game
 	* BRACKETS2
 * Medium
+	* Asteroid Collision
 * Hard
 	* Largest Rectangle in Histogram (\#array)

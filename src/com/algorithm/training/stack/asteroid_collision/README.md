@@ -63,3 +63,8 @@ Asteroids moving the same direction never meet, so no asteroids will meet each o
 스택에 남아있는 마지막 행성이 오른쪽으로 가고있으며 해당 행성과 크기가 같을경우 둘다 제거하고 끝내며, <br/>
 스택이 비어있거나 스택에 남아있는 마지막 행성이 왼쪽으로 가고있으면 해당 행성을 스택에 넣는다. <br/>
 이를 n번 반복하면 최종적으로 스택에 남아있는 행성들이 생존한 행성들이다.
+
+**Solution2 (refactoring Solution1)** <br/>
+시간복잡도 : O(n) 공간복잡도 : O(n) <br/>
+Solution1과 로직은 같으나 stack의 구현방식의 차이가 있다. <br/>
+Solution1은 java에서 제공하는 stack을 사용했다면 int배열과 index변수를 이용하여 스택을 구현하였다. <br/>
