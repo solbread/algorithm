@@ -68,3 +68,12 @@ Asteroids moving the same direction never meet, so no asteroids will meet each o
 시간복잡도 : O(n) 공간복잡도 : O(n) <br/>
 Solution1과 로직은 같으나 stack의 구현방식의 차이가 있다. <br/>
 Solution1은 java에서 제공하는 stack을 사용했다면 int배열과 index변수를 이용하여 스택을 구현하였다. <br/>
+
+**Best Solution** <br/>
+시간복잡도 : O(n) 공간복잡도 : O(n) <br/>
+참고자료 : https://discuss.leetcode.com/topic/112034/java-c-clean-code <br/>
+_로직은 Solution과 동일하나 훨씬 코드가 깔끔하다._ <br/>
+LinkedList를 스택처럼 사용하였는데, LinkedList를 이용하면 마지막에 결과 int배열을 만들때 reverse를 해 줄 필요가 없다. <br/>
+주어진 asteroids배열을 순회하면서 list에 넣거나 list에서 제거하는 작업을 한다. <br/>
+해당 행성이 오른쪽으로 이동하거나, list가 비어있거나 list의 마지막 행성이 왼쪽으로 이동중이라면 list에 해당 행성을 넣고, <br/>
+해당 행성이 리스트의 마지막 행성보다 같거나 작으면 리스트에서 행성을 제거하며, 같을 경우에는 행성이 둘다 제거되므로 다음 index로 넘어가며, 작을 경우에는 리스트에서 행성을 계속 제거한다. <br/>
