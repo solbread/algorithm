@@ -5,4 +5,5 @@
 * Easy
 * Medium
 	* My Calendar I
+	* My Calendar II (\#binary\_search)
 * Hard
