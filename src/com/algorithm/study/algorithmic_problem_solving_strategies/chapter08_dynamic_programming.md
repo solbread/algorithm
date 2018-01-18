@@ -42,7 +42,7 @@
 
 * 예제 <br/>
 	1. 외발 뛰기 (JUMPGAME) : solve(2017-10-07)
-	2. 와일드카드 (WILDCARD)
+	2. 와일드카드 (WILDCARD) : solve(2018-01-18)
 	3. 삼각형 위의 최대 경로 (TRIANGLEPATH) : solve(2017-10-07)
 	4. 최대 증가 부분 수열 (LIS) : solve(2017-10-08)
 	5. 합친 LIS (JLIS) : solve(2017-10-09)
