@@ -48,9 +48,8 @@ papa
 
 ------------------------------------
 
-**Solution : Unsolved problem** <br/>
+**Solution** <br/>
 시간복잡도 : O(n\*m) 공간복잡도 : O(n\*m) n:와일드카드문자수 m:파일명문자수 <br/>
-런타임에러가 나서 미해결 상태이다. <br/>
 isMatched(int wildCardIndex, int fileNameIndex) 메소드는 wildCardIndex에서 시작하는 와일드카드문자열과 fileNameIndex에서 시작하는 파일명이 일치하는지를 반환한다. <br/>
 해당 메소드의 return 조건은 <br/>
 1. wildCardIndex와 fileNameIndex가 동시에 끝났을 떄는 true를 반환
@@ -63,4 +62,8 @@ wildCardIndex의 와일드카드 문자가 무엇이냐에 따라서 동작이 �
 2. ?일 경우 : ?는 아무문자 하나랑 매칭되므로 각각의 index를 +1 하여 재귀호출
 3. 일반문자일 경우 : 두 문자가 같은지를 비교하여 같으면 각각의 index를 +1 하여 재귀호출
 
-위와 같은 방법으로 함수를 재귀호출하며 결과를 구한다.
+위와 같은 방법으로 함수를 재귀호출하며 결과를 구한다. <br/>
+
+2018/01/18 Solve <br/>
+런타임 에러가 나서 미해결 상태로 남아있던 문제였는데, 해결하였다. <br/>
+단순한 실수였는데, 캐시를 선언할 때 n\*m 크기로 선언해야 하는데 m\*m로 선언되어있었던게 문제였다. <br/>

@@ -26,7 +26,7 @@ public class Main {
 			for(int i = 0; i < fileNumber; i++) {
 				String fileNameStr = scanner.next();
 				fileName = fileNameStr.toCharArray();
-				cache = new int[fileName.length][fileName.length];
+				cache = new int[wildCard.length][fileName.length];
 				if(main.isMatched(0, 0)) matchedFileList.add(fileNameStr);
 			}
 			Collections.sort(matchedFileList);
