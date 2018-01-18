@@ -1,7 +1,6 @@
 TODO LIST
 
 * 미해결 문제
-	* dynamic_programming.wildcard
 	* dynamic_programming.quantize
 	* dynamic_programing.ocr
 	* dynamic_programming.wildcard (런타임에러)
