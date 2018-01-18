@@ -24,4 +24,4 @@
 	2. 소풍(PICNIC) : solve(2017-10-04) 
 	3. 게임판덮기(BOARDCOVER) : solve(2017-11-12)
 	4. 여행하는 외판원 문제(Traveling Sales-man Problem, TSP) : solve(2017-10-04)
-	5. 시계 맞추기(CLOCKSYNC)
+	5. 시계 맞추기(CLOCKSYNC) : solve(2018-01-18)

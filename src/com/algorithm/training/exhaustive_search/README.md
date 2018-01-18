@@ -8,4 +8,5 @@
 	* BOGGLE
 	* PICNIC
 * Medium
+	* CLOCKSYNC
 * Hard
