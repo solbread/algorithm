@@ -3,7 +3,6 @@ TODO LIST
 * 미해결 문제
 	* dynamic_programming.quantize
 	* dynamic_programing.ocr
-	* dynamic_programming.wildcard (런타임에러)
 	* dynamic_programming.klis (런타임에러)
 	* greedy.minastirith
 	* design.lfu_cache

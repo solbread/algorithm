@@ -65,7 +65,7 @@ public class BestMain {
 					subset = ((subset-1) & i);
 				}
 			}
-			System.out.println(main.fillBoard());
+			main.fillBoard();
 		}
 	}
 	
@@ -134,14 +134,14 @@ public class BestMain {
 	private void put(int y, int x, int value) {
 		solution[y][x] = value;
 		for(int i = 0 ; i <= 1; i++) {
-			filled[hint[y][x][i]] += (1<<value);
+			filled[hint[y][x][i]] |= (1<<value);
 		}
 	}
 	
 	private void remove(int y, int x, int value) {
 		solution[y][x] = 0;
 		for(int i = 0 ; i <= 1; i++) {
-			filled[hint[y][x][i]] -= 1<<value;
+			filled[hint[y][x][i]] &= ~(1<<value);
 		}
 	}
 }
