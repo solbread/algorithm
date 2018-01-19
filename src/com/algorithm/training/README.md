@@ -38,3 +38,5 @@ TODO LIST
 	* 알고리즘문제해결전략 402p~421p 조합탐색기법들 공부 후 정리
 	* combinatorial\_search.allergy
 		* 음식을 선택할 때, 가장 많은 사람이 먹을 수 있는 음식부터 시도하는 방향으로 알고리즘 최적화하기
+	* combinatorial\_search.kakuro2
+		* fillBoard에서 후보의 수가 가장 적은 칸을 찾기위해 호출되는 부분을 더 최적화하기
