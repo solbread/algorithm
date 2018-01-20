@@ -44,5 +44,5 @@
 	1. 여행하는 외판원 문제(Traveling Sales-man Problem3 TSP3)
 	2. 게임판 덮기2(BOARDCOVER2)
 	3. 알러지가 침한 친구들(ALLERGY) : solve(2017-11-13)
-	3. 카쿠로(KAKURO2) : solve(2018-01-20)
+	3. 카쿠로(KAKURO2) : solve(2018-01-19)
 	
