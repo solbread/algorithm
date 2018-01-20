@@ -8,7 +8,7 @@ import java.util.StringTokenizer;
 
 public class Main {
 	static double stations[][];
-	static boolean isPossible[], visit[];
+	static boolean isPossible[];
 	public static void main(String[] args) {
 		Main main = new Main();
 		BufferedReader bufferedReader = new BufferedReader(new InputStreamReader(System.in));
@@ -40,7 +40,6 @@ public class Main {
 		for(int i = 0;  i < 100; i++) {
 			mid = (hi - lo) /2 + lo;
 			isPossible = new boolean[stations.length];
-			visit = new boolean[stations.length];
 			if(linkStation(0, mid)) {
 				hi = mid;
 			} else {
@@ -52,17 +51,15 @@ public class Main {
 	
 	private boolean linkStation(int centerIdx, double radius) {
 		double[] centerPoint = stations[centerIdx];
-		visit[centerIdx] = true;
 		isPossible[centerIdx] = true;
 		for(int i = 0; i < stations.length; i++) {
-			if(!visit[i] && !isPossible[i]) {
+			if(!isPossible[i]) {
 				double distance = getDistance(centerPoint[0], centerPoint[1], stations[i][0], stations[i][1]);
 				if(distance <= radius && linkStation(i, radius)) {
 					return true;
 				}
 			}
 		}
-		visit[centerIdx] = false;
 		return canCommunication();
 	}
 	
