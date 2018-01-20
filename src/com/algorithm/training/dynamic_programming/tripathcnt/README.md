@@ -53,10 +53,10 @@ Output:
 **Solution** <br/>
 시간복잡도 : O(n^2) 공간복잡도 : O(n^2) <br/>
 TRIANGLEPATH 문제에서 dp를 이용하여 maxPathLength를 구하였다. <br/>
-해당 문제의 로직을 그대로 이용하여 maxPath[i][j] 배열에 (i,j)에서 출발하여 이동하며 맨 마지막줄 까지 도달할때 까지의 경로의 최대값을 저장해둔다. <br/>
+해당 문제의 로직을 그대로 이용하여 maxPath\[i\]\[j\] 배열에 (i,j)에서 출발하여 이동하며 맨 마지막줄 까지 도달할때 까지의 경로의 최대값을 저장해둔다. <br/>
 그 후 경로의 최대값의 count를 세는 작업을 아래처럼 dp를 이용하여 한다. <br/>
 하나의 점에서는 두개로 내려갈 수 있는데 (i,j)점을 기준으로 <br/>
-1. maxPath[i+1][j] > maxPath[i+1][j+1] : maxPathLength를 얻기 위해서는 (i+1,j+1)로는 내려갈 필요가 없으므로 (i+1,j)로만 내려간다.
-2. maxPath[i+1][j] < maxPath[i+1][j+1] : maxPathLength를 얻기 위해서는 (i+1, j)로는 내려갈 필요가 없으므로 (i+1, j+1)로만 내려간다.
-3. maxPath[i+1][j] == maxPath[i+1][j+1] : maxPathLength를 얻기 위해서는 (i+1, j), (i+1, j+1) 둘 다 내려간다.
+1. maxPath\[\i+1\]\[j\] > maxPath\[i+1\]\[j+1\] : maxPathLength를 얻기 위해서는 (i+1,j+1)로는 내려갈 필요가 없으므로 (i+1,j)로만 내려간다.
+2. maxPath\[i+1\]\[j\] < maxPath\[i+1\]\[j+1\] : maxPathLength를 얻기 위해서는 (i+1, j)로는 내려갈 필요가 없으므로 (i+1, j+1)로만 내려간다.
+3. maxPath\[i+1\]\[j\] == maxPath\[i+1\]\[j+1\] : maxPathLength를 얻기 위해서는 (i+1, j), (i+1, j+1) 둘 다 내려간다.
 시간복잡도 O(n^2)의 연산을 두번하게 된다.
