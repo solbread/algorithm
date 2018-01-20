@@ -41,9 +41,7 @@ public class Main {
 			mid = (hi - lo) /2 + lo;
 			isPossible = new boolean[stations.length];
 			visit = new boolean[stations.length];
-			isPossible[0] = true;
-			linkStation(0, mid);
-			if(canCommunication()) {
+			if(linkStation(0, mid)) {
 				hi = mid;
 			} else {
 				lo = mid;
@@ -52,19 +50,20 @@ public class Main {
 		return Math.round(lo * 100) / 100.0;
 	}
 	
-	private void linkStation(int centerIdx, double radius) {
+	private boolean linkStation(int centerIdx, double radius) {
 		double[] centerPoint = stations[centerIdx];
 		visit[centerIdx] = true;
+		isPossible[centerIdx] = true;
 		for(int i = 0; i < stations.length; i++) {
 			if(!visit[i] && !isPossible[i]) {
 				double distance = getDistance(centerPoint[0], centerPoint[1], stations[i][0], stations[i][1]);
-				if(distance <= radius) {
-					isPossible[i] = true;
-					linkStation(i, radius);
+				if(distance <= radius && linkStation(i, radius)) {
+					return true;
 				}
 			}
 		}
 		visit[centerIdx] = false;
+		return canCommunication();
 	}
 	
 	private boolean canCommunication() {
