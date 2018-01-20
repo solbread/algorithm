@@ -24,7 +24,7 @@ public class Main {
 					stations[i][1] = Double.parseDouble(tokenizer.nextToken());
 					maxDistance = Math.max(maxDistance, main.getDistance(stations[0][0], stations[0][1], stations[i][0], stations[i][1]));
 				}
-				System.out.println(main.getMinRadius(maxDistance));
+				System.out.println(String.format("%.2f", main.getMinRadius(maxDistance)));
 			}
 		} catch (Exception e) {
 			e.printStackTrace();
@@ -37,7 +37,7 @@ public class Main {
 	
 	public double getMinRadius(double maxDistance) {
 		double lo = 0.0, hi = maxDistance, mid;
-		while(hi - lo >= 0.005) {
+		for(int i = 0;  i < 100; i++) {
 			mid = (hi - lo) /2 + lo;
 			isPossible = new boolean[stations.length];
 			visit = new boolean[stations.length];
@@ -47,7 +47,7 @@ public class Main {
 				lo = mid;
 			}
 		}
-		return Math.round(lo * 100) / 100.0;
+		return lo;
 	}
 	
 	private boolean linkStation(int centerIdx, double radius) {
