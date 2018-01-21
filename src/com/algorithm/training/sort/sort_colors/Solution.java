@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.HashMap;
 import java.util.Map;
 
+@SuppressWarnings("unused")
 public class Solution {
     public void sortColors(int[] nums) {
         Map<Integer, Integer> counter = new HashMap<>();
@@ -18,7 +19,7 @@ public class Solution {
         		arrayIdx++;
         	}
         }
-        System.out.println(Arrays.toString(nums));
+//        System.out.println(Arrays.toString(nums));
     }
 	public static void main(String[] args) {
 		Solution solution = new Solution();
