@@ -35,3 +35,15 @@ Output: 6
 	* target이 오른쪽에 있다면 [index, nums.length-1]까지의 범위를 이진탐색
 	* target이 왼쪽에 있다면 [0, index]까지의 범위를 이진탐색
 3. 2번에서 설정한 lo랑 hi범위에서 target과 같은 숫자를 찾는다.
+
+**Solution** <br/>
+시간복잡도 : O(logn) 공간복잡도 : O(1) <br/>
+Solution1과 동일한데 Solution1의 2번 과정 이후가 조금 다르다. <br/>
+이진 탐색을 이용하가여 가장 적은 값의 index를 구한 후(smallestIdx) target이 이 index를 기준으로 왼쪽에 있는지 오른쪽에 있는지를 판단하지 않고, <br/>
+nums배열을 lo = 0, hi = nums.length-1의 범위로 하여 이진탐색을 통해 target을 찾아준다. <br/>
+찾을 때 index에 (index+smallestIdx)%nums.length 연산을 해주어 마치 해당 배열을 smallestIdx가 0 index인 배열처럼 이용하여 이진탐색을 통해 target을 찾는 것이다.
+
+
+
+
+
