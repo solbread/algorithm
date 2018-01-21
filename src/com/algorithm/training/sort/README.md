@@ -6,4 +6,5 @@
 * Easy
 * Medium
 	* Largest Number
+	* Sort Colors
 * Hard
