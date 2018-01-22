@@ -92,3 +92,19 @@ BestSolution2랑 모든부분이 동일하며 2-1의 target이 (mid, hi]사이�
 기존에는 nums[mid] < target이면서 nums[hi] >= target으로 조건을 사용했는데, <br/>
 nums[mid] < target이면서 nums[lo] > target으로 조건을 변경하였다. <br/>
 의미는 둘다 동일하나 이렇게 바꾼 이유는 아래의 Best Solution4처럼 더 간결한 코드로 나타내기 위해서이다. <br/>
+
+**Best Solution4** <br/>
+시간복잡도 O(logn) 공간복잡도 O(1) <br/>
+Best Solution3을 exclusive-or 연산자를 이용하여 하나의 조건문을 이용하여 lo랑 hi를 조정하도록 수정한 솔루션이다. <br/>
+
+* hi = mid가 되는 경우
+	1. nums[lo] <= target <= nums[mid] <br/>
+	2.             target <= nums[mid] < nums[lo] <br/>
+	3.                       nums[mid] < nums[lo] <= target <br/>
+	
+(nums[lo] <= target), (target <= nums[mid]), (nums[mid] < nums[lo]) 세가지의 조건 중 두개가 true일 경우 hi=mid가 된다. <br/>
+
+_여기서부터 잘 모르겠다_ <br/>
+위의 내용을 exclusive or을 이용하여 표현하면 아래와 같이 된다. (2가지 모두 같은 표현이다. 코드에는 위에껄로 사용)
+* nums\[lo\] <= nums\[mid\] ^ nums\[lo\] <= target ^ nums\[mid\] >= target
+* nums\[lo\] > target ^ nums\[lo\] > nums\[mid\] ^ target > nums\[mid\]
