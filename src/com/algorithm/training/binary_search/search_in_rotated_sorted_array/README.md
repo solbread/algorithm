@@ -36,7 +36,7 @@ Output: 6
 	* target이 왼쪽에 있다면 [0, index]까지의 범위를 이진탐색
 3. 2번에서 설정한 lo랑 hi범위에서 target과 같은 숫자를 찾는다.
 
-**Solution** <br/>
+**Solution2** <br/>
 시간복잡도 : O(logn) 공간복잡도 : O(1) <br/>
 Solution1과 동일한데 Solution1의 2번 과정 이후가 조금 다르다. <br/>
 이진 탐색을 이용하가여 가장 적은 값의 index를 구한 후(smallestIdx) target이 이 index를 기준으로 왼쪽에 있는지 오른쪽에 있는지를 판단하지 않고, <br/>
@@ -99,8 +99,8 @@ Best Solution3을 exclusive-or 연산자를 이용하여 하나의 조건문을 
 
 * hi = mid가 되는 경우
 	1. nums[lo] <= target <= nums[mid] <br/>
-	2.             target <= nums[mid] < nums[lo] <br/>
-	3.                       nums[mid] < nums[lo] <= target <br/>
+	2. ............target <= nums[mid] < nums[lo] <br/>
+	3. ......................nums[mid] < nums[lo] <= target <br/>
 	
 (nums[lo] <= target), (target <= nums[mid]), (nums[mid] < nums[lo]) 세가지의 조건 중 두개가 true일 경우 hi=mid가 된다. <br/>
 

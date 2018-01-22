@@ -1,13 +1,13 @@
 ## Iterative Algorithm
 
-** 반복 알고리즘
+* 반복 알고리즘
 	* 반복적인 방법으로 문제를 해결
 	* 반복 알고리즘 타당성 증명에는 변하는 성질인 루프 변성, 변하지 않는 성질인 루프 불변성을 이용
 
-* 루프 변셩 (Loop variants)
+* 루프 변성 (Loop variants)
 	* 반복문을 수행하면서 변하는 성질
 
-* 루프 불변셩 (Loop Invariants)
+* 루프 불변성 (Loop Invariants)
 	* 반복문을 수행하면서 변하지 않는 성질
 	* 알고리즘에서 상태는 항상 변하지만, 상태에 상관 없이 항상 참이되는 일련의 구문들
 	* 수학적 귀납법을 이용하여 종종 증명 됨
@@ -52,6 +52,7 @@ for(int i = 1; i < A.length; i++){
 	A[j+1] = temp;
 }
 ```
+
 * Initialization : i=1 에 대해서, A[0...i-1] = A[0] 이 정렬된다.
 * Maintenance : i가 증가하고 그에따라 A[1...i-1]가 정렬된다.
 * Termination : i = A.length일때 루프는 끝이나며, 루프가 끝이 났을때는 A[1...i-1] 은 정렬이 끝나있다.
