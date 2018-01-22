@@ -72,4 +72,16 @@ target이 속해있는 범위가 정확하게 정해지면 그 나머지는 어�
 1번과 2번의 조건에 의해 target의 위치가 확실하게 정해지는 경우에는 nums[mid] 값을 INF 혹은 -INF로 처리한 후, <br/>
 일반적인 이진탐색을 하여 target을 찾는다.
 
+**Best Solution2** <br/>
+시간복잡도 O(logn) 공간복잡도 O(1) <br/>
+참고자료 : https://leetcode.com/problems/search-in-rotated-sorted-array/discuss/ <br/>
 
+한번의 이진탐색을 통해 taret을 찾아내는 솔루션이다. <br/>
+1. [lo, mid]가 오름차순으로 정렬되어 있다면 (smallestIdx가 (mid, hi]에 있다면)
+	1. [lo, mid] 사이에 target이 있으면 hi = mid
+	2. [lo, mid] 사이에 target이 없다면 lo = mid+1
+2. [lo, mid]가 오름차순으로 정렬되어 있지 않다면 (smallestIdx가 [lo, mid]에 있다면, 즉 [mid, hi]가 오름차순으로 정렬 되어 있다면)
+	1. (mid, hi] 사이에 target이 있다면 lo = mid+1
+	2. (mid, hi] 사이에 target이 없다면 hi = mid
+	
+위와 같은 방법으로 lo와 hi를 바꿔주면서 원하는 target을 찾는다.
