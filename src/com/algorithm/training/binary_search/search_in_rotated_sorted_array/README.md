@@ -85,3 +85,10 @@ target이 속해있는 범위가 정확하게 정해지면 그 나머지는 어�
 	2. (mid, hi] 사이에 target이 없다면 hi = mid
 	
 위와 같은 방법으로 lo와 hi를 바꿔주면서 원하는 target을 찾는다.
+
+**Best Solution3** <br/>
+시간복잡도 O(logn) 공간복잡도 O(1) <br/>
+BestSolution2랑 모든부분이 동일하며 2-1의 target이 (mid, hi]사이에 있는지 판단해주는 부분의 조건문만 다르다. <br/>
+기존에는 nums[mid] < target이면서 nums[hi] >= target으로 조건을 사용했는데, <br/>
+nums[mid] < target이면서 nums[lo] > target으로 조건을 변경하였다. <br/>
+의미는 둘다 동일하나 이렇게 바꾼 이유는 아래의 Best Solution4처럼 더 간결한 코드로 나타내기 위해서이다. <br/>
