@@ -4,4 +4,5 @@
 * Easy
 * Medium
 	* Pacific Atlantic Water Flow (\#breadth\_first\_search)
+	* All Paths From Source to Target
 * Hard
