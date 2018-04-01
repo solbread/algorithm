@@ -8,6 +8,7 @@
 * Medium
 	* Gas Station
 	* STRJOIN (\#heap)
+	* Max Increase to Keep City Skyline
 * Hard
 	* MINASTIRITH
 	* Trapping Rain Water
