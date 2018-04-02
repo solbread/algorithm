@@ -6,6 +6,7 @@
 * Easy
 	* Student Attendance Record I
 	* Repeated String Match
+	* Rotate String
 * Medium
 	* Minimum Time Difference
 	* Next Greater Element III
