@@ -1,23 +1,26 @@
 package com.algorithm.training.dynamic_programming.minimum_swaps_to_makes_sequences_increasing;
 
+import java.util.Arrays;
+
 public class Solution2 {
     public int minSwap(int[] A, int[] B) {
-    	int[][] cache = new int[A.length][2];
-    	cache[0][0] = 0;
-    	cache[0][1] = 1;
+    	int[] prevMinSwap = new int[2];
+    	prevMinSwap[0] = 0;
+    	prevMinSwap[1] = 1;
     	for(int i = 1; i < A.length; i++) {
-    		cache[i][0] = 1000;
-    		cache[i][1] = 1000;
+    		int[] currentMinSwap = new int[2];
+    		Arrays.fill(currentMinSwap, 1000);
     		if(A[i-1] < A[i] && B[i-1] < B[i]) {
-    			cache[i][0] = cache[i-1][0];
-    			cache[i][1] = cache[i-1][1]+1;
+    			currentMinSwap[0] = prevMinSwap[0];
+    			currentMinSwap[1] = prevMinSwap[1]+1;
     		}
     		if(B[i-1] < A[i] && A[i-1] < B[i]) {
-    			cache[i][0] = Math.min(cache[i][0], cache[i-1][1]);
-    			cache[i][1] = Math.min(cache[i][1], cache[i-1][0]+1);
+    			currentMinSwap[0] = Math.min(currentMinSwap[0], prevMinSwap[1]);
+    			currentMinSwap[1] = Math.min(currentMinSwap[1], prevMinSwap[0]+1);
     		}
+    		prevMinSwap = currentMinSwap;
     	}
-    	return Math.min(cache[A.length-1][0], cache[A.length-1][1]);
+    	return Math.min(prevMinSwap[0], prevMinSwap[1]);
     }
     
 	public static void main(String[] args) {
