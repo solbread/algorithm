@@ -57,7 +57,6 @@ cache\[i\]\[1\]은 i-1과 i를 swap했을 때의 minSwapCount이다.
 	2. i-1과 i를 swap했을 경우의 cache\[i\]\[1\] 값은 min(cache\[i\]\[1\], cache\[i-1\]\[0\]+1)
 
 위의 조건으로 dp를 구현하면 되며, dp에서 사용되는 값은 A\[i-1\], A\[i\], B\[i-1\], B\[i\]이므로 2\*n 크기의 cache배열을 사용할 필요가 없으므로 해당 부분은 4크기의 배열만 사용하여 메모리제이션하도록 윈도우기법을 이용해서 최적화가 가능하다.  
-최적화는 prevMinSwap과 currentMinSwap을 이욯하여 하였다.  
-prevMinSwap\[0\]는 이전 index에서 swap을 하지 않았을때의 minSwapCount이며,  
-prevMinSwap\[1\]는 이전 index에서 swap을 했을 때의 minSwapCount이다.  
+최적화는 prevMinSwap과 currentMinSwap을 이용하여 하였다.  
+prevMinSwap\[0\]는 이전 index에서 swap을 하지 않았을때의 minSwapCount이며, prevMinSwap\[1\]는 이전 index에서 swap을 했을 때의 minSwapCount이다.  
 현재 index에서 swap을 하지 않을때의 minSwapCount(currentMinSwap\[0\])와 swap을 할 때의 minSwapCount(currentMinSwap\[1\])를 구하여 prevMinSwap에 넣어주면서 최종적인 결과를 얻는다.  
