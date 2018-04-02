@@ -3,6 +3,7 @@
 **Problem list**
 * Easy
 	* Employee Importance (\#depth\_first\_search \#breadth\_first\_search)
+	* Unique Morse Code Words
 * Medium
 	* Brick Wall
 	* Top K Frequent Words (\#heap \#trie)

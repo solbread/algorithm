@@ -32,6 +32,7 @@
 	* SUSHI
 	* GENIUS
 	* triangle (\#array)
+	* Minimum Swaps To Make Sequences Increasing
 * Hard
 	* OCR
 	* KLIS
