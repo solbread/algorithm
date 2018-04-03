@@ -3,6 +3,7 @@
 **Problem list**
 * None
 * Easy
+	* Majority Element
 * Medium
 	* My Calendar I
 	* My Calendar II (\#binary\_search)
