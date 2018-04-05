@@ -9,27 +9,25 @@ public class Solution {
         this.graph = graph;
         List<Integer> safeNodes = new ArrayList<>();
         for(int i = 0; i < graph.length; i++) {
-            if(isSafe(graph[i], new boolean[graph.length])) safeNodes.add(i);
+            if(isSafe(i, new boolean[graph.length])) safeNodes.add(i);
         }
         return safeNodes;
     }
     
-    private boolean isSafe(int[] linkedNodes, boolean[] visited) {
+    private boolean isSafe(int visitNodeNumber, boolean[] visited) {
+        if(visited[visitNodeNumber]) return false;
         boolean isSafe = true;
-        for(int i = 0; isSafe && i < linkedNodes.length; i++) {
-            if(!visited[i]) {
-                visited[i] = true;
-                isSafe = isSafe(graph[linkedNodes[i]], visited);
-                visited[i] = false;
-            } else {
-                isSafe = false;
-            }
+        visited[visitNodeNumber] = true;
+        for(int i = 0; isSafe && i < graph[visitNodeNumber].length; i++) {
+             isSafe = isSafe(graph[visitNodeNumber][i], visited);
         }
+        visited[visitNodeNumber] = false;
         return isSafe;
     }
     
     public static void main(String[] args) {
         Solution solution = new Solution();
         System.out.println(solution.eventualSafeNodes(new int[][]{{1,2},{2,3},{5},{0},{5},{},{}})); //{2,4,5,6}
+        System.out.println(solution.eventualSafeNodes(new int[][]{{},{0,2,3,4},{3},{4},{}})); //0,1,2,3,4
     }
 }
