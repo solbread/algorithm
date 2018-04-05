@@ -7,6 +7,7 @@
 	* Student Attendance Record I
 	* Repeated String Match
 	* Rotate String
+	* Number of Lines To Write String
 * Medium
 	* Minimum Time Difference
 	* Next Greater Element III
