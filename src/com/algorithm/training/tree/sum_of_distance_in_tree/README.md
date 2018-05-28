@@ -33,6 +33,7 @@ equals 1 + 1 + 2 + 2 + 2 = 8.  Hence, answer[0] = 8, and so on.
 참고자료  
 * https://leetcode.com/problems/sum-of-distances-in-tree/discuss/130583/C++JavaPython-Pre-order-and-Post-order-DFS-O(N)
 * https://leetcode.com/problems/sum-of-distances-in-tree/discuss/132133/Intuition-of-O(n)-solution-based-on-%22undirected%22-tree
+
 풀이  
 1. countSubNodes(int root, boolean[] visit)
    * root의 자기자신 노드를 포함한 자식노드 개수를 구하며, root노드에서 자식노드로의 총 distance를 구하는 메소드
