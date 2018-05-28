@@ -30,9 +30,7 @@ public class BestSolution {
                 sumOfDistance[root] += sumOfDistance[linkedNodeNumber] + countOfSubNodes[linkedNodeNumber];
             }
         }
-        if(root != 0) {
-            countOfSubNodes[root]++;
-        }
+        countOfSubNodes[root]++;
     }
 
     private void sumDistance(int root, boolean[] visit) {
