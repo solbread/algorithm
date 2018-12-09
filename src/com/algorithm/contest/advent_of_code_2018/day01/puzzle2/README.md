@@ -1,5 +1,7 @@
 ## Chronal Calibration Puzzle 2
 
+https://adventofcode.com/2018/day/1
+
 You notice that the device repeats the same frequency change list over and over.  
 To calibrate the device, you need to find the first frequency it reaches twice.
 

@@ -1,5 +1,7 @@
 ## Inventory Management System Puzzle 1
 
+https://adventofcode.com/2018/day/2
+
 You stop falling through time, catch your breath, and check the screen on the device.  
 "Destination reached. Current Year: 1518. Current Location: North Pole Utility Closet 83N10."  
 You made it! Now, to find those anomalies.
@@ -33,7 +35,9 @@ abcccd contains three c, but no letter appears exactly two times.
 aabcdd contains two a and two d, but it only counts once.
 abcdee contains two e.
 ababab contains three a and three b, but it only counts once.
-Of these box IDs, four of them contain a letter which appears exactly twice, and three of them contain a letter which appears exactly three times. Multiplying these together produces a checksum of 4 * 3 = 12.
+Of these box IDs, four of them contain a letter which appears exactly twice, 
+and three of them contain a letter which appears exactly three times. 
+Multiplying these together produces a checksum of 4 * 3 = 12.
 
 What is the checksum for your list of box IDs?
 
