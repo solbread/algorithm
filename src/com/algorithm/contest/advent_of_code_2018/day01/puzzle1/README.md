@@ -49,5 +49,6 @@ Your puzzle answer was 445.
 
 **Solution**  
 시간복잡도 : O(n) 공간복잡도 : O(1)  
+정답 : 445  
 주어진 input을 모두 더하면 되는 문제로, 매우 간단하게 해결하였다.
   

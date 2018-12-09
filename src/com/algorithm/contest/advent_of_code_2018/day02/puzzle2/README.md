@@ -29,6 +29,7 @@ Your puzzle answer was hhvsdkatysmiqjxunezgwcdpr.
 
 **Solution**  
 시간복잡도 : O(n*n*m) 공간복잡도 : O(n) (n=주어진 배열의 개수, m=주어진 문자열의 길이)  
+정답 : hhvsdkatysmiqjxunezgwcdpr  
 우선 n개짜리 리스트에 모든 문자열을 담아놓고 시작한다.  
 2개의 for문을 통해서 문자열의 모든 조합을 구하며, 각 문자열 쌍마다 문제의 조건을 충족하는지를 체크한다.  
 따라서 모든 조합을 구하는데 n\*n의 반복을 수행하고,  

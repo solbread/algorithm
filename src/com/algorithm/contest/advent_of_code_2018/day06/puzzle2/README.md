@@ -1,4 +1,4 @@
-## Chronal Coordinates Puzzle1
+## Chronal Coordinates Puzzle2
 
 https://adventofcode.com/2018/day/6
 
