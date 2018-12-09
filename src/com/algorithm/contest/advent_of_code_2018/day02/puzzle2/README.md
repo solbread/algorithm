@@ -1,5 +1,7 @@
 ## Inventory Management System Puzzle 2
 
+https://adventofcode.com/2018/day/2
+
 Confident that your list of box IDs is complete, you're ready to find the boxes full of prototype fabric.  
 The boxes will have IDs which differ by exactly one character at the same position in both strings.
 

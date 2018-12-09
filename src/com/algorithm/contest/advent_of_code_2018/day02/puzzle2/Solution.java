@@ -4,15 +4,12 @@ import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
 import java.util.ArrayList;
-import java.util.HashMap;
 import java.util.List;
-import java.util.Map;
 
 public class Solution {
     public static void main(String[] args) {
-        try {
-            FileReader fileReader = new FileReader("src/com/algorithm/contest/advent_of_code_2018/day02/puzzle2/input");
-            BufferedReader bufferedReader = new BufferedReader(fileReader);
+        try(FileReader fileReader = new FileReader("src/com/algorithm/contest/advent_of_code_2018/day02/puzzle2/input");
+                BufferedReader bufferedReader = new BufferedReader(fileReader);) {
             String line = null;
             List<String> input = new ArrayList<>();
             while((line = bufferedReader.readLine())!= null) {
