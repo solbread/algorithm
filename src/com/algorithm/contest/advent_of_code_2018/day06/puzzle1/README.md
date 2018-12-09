@@ -65,7 +65,7 @@ Therefore, in this example, the size of the largest area is 17.
 ---------------------------
 
 **Solution**  
-시간복잡도 : O(n*i*j) 공간복잡도 : O(i*j) (n=문자 개수 i=grid행개수 j=grid열개수)   
+시간복잡도 : O(n\*i\*j) 공간복잡도 : O(i\*j) (n=문자 개수 i=grid행개수 j=grid열개수)   
 정답 : 39398  
 1. grid의 행 개수와 열 개수를 구한다.  
 input을 순회하며 최대 행 번호와 최대 열 번호를 구한다. (시간복잡도 : O(n))
