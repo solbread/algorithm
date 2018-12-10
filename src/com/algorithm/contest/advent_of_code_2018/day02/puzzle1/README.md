@@ -1,5 +1,7 @@
 ## Inventory Management System Puzzle 1
 
+https://adventofcode.com/2018/day/2
+
 You stop falling through time, catch your breath, and check the screen on the device.  
 "Destination reached. Current Year: 1518. Current Location: North Pole Utility Closet 83N10."  
 You made it! Now, to find those anomalies.
@@ -33,7 +35,9 @@ abcccd contains three c, but no letter appears exactly two times.
 aabcdd contains two a and two d, but it only counts once.
 abcdee contains two e.
 ababab contains three a and three b, but it only counts once.
-Of these box IDs, four of them contain a letter which appears exactly twice, and three of them contain a letter which appears exactly three times. Multiplying these together produces a checksum of 4 * 3 = 12.
+Of these box IDs, four of them contain a letter which appears exactly twice, 
+and three of them contain a letter which appears exactly three times. 
+Multiplying these together produces a checksum of 4 * 3 = 12.
 
 What is the checksum for your list of box IDs?
 
@@ -44,6 +48,7 @@ Your puzzle answer was 8398.
 
 **Solution**  
 시간복잡도 : O(n\*m) 공간복잡도 : O(m) (n=주어진 배열의 개수, m=주어진 문자열의 길이)  
+정답 : 8398  
 문자열에 대해 등장한 문자를 맵에다가 카운트 한다.  
 카운트가 끝나고 나면 한 문자열에 문자가 2번 등장하는 경우와 3번 등장하는 경우를 체크한다.  
 (이로 인해 각 문자열에 대해 문자열 길이만큼 2번 순회하므로 정확한 시간 복잡도는 O(n\*2\*m)이 될 것이다.)  

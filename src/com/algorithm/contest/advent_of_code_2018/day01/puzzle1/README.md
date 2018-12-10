@@ -1,5 +1,7 @@
 ## Chronal Calibration Puzzle 1
 
+https://adventofcode.com/2018/day/1
+
 "We've detected some temporal anomalies," one of Santa's Elves at the Temporal Anomaly Research and Detection Instrument Station tells you.  
 She sounded pretty worried when she called you down here.  
 "At 500-year intervals into the past, someone has been changing Santa's history!"
@@ -47,5 +49,6 @@ Your puzzle answer was 445.
 
 **Solution**  
 시간복잡도 : O(n) 공간복잡도 : O(1)  
+정답 : 445  
 주어진 input을 모두 더하면 되는 문제로, 매우 간단하게 해결하였다.
   

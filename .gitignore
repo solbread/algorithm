@@ -52,3 +52,7 @@ bin/
 .settings
 src/com/algorithm/training/dynamic_programming/quantize
 src/com/algorithm/training/array/my_calendar2
+target
+algorithm.iml
+.gitignore
+.idea/
