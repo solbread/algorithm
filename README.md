@@ -65,6 +65,7 @@
 | [#](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/algospot/christmas) |               CHRISTMAS                |   Medium   |   ⭕️    |   Java   |
 | [#](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/algospot/get_zero_approximae_range) |       Get Zero Approximate Range       |     -      |   ⭕️    |   Java   |
 | [#](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/algospot/ites) |                  ITES                  |   Medium   |   ⭕️    |   Java   |
+| [#](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/algospot/brackets2) |    Mismatched Brackets (BRACKETS2)     |    Easy    |   ⭕️    |   Java   |
 
 
 
@@ -116,6 +117,9 @@
 | [324](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/leetcode/324_wiggle_sort2) |               Wiggle Sort II               |   Medium   |   ⭕️    |   Java   |
 | [179](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/leetcode/179_largest_number) |               Largest Number               |   Medium   |   ⭕️    |   Java   |
 | [75](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/leetcode/75_sort_colors) |                Sort Colors                 |   Medium   |   ⭕️    |   Java   |
+| [735](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/leetcode/735_asteroid_collision) |             Asteroid Collision             |   Medium   |   ⭕️    |   Java   |
+| [682](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/leetcode/682_baseball_game) |               Baseball Game                |    Easy    |   ⭕️    |   Java   |
+| [84](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/leetcode/84_largest_rectangle_in_histogram) |       Largest Rectangle in Histogram       |    Hard    |   ⭕️    |   Java   |
 
 
 
