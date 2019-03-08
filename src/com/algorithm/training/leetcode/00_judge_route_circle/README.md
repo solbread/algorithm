@@ -2,6 +2,7 @@
 
 **Difficulty:** Easy
 
+19.03.08 사라진 문제
 https://leetcode.com/problems/judge-route-circle/description/
 
 Initially, there is a Robot at position (0, 0). <br/>

@@ -120,6 +120,14 @@
 | [735](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/leetcode/735_asteroid_collision) |             Asteroid Collision             |   Medium   |   ⭕️    |   Java   |
 | [682](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/leetcode/682_baseball_game) |               Baseball Game                |    Easy    |   ⭕️    |   Java   |
 | [84](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/leetcode/84_largest_rectangle_in_histogram) |       Largest Rectangle in Histogram       |    Hard    |   ⭕️    |   Java   |
+| [#](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/leetcode/00_judge_route_circle) |             Judge Route Circle             |    Easy    |   ⭕️    |   Java   |
+| [831](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/leetcode/831_masking_personal_information) |        Masking Personal Information        |   Medium   |   ⭕️    |   Java   |
+| [539](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/leetcode/539_minimum_time_difference) |          Minimum Time Difference           |   Medium   |   ⭕️    |   Java   |
+| [556](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/leetcode/556_next_greater_element3) |          Next Greater Element III          |   Medium   |   ⭕️    |   Java   |
+| [806](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/leetcode/806_number_of_lines_to_write_string) |      Number of Lines To Write String       |    Easy    |   ⭕️    |   Java   |
+| [686](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/leetcode/686_repeat_string_match) |           Repeated String Match            |    Easy    |   ⭕️    |   Java   |
+| [796](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/leetcode/796_rotate_string) |               Rotate String                |    Easy    |   ⭕️    |   Java   |
+| [551](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/leetcode/551_student_attendance_record1) |        Student Attendance Record I         |    Easy    |   ⭕️    |   Java   |
 
 
 
