@@ -128,6 +128,22 @@
 | [686](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/leetcode/686_repeat_string_match) |           Repeated String Match            |    Easy    |   ⭕️    |   Java   |
 | [796](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/leetcode/796_rotate_string) |               Rotate String                |    Easy    |   ⭕️    |   Java   |
 | [551](https://github.com/solbread/algorithm/tree/master/src/com/algorithm/training/leetcode/551_student_attendance_record1) |        Student Attendance Record I         |    Easy    |   ⭕️    |   Java   |
+| [101](https://leetcode.com/problems/symmetric-tree/#/description) |               Symmetric Tree               |    Easy    |   ⭕️    |   java   |
+| [617](https://leetcode.com/problems/merge-two-binary-trees/) |           Merge Two Binary Trees           |    Easy    |   ❌    |          |
+| [671](https://leetcode.com/problems/second-minimum-node-in-a-binary-tree/description/) |    Second Minimum Node In a Binary Tree    |    Easy    |   ⭕️    |   java   |
+| [684](https://leetcode.com/problems/redundant-connection/description/) |            Redundant Connection            |   Medium   |   ⭕️    |   java   |
+| [685](https://leetcode.com/problems/redundant-connection-ii/description/) |          Redundant Connection II           |    Hard    |   ⭕️    |   java   |
+| [687](https://leetcode.com/problems/longest-univalue-path/description/) |           Longest Univalue Path            |    Easy    |   ⭕️    |   java   |
+| [834](https://leetcode.com/problems/sum-of-distances-in-tree/description/) |          Sum of Distances in Tree          |    Hard    |   ⭕️    |   java   |
+| [720](https://leetcode.com/problems/longest-word-in-dictionary/description/) |         Longest Word in Dictionary         |    Easy    |   ⭕️    |   java   |
+| [421](https://leetcode.com/problems/maximum-xor-of-two-numbers-in-an-array/#/description) |   Maximum XOR of Two Numbers in an Array   |   Medium   |   ⭕️    |   java   |
+| [11](https://leetcode.com/problems/container-with-most-water/) |         Container With Most Water          |   Medium   |   ⭕️    |   java   |
+| [532](https://leetcode.com/problems/k-diff-pairs-in-an-array/#/description) |          K-diff Pairs in an Array          |    Easy    |   ⭕️    |   java   |
+| [141](https://leetcode.com/problems/linked-list-cycle/#/description) |             Linked List Cycle              |    Easy    |   ⭕️    |   java   |
+| [283](https://leetcode.com/problems/move-zeroes/description/) |                Move Zeroes                 |    Easy    |   ⭕️    |   java   |
+| [713](https://leetcode.com/problems/subarray-product-less-than-k/description/) |        Subarray Product Less Than K        |   Medium   |   ⭕️    |   java   |
+| [42](https://leetcode.com/problems/trapping-rain-water/description/) |            Trapping Rain Water             |    Hard    |   ⭕️    |   java   |
+|  [828](https://leetcode.com/problems/unique-letter-string/)  |            Unique Letter String            |    Hard    |   ❌    |          |
 
 
 
